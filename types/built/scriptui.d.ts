@@ -9,7 +9,7 @@
  */
 export declare class ScriptUI {
 	/** The font constants defined by the host application. */
-	applicationFonts: Object;
+	readonly applicationFonts: Object;
 	/**
 	 * The presence of ScriptUI.compatability.su1PanelCoordinates 
 	 * means that the application allows backward compatibility 
@@ -18,17 +18,17 @@ export declare class ScriptUI {
 	 * @summary An object whose properties are the names of 
 	 * compatability modes supported by the host application.
 	 */
-	compatibility: Object;
+	readonly compatibility: Object;
 	/**
 	 * A string containing the internal version number of the 
 	 * ScriptUI module.
 	 */
-	coreVersion: string;
+	readonly coreVersion: string;
 	/**
 	 * An object whose properties define attributes of the 
 	 * environment in which ScriptUI operates.
 	 */
-	environment: Environment;
+	readonly environment: Environment;
 	/**
 	 * It contains one function, createEvent(), which allows you to 
 	 * create event objects in order to simulate user-interaction 
@@ -36,17 +36,17 @@ export declare class ScriptUI {
 	 * @summary An object whose properties and methods provide 
 	 * access to objects used in the ScriptUI event system.
 	 */
-	events: Events;
+	readonly events: Events;
 	/**
 	 * A string containing the name of the UI component framework 
 	 * with which this version of ScriptUI is compatible.
 	 */
-	frameworkName: string;
+	readonly frameworkName: string;
 	/**
 	 * A string containing the version number of the ScriptUI 
 	 * component framework
 	 */
-	version: any;
+	readonly version: any;
 	/**
 	 * Predefined alignment values are: TOP, BOTTOM, LEFT, RIGHT, 
 	 * FILL, CENTER
@@ -54,13 +54,13 @@ export declare class ScriptUI {
 	 * the alignment and alignChildren properties of controls and 
 	 * containers.
 	 */
-	Alignment: string;
+	readonly Alignment: string;
 	/**
 	 * Predefined styles are REGULAR, BOLD, ITALIC, BOLDITALIC.
 	 * @summary Collects the enumerated values that can be used as 
 	 * the style argument to the ScriptUI.newFont() method.
 	 */
-	FontStyle: Object;
+	readonly FontStyle: Object;
 	/**
 	 * If no string resource matches the given text, the text 
 	 * itself is returned.
@@ -84,7 +84,7 @@ export declare class ScriptUI {
 	 * @param {string} rollover - The resource name, or the 
 	 * file-system path to the image used for the rollover state.
 	 */
-	newImage(normal: string, disabled: string, pressed: string, rollover: string): ScriptUIImage;
+	newImage(normal: string, disabled?: string, pressed?: string, rollover?: string): ScriptUIImage;
 	/**
 	 * Creates a new font object for use in text controls and 
 	 * titles.
@@ -106,14 +106,14 @@ export declare class ScriptUI {
  */
 export declare class Window {
 	/** Deprecated. Use ScriptUI.frameworkName instead. */
-	frameworkName: string;
+	readonly frameworkName: string;
 	/** Deprecated. Use ScriptUI.version instead. */
-	version: any;
+	readonly version: any;
 	/**
 	 * The graphics object that can be used to customize the 
 	 * window’s appearance, in response to the onDraw event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -134,7 +134,7 @@ export declare class Window {
 	 * @summary The bounds of the window frame in screen 
 	 * coordinates.
 	 */
-	frameBounds: Bounds;
+	readonly frameBounds: Bounds;
 	/**
 	 * The same as [frameBounds.x, frameBounds.y]. Set this value 
 	 * to move the window frame to the specified location on the 
@@ -147,7 +147,7 @@ export declare class Window {
 	 * The size and location of the window's frame in screen 
 	 * coordinates.
 	 */
-	frameSize: Dimension;
+	readonly frameSize: Dimension;
 	/**
 	 * The same as [bounds.x, bounds.y].
 	 * @summary The upper left corner of the window's drawable 
@@ -174,7 +174,7 @@ export declare class Window {
 	 * The bounds of this window relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * A number of characters for which to reserve space when 
 	 * calculating the preferred size of the window.
@@ -245,7 +245,7 @@ export declare class Window {
 	 * @summary The collection of UI elements that have been added 
 	 * to this container.
 	 */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * The first time a container object is made visible, ScriptUI 
 	 * invokes this layout manager by calling 
@@ -338,11 +338,11 @@ export declare class Window {
 	/** The number of pixels to indent the element. */
 	indent: number;
 	/** The immediate parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "dialog", "palette", or "window". */
-	type: string;
+	readonly type: string;
 	/**
 	 * A value of 1.0 (the default) makes the window completely 
 	 * opaque, a value of 0 makes it completely transparent. 
@@ -405,7 +405,7 @@ export declare class Window {
 	 * borderless:  When true, the window has no title bar or 
 	 * borders. Properties that control those features are ignored.
 	 */
-	Window(_type: string, title: string, bounds: Bounds, properties: Object): void;
+	Window(_type: string, title?: string, bounds?: Bounds, properties?: Object): void;
 	/**
 	 * This includes windows defined by ScriptUI resource strings, 
 	 * windows already created by a script, and windows created by 
@@ -438,7 +438,7 @@ export declare class Window {
 	 * platform-standard error icon in the dialog. / Ignored in Mac 
 	 * OS, which does not support icons for alert dialogs.
 	 */
-	alert(message: string, title: string, errorIcon: boolean): void;
+	alert(message: string, title?: string, errorIcon?: boolean): void;
 	/**
 	 * Returns true if the user clicked Yes, false if the user 
 	 * clicked No.
@@ -454,7 +454,7 @@ export declare class Window {
 	 * Mac OS, which does not support titles for alert dialogs. The 
 	 * default title string is "Script Alert".
 	 */
-	confirm(message: string, noAsDefault: boolean, title: string): boolean;
+	confirm(message: string, noAsDefault: boolean, title?: string): boolean;
 	/**
 	 * Returns the value of the text edit field if the user clicked 
 	 * OK, null if the user clicked Cancel.
@@ -469,7 +469,7 @@ export declare class Window {
 	 * frame; in Mac OS it appears above the message. The default 
 	 * title string is "Script Prompt".
 	 */
-	prompt(prompt: string, _default: string, title: string): string;
+	prompt(prompt: string, _default?: string, title?: string): string;
 	/**
 	 * If an onShow() callback is defined for a window, calls that 
 	 * function before showing the window.When a window or 
@@ -499,14 +499,14 @@ export declare class Window {
 	 * default event is sent. / One of: onClose, onMove, onMoving, 
 	 * onResize, onResizing, onShow
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * Centers this window on screen or with repect to another 
 	 * window.
 	 * @param {Window} window - The relative window. If not 
 	 * specified, centers on the screen.
 	 */
-	center(window: Window): void;
+	center(window?: Window): void;
 	/**
 	 * . If an onClose() callback is defined for the window, calls 
 	 * that function before closing the window.
@@ -514,7 +514,7 @@ export declare class Window {
 	 * @param {any} _return - A number to be returned from the 
 	 * show() method that invoked this window as a modal dialog.
 	 */
-	close(_return: any): void;
+	close(_return?: any): void;
 	/**
 	 * Control types are listed in the JavaScript Tools Guide.
 	 * @summary Creates and returns a new control or container 
@@ -538,7 +538,7 @@ export declare class Window {
 	 * depend on the element type. See properties property of each 
 	 * control type.
 	 */
-	add(_type: string, bounds: Bounds, text: string, properties: Object): Object;
+	add(_type: string, bounds?: Bounds, text?: string, properties?: Object): Object;
 	/**
 	 * No error results if the child does not exist.
 	 * @summary Removes the specified child control from this 
@@ -572,7 +572,7 @@ export declare class Window {
 	 * target, or in the at-target phase if this object is itself 
 	 * the target.
 	 */
-	addEventListener(eventName: string, handler: Function, capturePhase: boolean): boolean;
+	addEventListener(eventName: string, handler: Function, capturePhase?: boolean): boolean;
 	/**
 	 * All arguments must be identical to those that were used to 
 	 * register the event handler.
@@ -667,7 +667,6 @@ export declare class Window {
  * @class
  */
 export declare class LayoutManager {
-	
 	/**
 	 * Adjusts sizes and positions of the child elements of this 
 	 * window or container according to the placement and alignment 
@@ -707,23 +706,22 @@ export declare class ScriptUIPen {
 	 * fully transparent, and an opacity of 1 is fully opaque.
 	 * @summary The pen color.
 	 */
-	color: number;
+	readonly color: number;
 	/**
 	 * The name of a color theme to use for drawing when the type 
 	 * is THEME_COLOR. Theme colors are defined by the host 
 	 * application.
 	 * @summary The theme name.
 	 */
-	theme: string;
+	readonly theme: string;
 	/**
 	 * One of these constants: ScriptUIGraphics.PenType.SOLID_COLOR 
 	 * or ScriptUIGraphics.PenType.THEME_COLOR
 	 * @summary The pen type, solid or theme.
 	 */
-	type: string;
+	readonly type: string;
 	/** The pixel width of the drawing line. */
 	lineWidth: number;
-	
 }
 
 /**
@@ -743,22 +741,21 @@ export declare class ScriptUIBrush {
 	 * fully transparent, and an opacity of 1 is fully opaque.
 	 * @summary The brush color.
 	 */
-	color: number;
+	readonly color: number;
 	/**
 	 * The name of a color theme to use for drawing when the type 
 	 * is THEME_COLOR. Theme colors are defined by the host 
 	 * application.
 	 * @summary The theme name.
 	 */
-	theme: string;
+	readonly theme: string;
 	/**
 	 * One of these constants: 
 	 * ScriptUIGraphics.BrushType.SOLID_COLOR or 
 	 * ScriptUIGraphics.BrushType.THEME_COLOR
 	 * @summary The brush type, solid or theme.
 	 */
-	type: number;
-	
+	readonly type: number;
 }
 
 /**
@@ -772,8 +769,6 @@ export declare class ScriptUIBrush {
  * @class
  */
 export declare class ScriptUIPath {
-	
-	
 }
 
 /**
@@ -792,13 +787,13 @@ export declare class ScriptUIGraphics {
 	 * @summary Contains the enumerated constants for the type 
 	 * argument of newBrush().
 	 */
-	BrushType: Object;
+	readonly BrushType: Object;
 	/**
 	 * Type constants are: SOLID_COLOR, THEME_COLOR.
 	 * @summary Contains the enumerated constants for the type 
 	 * argument of newPen().
 	 */
-	PenType: Object;
+	readonly PenType: Object;
 	/**
 	 * The paint color and style is defined in this brush 
 	 * object.This property is only supported for controls like  
@@ -830,9 +825,9 @@ export declare class ScriptUIGraphics {
 	 */
 	foregroundColor: ScriptUIPen;
 	/** The current drawing path, encapsulated in a path object. */
-	currentPath: ScriptUIPath;
+	readonly currentPath: ScriptUIPath;
 	/** The current position in the current drawing path. */
-	currentPoint: Point;
+	readonly currentPoint: Point;
 	/**
 	 * One of the constants ScriptUIGraphics.BrushType.SOLID_COLOR 
 	 * or ScriptUIGraphics.BrushType.THEME_COLOR.
@@ -946,7 +941,7 @@ export declare class ScriptUIGraphics {
 	 * @param {ScriptUIPath} path - The path object. Default is 
 	 * the currentPath.
 	 */
-	strokePath(pen: ScriptUIPen, path: ScriptUIPath): void;
+	strokePath(pen: ScriptUIPen, path?: ScriptUIPath): void;
 	/**
 	 * Fills a path using a given painting brush.
 	 * @param {ScriptUIBrush} brush - The brush object that defines 
@@ -954,7 +949,7 @@ export declare class ScriptUIGraphics {
 	 * @param {ScriptUIPath} path - The path object. Default is 
 	 * the currentPath.
 	 */
-	fillPath(brush: ScriptUIBrush, path: ScriptUIPath): void;
+	fillPath(brush: ScriptUIBrush, path?: ScriptUIPath): void;
 	/**
 	 * Value is relative to the origin of this element.
 	 * @summary Draws a focus ring within a region of this element.
@@ -986,7 +981,7 @@ export declare class ScriptUIGraphics {
 	 * the image is stretched or shrunk to fit. If omitted, uses 
 	 * the original image height.
 	 */
-	drawImage(image: ScriptUIImage, left: number, top: number, width: number, height: number): void;
+	drawImage(image: ScriptUIImage, left: number, top: number, width?: number, height?: number): void;
 	/**
 	 * Draw the platform-specific control associated with this 
 	 * element.
@@ -1004,7 +999,7 @@ export declare class ScriptUIGraphics {
 	 * @param {ScriptUIFont} font - The font to use. Default is the 
 	 *  font value in this object.
 	 */
-	drawString(text: string, pen: ScriptUIPen, x: number, y: number, font: ScriptUIFont): void;
+	drawString(text: string, pen: ScriptUIPen, x: number, y: number, font?: ScriptUIFont): void;
 	/**
 	 * Returns a Dimension object that contains the height and 
 	 * width of the string in pixels.
@@ -1015,7 +1010,7 @@ export declare class ScriptUIGraphics {
 	 * the font value in this object.
 	 * @param {number} boundingWidth - The bounding width.
 	 */
-	measureString(text: string, font: ScriptUIFont, boundingWidth: number): Dimension;
+	measureString(text: string, font?: ScriptUIFont, boundingWidth?: number): Dimension;
 }
 
 /**
@@ -1029,30 +1024,29 @@ export declare class ScriptUIGraphics {
  */
 export declare class DrawState {
 	/** True if the cursor is hovering over this element. */
-	mouseOver: boolean;
+	readonly mouseOver: boolean;
 	/** True if the left mouse button is being pressed. */
-	leftButtonPressed: boolean;
+	readonly leftButtonPressed: boolean;
 	/** True if the middle mouse button is being pressed. */
-	middleButtonPressed: boolean;
+	readonly middleButtonPressed: boolean;
 	/** True if the right mouse button is being pressed. */
-	rightButtonPressed: boolean;
+	readonly rightButtonPressed: boolean;
 	/** True if the element has the input focus. */
-	hasFocus: boolean;
+	readonly hasFocus: boolean;
 	/** True if the Shift key is being pressed. */
-	shiftKeyPressed: boolean;
+	readonly shiftKeyPressed: boolean;
 	/** True if the Ctrl key is being pressed. */
-	ctrlKeyPressed: boolean;
+	readonly ctrlKeyPressed: boolean;
 	/** True if the Command key is being pressed (in Mac OS only). */
-	cmdKeyPressed: boolean;
+	readonly cmdKeyPressed: boolean;
 	/** True if the Option key is being pressed (in Mac OS only). */
-	optKeyPressed: boolean;
+	readonly optKeyPressed: boolean;
 	/** True if the Alt key is being pressed (in Windows only). */
-	altKeyPressed: boolean;
+	readonly altKeyPressed: boolean;
 	/** True if the Num Lock key is being pressed. */
-	numLockKeyPressed: boolean;
+	readonly numLockKeyPressed: boolean;
 	/** True if the Caps Lock key is being pressed. */
-	capsLockKeyPressed: boolean;
-	
+	readonly capsLockKeyPressed: boolean;
 }
 
 /**
@@ -1064,26 +1058,25 @@ export declare class DrawState {
  */
 export declare class ScriptUIFont {
 	/** The font family name. */
-	family: string;
+	readonly family: string;
 	/**
 	 * The complete font name, consisting of the family and style, 
 	 * if specified.
 	 */
-	name: string;
+	readonly name: string;
 	/** The font point size. */
-	size: number;
+	readonly size: number;
 	/**
 	 * The font style. One of the constants 
 	 * in ScriptUIGraphics.FontStyle.
 	 */
-	style: Object;
+	readonly style: Object;
 	/**
 	 * The name of a substitution font, a fallback font to 
 	 * substitute for this font if the requested font family or 
 	 * style is not available.
 	 */
-	substitute: string;
-	
+	readonly substitute: string;
 }
 
 /**
@@ -1099,14 +1092,13 @@ export declare class ScriptUIImage {
 	 * The image format. One of: resource, JPEG, GIF, TIFF, PNG, or 
 	 * PICT (Macintosh).
 	 */
-	format: string;
+	readonly format: string;
 	/** The image name. Either the file name, or the resource name. */
-	name: string;
+	readonly name: string;
 	/** The full path to the file that contains the image. */
-	pathname: string;
+	readonly pathname: string;
 	/** The image size in pixels. */
-	size: Dimension;
-	
+	readonly size: Dimension;
 }
 
 /**
@@ -1146,7 +1138,7 @@ export declare class StaticText {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -1207,7 +1199,7 @@ export declare class StaticText {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -1224,7 +1216,7 @@ export declare class StaticText {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * Creation properties of a StaticText object can include:
 	 * multiline: When false (the default), the control displays a 
@@ -1260,11 +1252,11 @@ export declare class StaticText {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type, "statictext". */
-	type: string;
+	readonly type: string;
 	/**
 	 * One of: onClick, onChange, onChanging. By default, simulates 
 	 * the onChange event for an edittext control, an onClick event 
@@ -1277,7 +1269,7 @@ export declare class StaticText {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -1381,7 +1373,7 @@ export declare class Button {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -1442,7 +1434,7 @@ export declare class Button {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -1459,7 +1451,7 @@ export declare class Button {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * A Button object has no creation properties, but the third 
 	 * argument to the add() method that creates it can be the 
@@ -1489,11 +1481,11 @@ export declare class Button {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "button". */
-	type: string;
+	readonly type: string;
 	/**
 	 * One of: onClick, onChange, onChanging. By default, simulates 
 	 * the onChange event for an edittext control, an onClick event 
@@ -1506,7 +1498,7 @@ export declare class Button {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -1618,7 +1610,7 @@ export declare class IconButton {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -1679,7 +1671,7 @@ export declare class IconButton {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -1696,7 +1688,7 @@ export declare class IconButton {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * Creation properties of an IconButton object can include:
 	 * style:  A string for the visual style, either "button", 
@@ -1728,11 +1720,11 @@ export declare class IconButton {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "iconbutton". */
-	type: string;
+	readonly type: string;
 	/**
 	 * One of: onClick, onChange, onChanging. By default, simulates 
 	 * the onChange event for an edittext control, an onClick event 
@@ -1745,7 +1737,7 @@ export declare class IconButton {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -1875,7 +1867,7 @@ export declare class EditText {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -1936,7 +1928,7 @@ export declare class EditText {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * An active control is the one with keyboard focus—that is, 
 	 * the one that accepts keystrokes, or in the case of a Button, 
@@ -1966,7 +1958,7 @@ export declare class EditText {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * Creation properties of an EditText object can include:
 	 * multiline: When false (the default), the control displays a 
@@ -2016,11 +2008,11 @@ export declare class EditText {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "edittext". */
-	type: string;
+	readonly type: string;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -2042,7 +2034,7 @@ export declare class EditText {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * Event names are listed in the JavaScript Tools Guide.
 	 * @summary Registers an event handler for a particular type of 
@@ -2155,7 +2147,7 @@ export declare class ListBox {
 	 * that is true when it is in the selected state.
 	 * @summary The array of choice items displayed in the list.
 	 */
-	items: ListItem;
+	readonly items: ListItem;
 	/**
 	 * Used by auto-layout to determine the preferredSize of the 
 	 * list, if not otherwise specified. If not set explicitly, the 
@@ -2200,7 +2192,7 @@ export declare class ListBox {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -2261,7 +2253,7 @@ export declare class ListBox {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -2278,7 +2270,7 @@ export declare class ListBox {
 	 */
 	alignment: string;
 	/** An array of child ListItem elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * A JavaScript object with two read-only properties whose 
 	 * values are set by the creation parameters:
@@ -2293,7 +2285,7 @@ export declare class ListBox {
 	 * ScriptUI.frameworkName == 'Flex'.
 	 * @summary For a multi-column list box, the column properties.
 	 */
-	columns: Object;
+	readonly columns: Object;
 	/**
 	 * Creation properties of a ListBox object can include:
 	 * multiselect: When false (the default), only one item can be 
@@ -2340,11 +2332,11 @@ export declare class ListBox {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "listbox". */
-	type: string;
+	readonly type: string;
 	/**
 	 * Returns the item control object. If this is a multi-column 
 	 * list box, each added ListItem represents one selectable row. 
@@ -2357,7 +2349,7 @@ export declare class ListBox {
 	 * @param {string} text - The localizable text label for the 
 	 * item.
 	 */
-	add(_type: string, text: string): ListItem;
+	add(_type: string, text?: string): ListItem;
 	/**
 	 * Retrieves an item object from the list that has a given text 
 	 * label.
@@ -2384,7 +2376,7 @@ export declare class ListBox {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -2504,7 +2496,7 @@ export declare class DropDownList {
 	 * @summary The array of choice items displayed in the 
 	 * drop-down or pop-up list.
 	 */
-	items: ListItem;
+	readonly items: ListItem;
 	/**
 	 * Used by auto-layout to determine the preferredSize of the 
 	 * list, if not otherwise specified. If not set explicitly, the 
@@ -2543,7 +2535,7 @@ export declare class DropDownList {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -2604,7 +2596,7 @@ export declare class DropDownList {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -2621,7 +2613,7 @@ export declare class DropDownList {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * Creation properties of a DropDownList object can include:
 	 * items: An array of strings for the text of each list item. 
@@ -2655,11 +2647,11 @@ export declare class DropDownList {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "dropdownlist". */
-	type: string;
+	readonly type: string;
 	/**
 	 * Returns the item control object for type="item", or null for 
 	 * type="separator".
@@ -2671,7 +2663,7 @@ export declare class DropDownList {
 	 * @param {string} text - The localizable text label for the 
 	 * item.
 	 */
-	add(_type: string, text: string): ListItem;
+	add(_type: string, text?: string): ListItem;
 	/**
 	 * Retrieves an item object from the list that has a given text 
 	 * label.
@@ -2698,7 +2690,7 @@ export declare class DropDownList {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -2819,7 +2811,7 @@ export declare class ListItem {
 	 * The 0-based index of this item in the items collection of 
 	 * its parent list control.
 	 */
-	index: number;
+	readonly index: number;
 	/**
 	 * When true, the item is part of the selection for its parent 
 	 * list. When false, the item is not selected. Set to true to 
@@ -2856,7 +2848,7 @@ export declare class ListItem {
 	 * describes the labels for this selectable row in additional 
 	 * columns.
 	 */
-	subItems: any[];
+	readonly subItems: any[];
 	/**
 	 * A ListItem object has no creation properties.
 	 * @summary An object that contains one or more creation 
@@ -2865,7 +2857,7 @@ export declare class ListItem {
 	 */
 	properties: Object;
 	/** The parent element, a list control. */
-	parent: Object;
+	readonly parent: Object;
 	/**
 	 * Normally "item", but an item whose parent is 
 	 * a DropDownList control can have type "separator". A 
@@ -2873,8 +2865,7 @@ export declare class ListItem {
 	 * horizontal line across the drop-down or pop-up menu.
 	 * @summary The element type.
 	 */
-	type: string;
-	
+	readonly type: string;
 }
 
 /**
@@ -2923,7 +2914,7 @@ export declare class Checkbox {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -2984,7 +2975,7 @@ export declare class Checkbox {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -3001,7 +2992,7 @@ export declare class Checkbox {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * A CheckBox object has no creation properties. The third 
 	 * argument to the add() method that creates it is the text to 
@@ -3031,11 +3022,11 @@ export declare class Checkbox {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "checkbox". */
-	type: string;
+	readonly type: string;
 	/**
 	 * One of: onClick, onChange, onChanging. By default, simulates 
 	 * the onChange event for an edittext control, an onClick event 
@@ -3048,7 +3039,7 @@ export declare class Checkbox {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -3198,7 +3189,7 @@ export declare class Scrollbar {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -3259,7 +3250,7 @@ export declare class Scrollbar {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -3276,7 +3267,7 @@ export declare class Scrollbar {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * A Scrollbar object has no creation properties. The third 
 	 * argument of the add() method that creates it is the initial 
@@ -3307,11 +3298,11 @@ export declare class Scrollbar {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type, "scrollbar". */
-	type: string;
+	readonly type: string;
 	/**
 	 * One of: onClick, onChange, onChanging. By default, simulates 
 	 * the onChange event for an edittext control, an onClick event 
@@ -3324,7 +3315,7 @@ export declare class Scrollbar {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -3460,7 +3451,7 @@ export declare class RadioButton {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -3521,7 +3512,7 @@ export declare class RadioButton {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -3538,7 +3529,7 @@ export declare class RadioButton {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * A RadioButton object has no creation properties. The third 
 	 * argument of the add() method that creates can be the label 
@@ -3568,11 +3559,11 @@ export declare class RadioButton {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "radiobutton". */
-	type: string;
+	readonly type: string;
 	/**
 	 * One of: onClick, onChange, onChanging. By default, simulates 
 	 * the onChange event for an edittext control, an onClick event 
@@ -3585,7 +3576,7 @@ export declare class RadioButton {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -3717,7 +3708,7 @@ export declare class Slider {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -3778,7 +3769,7 @@ export declare class Slider {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -3795,7 +3786,7 @@ export declare class Slider {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * A Slider object has no creation properties. The third 
 	 * argument of the add() method that creates it is the initial 
@@ -3826,11 +3817,11 @@ export declare class Slider {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type, "slider". */
-	type: string;
+	readonly type: string;
 	/**
 	 * One of: onClick, onChange, onChanging. By default, simulates 
 	 * the onChange event for an edittext control, an onClick event 
@@ -3843,7 +3834,7 @@ export declare class Slider {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -3965,7 +3956,7 @@ export declare class Progressbar {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -4026,7 +4017,7 @@ export declare class Progressbar {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -4043,7 +4034,7 @@ export declare class Progressbar {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * A ProgressBar object has no creation properties. The third 
 	 * argument of the add() method that creates it is the initial 
@@ -4074,11 +4065,11 @@ export declare class Progressbar {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type, "progessbar". */
-	type: string;
+	readonly type: string;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -4157,7 +4148,7 @@ export declare class TreeView {
 	 * control’s add() method.
 	 * @summary The array of top-level items displayed in the list.
 	 */
-	items: ListItem;
+	readonly items: ListItem;
 	/**
 	 * Used by auto-layout to determine the preferredSize of the 
 	 * list, if not otherwise specified. If not set explicitly, the 
@@ -4196,7 +4187,7 @@ export declare class TreeView {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -4257,7 +4248,7 @@ export declare class TreeView {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -4274,7 +4265,7 @@ export declare class TreeView {
 	 */
 	alignment: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * Creation properties of a ListBox object can include:
 	 * items: An array of strings for the text of each top-level 
@@ -4308,11 +4299,11 @@ export declare class TreeView {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type, "treeview". */
-	type: string;
+	readonly type: string;
 	/**
 	 * Returns the item control object.
 	 * @summary Adds an item to the top-level choices in this list.
@@ -4321,7 +4312,7 @@ export declare class TreeView {
 	 * @param {string} text - The localizable text label for the 
 	 * item.
 	 */
-	add(_type: string, text: string): ListItem;
+	add(_type: string, text?: string): ListItem;
 	/**
 	 * Retrieves an item object from the list that has a given text 
 	 * label.
@@ -4349,7 +4340,7 @@ export declare class TreeView {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -4528,7 +4519,7 @@ export declare class FlashPlayer {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * This can be a single string, which indicates the alignment 
 	 * for the orientation specified in the parent container, or an 
@@ -4571,11 +4562,11 @@ export declare class FlashPlayer {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type, "flashplayer". */
-	type: string;
+	readonly type: string;
 	/**
 	 * Returns the result of the invoked function, which must be 
 	 * one of the allowed types. The ActionScript class and date 
@@ -4591,7 +4582,7 @@ export declare class FlashPlayer {
 	 * Boolean, null, undefined, Object, Array. No other data types 
 	 * are supported.
 	 */
-	invokePlayerFunction(name: string, argument: any): any;
+	invokePlayerFunction(name: string, argument?: any): any;
 	/**
 	 * Loads a movie into the Flash Player, and begins playing it.
 	 * @param {File} file - The File object for the SWF file to 
@@ -4633,7 +4624,7 @@ export declare class FlashPlayer {
 	 * control, an onClick event for controls that support that 
 	 * event.
 	 */
-	notify(eventName: string): void;
+	notify(eventName?: string): void;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -4709,7 +4700,7 @@ export declare class Group {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -4770,7 +4761,7 @@ export declare class Group {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/**
 	 * Order of creation determines which children are at the top 
 	 * of a column or the left of a row; the earlier a child is 
@@ -4783,7 +4774,7 @@ export declare class Group {
 	 */
 	alignChildren: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * The first time a container object is made visible, ScriptUI 
 	 * invokes this layout manager by calling 
@@ -4864,11 +4855,11 @@ export declare class Group {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "group". */
-	type: string;
+	readonly type: string;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -4901,7 +4892,7 @@ export declare class Group {
 	 * depend on the element type. See properties property of each 
 	 * control type.
 	 */
-	add(_type: string, bounds: Bounds, text: string, properties: Object): Object;
+	add(_type: string, bounds?: Bounds, text?: string, properties?: Object): Object;
 	/**
 	 * No error results if the child does not exist.
 	 * @summary Removes the specified child control from this 
@@ -4988,7 +4979,7 @@ export declare class Panel {
 	 * The graphics object that can be used to customize the 
 	 * element's appearance, in response to the onDraw() event.
 	 */
-	graphics: ScriptUIGraphics;
+	readonly graphics: ScriptUIGraphics;
 	/**
 	 * When a container is hidden, its children are also hidden, 
 	 * but they retain their own visibility values, and are shown 
@@ -5049,11 +5040,11 @@ export declare class Panel {
 	 * The bounds of this element relative to the top-level parent 
 	 * window.
 	 */
-	windowBounds: Bounds;
+	readonly windowBounds: Bounds;
 	/** Specifies how to align the child elements. */
 	alignChildren: string;
 	/** An array of child elements. */
-	children: Object;
+	readonly children: Object;
 	/**
 	 * The first time a container object is made visible, ScriptUI 
 	 * invokes this layout manager by calling 
@@ -5143,11 +5134,11 @@ export declare class Panel {
 	 */
 	indent: number;
 	/** The parent element. */
-	parent: Object;
+	readonly parent: Object;
 	/** The window that this element belongs to. */
-	window: Window;
+	readonly window: Window;
 	/** The element type; "panel". */
-	type: string;
+	readonly type: string;
 	/**
 	 * When a window or container is hidden, its children are also 
 	 * hidden, but when it is shown again, the children retain 
@@ -5180,7 +5171,7 @@ export declare class Panel {
 	 * depend on the element type. See properties property of each 
 	 * control type.
 	 */
-	add(_type: string, bounds: Bounds, text: string, properties: Object): Object;
+	add(_type: string, bounds?: Bounds, text?: string, properties?: Object): Object;
 	/**
 	 * No error results if the child does not exist.
 	 * @summary Removes the specified child control from this 
@@ -5267,8 +5258,7 @@ export declare class Point {
 	/** The top coordinate. */
 	top: number;
 	/** The array length. */
-	length: number;
-	
+	readonly length: number;
 }
 
 /**
@@ -5287,8 +5277,7 @@ export declare class Dimension {
 	/** The height in pixels. */
 	height: number;
 	/** The array length. */
-	length: number;
-	
+	readonly length: number;
 }
 
 /**
@@ -5332,8 +5321,7 @@ export declare class Bounds {
 	 */
 	bottom: number;
 	/** The array length. */
-	length: number;
-	
+	readonly length: number;
 }
 
 /**
@@ -5349,38 +5337,38 @@ export declare class Bounds {
  */
 export declare class UIEvent {
 	/** True if this event can be captured. */
-	captures: boolean;
+	readonly captures: boolean;
 	/** True if the event is of a type that bubbles. */
-	bubbles: boolean;
+	readonly bubbles: boolean;
 	/**
 	 * True if the default action associated with the event can be 
 	 * canceled with preventDefault().
 	 */
-	cancelable: boolean;
+	readonly cancelable: boolean;
 	/**
 	 * The event target object which is currently handling the 
 	 * event. During capturing and bubbling, this is different from 
 	 * the property target.
 	 */
-	currentTarget: boolean;
+	readonly currentTarget: boolean;
 	/**
 	 * The current phase of event propagation; one of none, target, 
 	 * capture, bubble.
 	 */
-	eventPhase: string;
+	readonly eventPhase: string;
 	/** The event target object for this event. */
-	target: Object;
+	readonly target: Object;
 	/** The date and time at which the event occurred. */
-	timeStamp: Date;
+	readonly timeStamp: Date;
 	/**
 	 * Event types are listed in the JavaScript Tools Guide.
 	 * @summary The name of the event that this  object represents.
 	 */
-	type: string;
+	readonly type: string;
 	/** The ScriptUI element that this event relates to. */
-	view: any;
+	readonly view: any;
 	/** The click count for a mouse-click event. */
-	detail: any;
+	readonly detail: any;
 	/**
 	 * The UIEvent object is normally created by ScriptUI and 
 	 * passed to your event handler. However, you can simulate a 
@@ -5397,7 +5385,7 @@ export declare class UIEvent {
 	 * @param {number} detail - The click count for a mouse-click 
 	 * event.
 	 */
-	UIEvent(_type: string, captures: boolean, bubbles: boolean, view: Object, detail: number): UIEvent;
+	UIEvent(_type: string, captures: boolean, bubbles: boolean, view?: Object, detail?: number): UIEvent;
 	/**
 	 * Prevents the default action associated with this event from 
 	 * being called.
@@ -5426,7 +5414,7 @@ export declare class UIEvent {
 	 * @param {number} detail - The click count for a mouse-click 
 	 * event.
 	 */
-	initUIEvent(_type: string, captures: boolean, bubbles: boolean, view: Object, detail: number): void;
+	initUIEvent(_type: string, captures: boolean, bubbles: boolean, view?: Object, detail?: number): void;
 }
 
 /**
@@ -5437,39 +5425,39 @@ export declare class UIEvent {
  * @class
  */
 export declare class Event {
-	NOT_DISPATCHING: any;
-	CAPTURING_PHASE: any;
-	AT_TARGET: any;
-	BUBBLING_PHASE: any;
+	readonly NOT_DISPATCHING: any;
+	readonly CAPTURING_PHASE: any;
+	readonly AT_TARGET: any;
+	readonly BUBBLING_PHASE: any;
 	/** True if this event can be captured. */
-	captures: boolean;
+	readonly captures: boolean;
 	/** True if the event is of a type that bubbles. */
-	bubbles: boolean;
+	readonly bubbles: boolean;
 	/**
 	 * True if the default action associated with the event can be 
 	 * canceled with preventDefault().
 	 */
-	cancelable: boolean;
+	readonly cancelable: boolean;
 	/**
 	 * The event target object which is currently handling the 
 	 * event. During capturing and bubbling, this is different from 
 	 * the property target.
 	 */
-	currentTarget: boolean;
+	readonly currentTarget: boolean;
 	/**
 	 * The current phase of event propagation; one of none, target, 
 	 * capture, bubble.
 	 */
-	eventPhase: string;
+	readonly eventPhase: string;
 	/** The event target object for this event. */
-	target: Object;
+	readonly target: Object;
 	/** The date and time at which the event occurred. */
-	timeStamp: Date;
+	readonly timeStamp: Date;
 	/**
 	 * Event types are listed in the JavaScript Tools Guide.
 	 * @summary The name of the event that this object represents.
 	 */
-	type: string;
+	readonly type: string;
 	/**
 	 * Prevents the default action associated with this event from 
 	 * being called.
@@ -5491,8 +5479,7 @@ export declare class Environment {
 	 * @summary An object that reports the active state of the 
 	 * keyboard at any time.
 	 */
-	keyboardState: KeyboardState;
-	
+	readonly keyboardState: KeyboardState;
 }
 
 /**
@@ -5502,7 +5489,6 @@ export declare class Environment {
  * @class
  */
 export declare class Events {
-	
 	/**
 	 * The Event returned is a UIEvent,
 	 * KeyboardEvent or MouseEvent object,
@@ -5531,17 +5517,16 @@ export declare class KeyboardState {
 	 * A string containing the name of the currently pressed key, 
 	 * such as "a", or an empty string.
 	 */
-	keyName: string;
+	readonly keyName: string;
 	/** True if the Shift key is pressed. */
-	shiftKey: boolean;
+	readonly shiftKey: boolean;
 	/** True if the Ctrl key is pressed. */
-	ctrlKey: boolean;
+	readonly ctrlKey: boolean;
 	/** True if the Alt or Option key is pressed. */
-	altKey: boolean;
+	readonly altKey: boolean;
 	/**
 	 * True if the Cmd key (in Mac OS) or Windows key (in Windows) 
 	 * is pressed.
 	 */
-	metaKey: boolean;
-	
+	readonly metaKey: boolean;
 }

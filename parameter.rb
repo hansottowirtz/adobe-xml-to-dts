@@ -2,16 +2,21 @@ class Parameter < Describable
   attr_reader :name
   attr_reader :type
 
-  def initialize(*args)
-    super(*args)
+  def initialize(x, optional = false)
+    super(x)
     @name = @x.attributes['name'].value
     @name = "_#{@name}" if Typescript::RESERVED_KEYWORDS.include? @name
     @name = /(\D+)\d/.match(@name)[1] if @name.end_with? '...'
     @type = Type.map(Util.text_or_nil(@x.css('> datatype type')))
+    @optional = optional || @x.attributes['optional']
   end
 
   def declaration
-    "#{@name}: #{@type}"
+    "#{@name}#{"?" if optional?}: #{@type}"
+  end
+
+  def optional?
+    @optional
   end
 
   def doc_tag

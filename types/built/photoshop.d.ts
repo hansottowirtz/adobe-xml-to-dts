@@ -1,4 +1,3 @@
-/// <reference path="../helpers/photoshop-helper.d.ts"/>
 /**
  * Document formats that Photoshop can open.
  * @enum
@@ -3203,11 +3202,11 @@ export declare enum MeasurementRange {
  */
 export declare class Documents {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * A document.
 	 * @param {UnitValue} width - The width of the document.
@@ -3225,7 +3224,7 @@ export declare class Documents {
 	 * @param {string} colorProfileName - The name of color profile 
 	 * for document.
 	 */
-	add(width: UnitValue, height: UnitValue, resolution: number, name: string, mode: NewDocumentMode, initialFill: DocumentFill, pixelAspectRatio: number, bitsPerChannel: BitsPerChannelType, colorProfileName: string): Document;
+	add(width?: UnitValue, height?: UnitValue, resolution?: number, name?: string, mode?: NewDocumentMode, initialFill?: DocumentFill, pixelAspectRatio?: number, bitsPerChannel?: BitsPerChannelType, colorProfileName?: string): Document;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3246,11 +3245,11 @@ export declare class Documents {
  */
 export declare class Layers {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -3272,11 +3271,11 @@ export declare class Layers {
  */
 export declare class LayerSets {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Adds an element. */
 	add(): LayerSet;
 	/** Deletes all elements. */
@@ -3300,11 +3299,11 @@ export declare class LayerSets {
  */
 export declare class ArtLayers {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Adds an element. */
 	add(): ArtLayer;
 	/** Deletes all elements. */
@@ -3328,11 +3327,11 @@ export declare class ArtLayers {
  */
 export declare class Channels {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Adds an element. */
 	add(): Channel;
 	/** Deletes all elements. */
@@ -3356,11 +3355,11 @@ export declare class Channels {
  */
 export declare class Guides {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * A guide.
 	 * @param {Direction} direction - Indicates whether the guide 
@@ -3383,11 +3382,11 @@ export declare class Guides {
  */
 export declare class HistoryStates {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3407,11 +3406,11 @@ export declare class HistoryStates {
  */
 export declare class LayerComps {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Adds a layer comp.
 	 * @param {string} name - The name of the layer comp.
@@ -3423,7 +3422,7 @@ export declare class LayerComps {
 	 * @param {boolean} visibility - If true, uses the layer 
 	 * visibility for this layer comp.
 	 */
-	add(name: string, comment: string, appearance: boolean, position: boolean, visibility: boolean): LayerComp;
+	add(name: string, comment?: string, appearance?: boolean, position?: boolean, visibility?: boolean): LayerComp;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3443,11 +3442,11 @@ export declare class LayerComps {
  */
 export declare class TextFonts {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3467,11 +3466,11 @@ export declare class TextFonts {
  */
 export declare class PathItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Creates a new path item.
 	 * @param {string} name - The name for the new path.
@@ -3501,11 +3500,11 @@ export declare class PathItems {
  */
 export declare class SubPathItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3526,11 +3525,11 @@ export declare class SubPathItems {
  */
 export declare class PathPoints {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3550,11 +3549,11 @@ export declare class PathPoints {
  */
 export declare class Notifiers {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Creates a notifier.
 	 * @param {string} event - The class id of the event, four 
@@ -3569,7 +3568,7 @@ export declare class Notifiers {
 	 * applies to documents (“Dcmn”), channels (“Chnl”) and other 
 	 * objects.
 	 */
-	add(event: string, eventFile: File, eventClass: string): Notifier;
+	add(event: string, eventFile: File, eventClass?: string): Notifier;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -3591,11 +3590,11 @@ export declare class Notifiers {
  */
 export declare class CountItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Creates a count item.
 	 * @param {UnitPoint} position - The position of origin.
@@ -3620,11 +3619,11 @@ export declare class CountItems {
  */
 export declare class ColorSamplers {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Creates a color sampler.
 	 * @param {UnitPoint} position - The horizontal and vertical 
@@ -3649,8 +3648,6 @@ export declare class ColorSamplers {
  * @class
  */
 export declare class OpenOptions {
-	
-	
 }
 
 /**
@@ -3669,7 +3666,6 @@ export declare class PhotoCDOpenOptions extends OpenOptions {
 	colorSpace: PhotoCDColorSpace;
 	/** The image orientation. */
 	orientation: Orientation;
-	
 }
 
 /**
@@ -3706,7 +3702,6 @@ export declare class RawFormatOpenOptions extends OpenOptions {
 	headerSize: number;
 	/** If true, the header is retained when saving. */
 	retainHeader: boolean;
-	
 }
 
 /**
@@ -3755,7 +3750,6 @@ export declare class GenericPDFOpenOptions extends OpenOptions {
 	 * opening.
 	 */
 	suppressWarnings: boolean;
-	
 }
 
 /**
@@ -3777,7 +3771,6 @@ export declare class GenericEPSOpenOptions extends OpenOptions {
 	antiAlias: boolean;
 	/** If true, the image proportions are constrained. */
 	constrainProportions: boolean;
-	
 }
 
 /**
@@ -3800,7 +3793,6 @@ export declare class DICOMOpenOptions extends OpenOptions {
 	windowLevel: number;
 	/** If true, the image is inverted. */
 	reverse: boolean;
-	
 }
 
 /**
@@ -3869,7 +3861,6 @@ export declare class CameraRAWOpenOptions extends OpenOptions {
 	blueHue: number;
 	/** The blue saturation of the shot. Range: -100 to 100. */
 	blueSaturation: number;
-	
 }
 
 /**
@@ -3878,12 +3869,11 @@ export declare class CameraRAWOpenOptions extends OpenOptions {
  */
 export declare class SaveOptions {
 	/** Save changes. */
-	static SAVECHANGES: number;
+	static readonly SAVECHANGES: number;
 	/** Do not save changes. */
-	static DONOTSAVECHANGES: number;
+	static readonly DONOTSAVECHANGES: number;
 	/** Ask the user whether to save. */
-	static PROMPTTOSAVECHANGES: number;
-	
+	static readonly PROMPTTOSAVECHANGES: number;
 }
 
 /**
@@ -3902,7 +3892,6 @@ export declare class PhotoshopSaveOptions extends SaveOptions {
 	spotColors: boolean;
 	/** If true, the color profile is embedded in the document. */
 	embedColorProfile: boolean;
-	
 }
 
 /**
@@ -3921,7 +3910,6 @@ export declare class BMPSaveOptions extends SaveOptions {
 	rleCompression: boolean;
 	/** If true, the image is written from bottom to top. */
 	flipRowOrder: boolean;
-	
 }
 
 /**
@@ -3964,7 +3952,6 @@ export declare class GIFSaveOptions extends SaveOptions {
 	 * conversion.
 	 */
 	transparency: boolean;
-	
 }
 
 /**
@@ -4000,7 +3987,6 @@ export declare class EPSSaveOptions extends SaveOptions {
 	 * documents in BitMap mode.
 	 */
 	transparentWhites: boolean;
-	
 }
 
 /**
@@ -4025,7 +4011,6 @@ export declare class JPEGSaveOptions extends SaveOptions {
 	scans: number;
 	/** The quality of the produced image. */
 	quality: number;
-	
 }
 
 /**
@@ -4138,7 +4123,6 @@ export declare class PDFSaveOptions extends SaveOptions {
 	outputConditionID: string;
 	/** The URL where the output condition is registered. */
 	registryName: string;
-	
 }
 
 /**
@@ -4155,7 +4139,6 @@ export declare class PICTFileSaveOptions extends SaveOptions {
 	resolution: PICTBitsPerPixels;
 	/** The compression method. */
 	compression: PICTCompression;
-	
 }
 
 /**
@@ -4176,7 +4159,6 @@ export declare class PICTResourceSaveOptions extends SaveOptions {
 	resourceID: number;
 	/** The name of PICT resource. */
 	name: string;
-	
 }
 
 /**
@@ -4187,7 +4169,6 @@ export declare class PICTResourceSaveOptions extends SaveOptions {
 export declare class PixarSaveOptions extends SaveOptions {
 	/** If true, the alpha channels are saved. */
 	alphaChannels: boolean;
-	
 }
 
 /**
@@ -4200,7 +4181,6 @@ export declare class PNGSaveOptions extends SaveOptions {
 	interlaced: boolean;
 	/** Compression used on the image. */
 	compression: number;
-	
 }
 
 /**
@@ -4213,7 +4193,6 @@ export declare class RawSaveOptions extends SaveOptions {
 	alphaChannels: boolean;
 	/** If true, spot colors are saved. */
 	spotColors: boolean;
-	
 }
 
 /**
@@ -4226,7 +4205,6 @@ export declare class SGIRGBSaveOptions extends SaveOptions {
 	alphaChannels: boolean;
 	/** If true, the spot colors are saved. */
 	spotColors: boolean;
-	
 }
 
 /**
@@ -4241,7 +4219,6 @@ export declare class TargaSaveOptions extends SaveOptions {
 	rleCompression: boolean;
 	/** If true, the alpha channels are saved. */
 	alphaChannels: boolean;
-	
 }
 
 /**
@@ -4288,7 +4265,6 @@ export declare class TiffSaveOptions extends SaveOptions {
 	layerCompression: LayerCompressionType;
 	/** If true, the channels in the image are interleaved. */
 	interleaveChannels: boolean;
-	
 }
 
 /**
@@ -4319,7 +4295,6 @@ export declare class DCS1_SaveOptions extends SaveOptions {
 	vectorData: boolean;
 	/** If true, image interpolation is used. */
 	interpolation: boolean;
-	
 }
 
 /**
@@ -4354,7 +4329,6 @@ export declare class DCS2_SaveOptions extends SaveOptions {
 	vectorData: boolean;
 	/** If true, image interpolation is used. */
 	interpolation: boolean;
-	
 }
 
 /**
@@ -4362,8 +4336,6 @@ export declare class DCS2_SaveOptions extends SaveOptions {
  * @class
  */
 export declare class ExportOptions {
-	
-	
 }
 
 /**
@@ -4376,7 +4348,6 @@ export declare class ExportOptionsIllustrator extends ExportOptions {
 	path: IllustratorPathType;
 	/** The name of the path to export. Valid only for named paths. */
 	pathName: string;
-	
 }
 
 /**
@@ -4443,7 +4414,6 @@ export declare class ExportOptionsSaveForWeb extends ExportOptions {
 	 * artifacts.
 	 */
 	blur: number;
-	
 }
 
 /**
@@ -4451,8 +4421,6 @@ export declare class ExportOptionsSaveForWeb extends ExportOptions {
  * @class
  */
 export declare class DocumentConversionOptions {
-	
-	
 }
 
 /**
@@ -4483,7 +4451,6 @@ export declare class BitmapConversionOptions extends DocumentConversionOptions {
 	angle: number;
 	/** The dot shape. Valid only when 'method' = halftone screen. */
 	shape: BitmapHalfToneType;
-	
 }
 
 /**
@@ -4523,7 +4490,6 @@ export declare class IndexedConversionOptions extends DocumentConversionOptions 
 	 * the matte color is applied to transparent areas.
 	 */
 	matte: MatteType;
-	
 }
 
 /**
@@ -4531,8 +4497,6 @@ export declare class IndexedConversionOptions extends DocumentConversionOptions 
  * @class
  */
 export declare class Color {
-	
-	
 }
 
 /**
@@ -4553,7 +4517,7 @@ export declare class SolidColor {
 	/** The HSB color model. */
 	hsb: HSBColor;
 	/** The nearest web color to the current color. */
-	nearestWebColor: RGBColor;
+	readonly nearestWebColor: RGBColor;
 	/**
 	 * Compares two colors.
 	 * @param {SolidColor} color - Another color to compare with.
@@ -4569,7 +4533,6 @@ export declare class SolidColor {
 export declare class GrayColor extends Color {
 	/** The gray value. Range: 0.0 to 100.0. */
 	gray: number;
-	
 }
 
 /**
@@ -4586,7 +4549,6 @@ export declare class RGBColor extends Color {
 	blue: number;
 	/** The hex representation of this color. */
 	hexValue: string;
-	
 }
 
 /**
@@ -4603,7 +4565,6 @@ export declare class CMYKColor extends Color {
 	yellow: number;
 	/** The black color value. Range: 0.0 to 100.0. */
 	black: number;
-	
 }
 
 /**
@@ -4618,7 +4579,6 @@ export declare class LabColor extends Color {
 	A: number;
 	/** The b-value. Range: -128.0 and 127.0. */
 	B: number;
-	
 }
 
 /**
@@ -4633,7 +4593,6 @@ export declare class HSBColor extends Color {
 	saturation: number;
 	/** The brightness value. Range: 0.0 to 100.0. */
 	brightness: number;
-	
 }
 
 /**
@@ -4642,8 +4601,6 @@ export declare class HSBColor extends Color {
  * @extends Color
  */
 export declare class NoColor extends Color {
-	
-	
 }
 
 /**
@@ -4674,7 +4631,6 @@ export declare class PresentationOptions {
 	includeFilename: boolean;
 	/** Options for creating the PDF file. */
 	PDFFileOptions: PDFSaveOptions;
-	
 }
 
 /**
@@ -4710,7 +4666,6 @@ export declare class GalleryOptions {
 	customColorOptions: GalleryCustomColorOptions;
 	/** Options related to security settings. */
 	securityOptions: GallerySecurityOptions;
-	
 }
 
 /**
@@ -4731,7 +4686,6 @@ export declare class GalleryBannerOptions {
 	font: GalleryFontType;
 	/** The size of the font for the banner text. */
 	fontSize: number;
-	
 }
 
 /**
@@ -4766,7 +4720,6 @@ export declare class GalleryImagesOptions {
 	font: GalleryFontType;
 	/** Font size for the gallery images text. */
 	fontSize: number;
-	
 }
 
 /**
@@ -4802,7 +4755,6 @@ export declare class GalleryThumbnailOptions {
 	 * images.
 	 */
 	border: number;
-	
 }
 
 /**
@@ -4823,7 +4775,6 @@ export declare class GalleryCustomColorOptions {
 	linkColor: RGBColor;
 	/** Visited link color. */
 	visitedLinkColor: RGBColor;
-	
 }
 
 /**
@@ -4848,7 +4799,6 @@ export declare class GallerySecurityOptions {
 	textPosition: GallerySecurityTextPositionType;
 	/** Web photo gallery security text rotate. */
 	textRotate: GallerySecurityTextRotateType;
-	
 }
 
 /**
@@ -4901,7 +4851,6 @@ export declare class ContactSheetOptions {
 	font: GalleryFontType;
 	/** The caption font size. */
 	fontSize: number;
-	
 }
 
 /**
@@ -4936,7 +4885,6 @@ export declare class PicturePackageOptions {
 	textPosition: GallerySecurityTextPositionType;
 	/** The orientation of the security text. */
 	textRotate: GallerySecurityTextRotateType;
-	
 }
 
 /**
@@ -4978,7 +4926,6 @@ export declare class BatchOptions {
 	 * occur, leave blank.
 	 */
 	errorFile: File;
-	
 }
 
 /**
@@ -4993,7 +4940,6 @@ export declare class SubPathInfo {
 	closed: boolean;
 	/** All of the sub path item's path points. */
 	entireSubPath: PathPointInfo;
-	
 }
 
 /**
@@ -5021,7 +4967,6 @@ export declare class PathPointInfo {
 	rightDirection: Point;
 	/** The point type. */
 	kind: PointKind;
-	
 }
 
 /**
@@ -5034,8 +4979,7 @@ export declare class PathPointInfo {
  */
 export declare class ActionDescriptor {
 	/** The number of keys contained in the descriptor. */
-	count: number;
-	
+	readonly count: number;
 }
 
 /**
@@ -5048,8 +4992,7 @@ export declare class ActionDescriptor {
  */
 export declare class ActionList {
 	/** The number of commands that comprise the action. */
-	count: number;
-	
+	readonly count: number;
 }
 
 /**
@@ -5060,8 +5003,6 @@ export declare class ActionList {
  * @class
  */
 export declare class ActionReference {
-	
-	
 }
 
 /**
@@ -5075,35 +5016,35 @@ export declare class ActionReference {
  */
 export declare class Application {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The name of the selected color setting's set. */
 	colorSettings: any;
 	/** The frontmost document. */
 	activeDocument: Document;
 	/** The application name. */
-	name: string;
+	readonly name: string;
 	/**
 	 * The full path of the location of the Adobe Photoshop 
 	 * application.
 	 */
-	path: File;
+	readonly path: File;
 	/**
 	 * The application preference settings (equivalent to selecting 
 	 * Edit > Preferences in the Adobe Photoshop application in 
 	 * Windows or Photoshop > Preferences in Mac OS).
 	 */
-	preferences: Preferences;
+	readonly preferences: Preferences;
 	/** The version of the Scripting interface. */
-	scriptingVersion: string;
+	readonly scriptingVersion: string;
 	/** The amount of unused memory available to Photoshop. */
-	freeMemory: number;
+	readonly freeMemory: number;
 	/**
 	 * The version of Adobe Photoshop application that you are 
 	 * running.
 	 */
-	version: string;
+	readonly version: string;
 	/**
 	 * The dialog mode for the document, which indicates whether or 
 	 * not Photoshop displays dialogs when the script runs.
@@ -5132,32 +5073,32 @@ export declare class Application {
 	/** If true, notifiers are enabled. */
 	notifiersEnabled: boolean;
 	/** A list of the image file extensions Photoshop can open. */
-	windowsFileTypes: string;
+	readonly windowsFileTypes: string;
 	/** A list of the image file types Photoshop can open. */
-	macintoshFileTypes: string;
+	readonly macintoshFileTypes: string;
 	/** The full path to the preferences folder. */
-	preferencesFolder: File;
+	readonly preferencesFolder: File;
 	/** The language locale of the application. */
-	locale: string;
+	readonly locale: string;
 	/** The collection of open documents. */
-	documents: Documents;
+	readonly documents: Documents;
 	/** The fonts installed on this system. */
-	fonts: TextFonts;
+	readonly fonts: TextFonts;
 	/**
 	 * The notifiers currently configured (in the Scripts Events 
 	 * Manager menu in the application).
 	 */
-	notifiers: Notifiers;
+	readonly notifiers: Notifiers;
 	/** The build date of the scripting interface. */
-	scriptingBuildDate: string;
+	readonly scriptingBuildDate: string;
 	/** Files in the Recent Files list. */
-	recentFiles: FileArray;
+	readonly recentFiles: FileArray;
 	/** The build number of Adobe Photoshop application. */
-	build: string;
+	readonly build: string;
 	/** System information of the host application and machine. */
-	systemInformation: string;
+	readonly systemInformation: string;
 	/** The log of measurements taken. */
-	measurementLog: MeasurementLog;
+	readonly measurementLog: MeasurementLog;
 	/** Name of the current tool. */
 	currentTool: string;
 	/**
@@ -5182,7 +5123,7 @@ export declare class Application {
 	 * @param {number} thumbnailSize - Size of thumbnail to save.
 	 * @param {number} backgroundValue - Background grayvalue.
 	 */
-	thumbnailStyleFile(file: File, dest: File, thumbnailSize: number, backgroundValue: number): void;
+	thumbnailStyleFile(file: File, dest: File, thumbnailSize?: number, backgroundValue?: number): void;
 	/**
 	 * PRIVATE - write out a thumbnail file from text parameters.
 	 * @param {File} dest - Thumb file to write.
@@ -5191,7 +5132,7 @@ export declare class Application {
 	 * @param {number} size - Size of type.
 	 * @param {SolidColor} color - Color of type.
 	 */
-	thumbnailText(dest: File, text: string, font: string, size: number, color: SolidColor): void;
+	thumbnailText(dest: File, text?: string, font?: string, size?: number, color?: SolidColor): void;
 	/**
 	 * Performs a task with a progress bar. Other progress APIs 
 	 * must be called periodically to update the progress bar and 
@@ -5287,7 +5228,7 @@ export declare class Application {
 	 * @param {boolean} asSmartObject - Creates a smart object 
 	 * around the document.
 	 */
-	open(document: File, _as: any, asSmartObject: boolean): Document;
+	open(document: File, _as?: any, asSmartObject?: boolean): Document;
 	/**
 	 * Purges one or more caches.
 	 * @param {PurgeTarget} target - The caches to purge.
@@ -5301,7 +5242,7 @@ export declare class Application {
 	 * @param {GalleryOptions} options - Options for the web photo 
 	 * gallery.
 	 */
-	makePhotoGallery(inputFolder: any, outputFolder: File, options: GalleryOptions): string;
+	makePhotoGallery(inputFolder: any, outputFolder: File, options?: GalleryOptions): string;
 	/**
 	 * Creates a PDF presentation file.
 	 * @param {AliasArray} inputFiles - The input files to include 
@@ -5310,7 +5251,7 @@ export declare class Application {
 	 * @param {PresentationOptions} options - Options for the PDF 
 	 * presentation.
 	 */
-	makePDFPresentation(inputFiles: AliasArray, outputFile: File, options: PresentationOptions): string;
+	makePDFPresentation(inputFiles: AliasArray, outputFile: File, options?: PresentationOptions): string;
 	/**
 	 * DEPRECATED. Merges multiple files into one, user interaction 
 	 * required.
@@ -5324,14 +5265,14 @@ export declare class Application {
 	 * @param {ContactSheetOptions} options - Options for creating 
 	 * the contact sheet.
 	 */
-	makeContactSheet(inputFiles: AliasArray, options: ContactSheetOptions): string;
+	makeContactSheet(inputFiles: AliasArray, options?: ContactSheetOptions): string;
 	/**
 	 * Creates a picture package from multiple files.
 	 * @param {AliasArray} inputFiles - The files to include.
 	 * @param {PicturePackageOptions} options - Options for 
 	 * creating a Picture Package.
 	 */
-	makePicturePackage(inputFiles: AliasArray, options: PicturePackageOptions): string;
+	makePicturePackage(inputFiles: AliasArray, options?: PicturePackageOptions): string;
 	/**
 	 * Runs the batch automation routine; analogous to using the 
 	 * Batch command in Photoshop.
@@ -5346,7 +5287,7 @@ export declare class Application {
 	 * @param {BatchOptions} options - Options for batch 
 	 * automation.
 	 */
-	batch(inputFiles: AliasArray, action: string, _from: string, options: BatchOptions): string;
+	batch(inputFiles: AliasArray, action: string, _from: string, options?: BatchOptions): string;
 	/** Makes Photoshop the active application. */
 	bringToFront(): void;
 	/** Pauses the script until the application refreshes. */
@@ -5362,7 +5303,7 @@ export declare class Application {
 	 * @param {boolean} persistent - If true, the object persists 
 	 * after the script has finished.
 	 */
-	putCustomOptions(key: string, customObject: ActionDescriptor, persistent: boolean): void;
+	putCustomOptions(key: string, customObject: ActionDescriptor, persistent?: boolean): void;
 	/**
 	 * Retrieves user objects from the Photoshop registry for the 
 	 * ID with value key.
@@ -5402,7 +5343,7 @@ export declare class Application {
 	 * @param {DialogModes} displayDialogs - The display 
 	 * permissions for dialogs and alert messages.
 	 */
-	executeAction(eventID: number, descriptor: ActionDescriptor, displayDialogs: DialogModes): ActionDescriptor;
+	executeAction(eventID: number, descriptor?: ActionDescriptor, displayDialogs?: DialogModes): ActionDescriptor;
 	/**
 	 * Obtains an action descriptor.
 	 * @param {ActionReference} reference - The reference 
@@ -5439,7 +5380,7 @@ export declare class Application {
 	 * @param {boolean} pickForeground - If true the foreground 
 	 * color is chosen, if false the background color is chosen.
 	 */
-	showColorPicker(pickForeground: boolean): boolean;
+	showColorPicker(pickForeground?: boolean): boolean;
 }
 
 /**
@@ -5451,11 +5392,11 @@ export declare class Application {
  */
 export declare class Document {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The background layer for the document. */
-	backgroundLayer: ArtLayer;
+	readonly backgroundLayer: ArtLayer;
 	/** The number of bits per channel. */
 	bitsPerChannel: BitsPerChannelType;
 	/**
@@ -5470,9 +5411,9 @@ export declare class Document {
 	 */
 	colorProfileName: string;
 	/** The color profile. */
-	mode: DocumentMode;
+	readonly mode: DocumentMode;
 	/** The color component channels for this document. */
-	componentChannels: Channel;
+	readonly componentChannels: Channel;
 	/** The current history state for this document. */
 	activeHistoryState: HistoryState;
 	/** The history state to use with the history brush. */
@@ -5482,35 +5423,35 @@ export declare class Document {
 	/** The selected channels. */
 	activeChannels: Channel;
 	/** Metadata about the document. */
-	info: DocumentInfo;
+	readonly info: DocumentInfo;
 	/** Document print settings. */
-	printSettings: DocumentPrintSettings;
+	readonly printSettings: DocumentPrintSettings;
 	/** The full path name of the document. */
-	fullName: File;
+	readonly fullName: File;
 	/** The height of the document. */
-	height: UnitValue;
+	readonly height: UnitValue;
 	/** If true, the document is a workgroup document. */
-	managed: boolean;
+	readonly managed: boolean;
 	/** If true, the document been saved since the last change. */
-	saved: boolean;
+	readonly saved: boolean;
 	/** The document name. */
-	name: string;
+	readonly name: string;
 	/** The path to the document. */
-	path: File;
+	readonly path: File;
 	/** If true, the document is in Quick Mask mode. */
 	quickMaskMode: boolean;
 	/** The resolution of the document (in pixels per inch) */
-	resolution: number;
+	readonly resolution: number;
 	/** The selected area of the document. */
-	selection: Selection;
+	readonly selection: Selection;
 	/** The width of the document. */
-	width: UnitValue;
+	readonly width: UnitValue;
 	/**
 	 * Valid only when 'mode' = RGB, CMYK, or indexed.
 	 * @summary A histogram showing the number of pixels at each 
 	 * color intensity level for the composite channel.
 	 */
-	histogram: number;
+	readonly histogram: number;
 	/**
 	 * The (custom) pixel aspect ratio of the document. Range: 
 	 * 0.100 to 10.000.
@@ -5520,31 +5461,31 @@ export declare class Document {
 	 * The XMP properties of the document. The Camera RAW settings 
 	 * are stored here.
 	 */
-	xmpMetadata: XMPMetadata;
+	readonly xmpMetadata: XMPMetadata;
 	/** The measurement scale of the document. */
-	measurementScale: MeasurementScale;
+	readonly measurementScale: MeasurementScale;
 	/** The unique ID of this document. */
-	id: number;
+	readonly id: number;
 	/** The layers collection in the document. */
-	layers: Layers;
+	readonly layers: Layers;
 	/** The layer sets collection in the document. */
-	layerSets: LayerSets;
+	readonly layerSets: LayerSets;
 	/** The art layers collection in the document. */
-	artLayers: ArtLayers;
+	readonly artLayers: ArtLayers;
 	/** The channels collection in this document. */
-	channels: Channels;
+	readonly channels: Channels;
 	/** The guides in this document. */
-	guides: Guides;
+	readonly guides: Guides;
 	/** The history states collection in this document. */
-	historyStates: HistoryStates;
+	readonly historyStates: HistoryStates;
 	/** The layer comps collection in this document. */
-	layerComps: LayerComps;
+	readonly layerComps: LayerComps;
 	/** The path items collection in this document. */
-	pathItems: PathItems;
+	readonly pathItems: PathItems;
 	/** The current count items in the document. */
-	countItems: CountItems;
+	readonly countItems: CountItems;
 	/** The current color samplers associated with the document. */
-	colorSamplers: ColorSamplers;
+	readonly colorSamplers: ColorSamplers;
 	/**
 	 * Duplicate this object.
 	 * @param {Object} relativeObject
@@ -5556,7 +5497,7 @@ export declare class Document {
 	 * @param {SaveOptionsType} saving - Specifies whether changes 
 	 * should be saved before closing.
 	 */
-	close(saving: SaveOptionsType): void;
+	close(saving?: SaveOptionsType): void;
 	/**
 	 * Converts the document from using one color profile to using 
 	 * another.
@@ -5568,14 +5509,14 @@ export declare class Document {
 	 * point compensation is used.
 	 * @param {boolean} dither - If true, dither is used.
 	 */
-	convertProfile(destinationProfile: string, intent: Intent, blackPointCompensation: boolean, dither: boolean): void;
+	convertProfile(destinationProfile: string, intent: Intent, blackPointCompensation?: boolean, dither?: boolean): void;
 	/**
 	 * Changes the mode of the document.
 	 * @param {ChangeMode} destinationMode - The mode to change to.
 	 * @param {DocumentConversionOptions} options - Options for 
 	 * changing the mode.
 	 */
-	changeMode(destinationMode: ChangeMode, options: DocumentConversionOptions): void;
+	changeMode(destinationMode: ChangeMode, options?: DocumentConversionOptions): void;
 	/**
 	 * Crops the document.
 	 * @param {UnitRect} bounds - The area to crop.
@@ -5585,7 +5526,7 @@ export declare class Document {
 	 * @param {UnitValue} height - The height of the resulting 
 	 * document.
 	 */
-	crop(bounds: UnitRect, angle: number, width: UnitValue, height: UnitValue): void;
+	crop(bounds: UnitRect, angle?: number, width?: UnitValue, height?: UnitValue): void;
 	/**
 	 * Exports the document.
 	 * @param {File} exportIn - The file to export to.
@@ -5593,7 +5534,7 @@ export declare class Document {
 	 * @param {ExportOptions} options - Options for the specified 
 	 * export type.
 	 */
-	exportDocument(exportIn: File, exportAs: ExportType, options: ExportOptions): void;
+	exportDocument(exportIn: File, exportAs?: ExportType, options?: ExportOptions): void;
 	/**
 	 * Flips the canvas horizontally or vertically.
 	 * @param {Direction} direction - The direction in which to 
@@ -5615,7 +5556,7 @@ export declare class Document {
 	 * @param {boolean} intoSelection - If true, contents are 
 	 * pasted into the current selection.
 	 */
-	paste(intoSelection: boolean): ArtLayer;
+	paste(intoSelection?: boolean): ArtLayer;
 	/**
 	 * Prints the document.
 	 * @param {SourceSpaceType} sourceSpace - The color space for 
@@ -5628,7 +5569,7 @@ export declare class Document {
 	 * @param {boolean} blackPointCompensation - If true, black 
 	 * point compensation is used.
 	 */
-	print(sourceSpace: SourceSpaceType, printSpace: string, intent: Intent, blackPointCompensation: boolean): void;
+	print(sourceSpace?: SourceSpaceType, printSpace?: string, intent?: Intent, blackPointCompensation?: boolean): void;
 	/** Print one copy of the document. */
 	printOneCopy(): void;
 	/** Expands the document to show clipped sections. */
@@ -5643,7 +5584,7 @@ export declare class Document {
 	 * points to record. Any data points not appropriate for the 
 	 * specified source are ignored.
 	 */
-	recordMeasurements(source: MeasurementSource, dataPoints: string): void;
+	recordMeasurements(source?: MeasurementSource, dataPoints?: string): void;
 	/**
 	 * Rotates the canvas.
 	 * @param {number} angle - The number of degrees to rotate. A 
@@ -5659,7 +5600,7 @@ export declare class Document {
 	 * @param {AnchorPosition} anchor - The anchor point to resize 
 	 * around.
 	 */
-	resizeCanvas(width: UnitValue, height: UnitValue, anchor: AnchorPosition): void;
+	resizeCanvas(width?: UnitValue, height?: UnitValue, anchor?: AnchorPosition): void;
 	/**
 	 * Changes the size of the image.
 	 * @param {UnitValue} width - The desired width of the image.
@@ -5671,7 +5612,7 @@ export declare class Document {
 	 * @param {number} amount - Amount of noise value when using 
 	 * preserve details (range: 0 - 100)
 	 */
-	resizeImage(width: UnitValue, height: UnitValue, resolution: number, resampleMethod: ResampleMethod, amount: number): void;
+	resizeImage(width?: UnitValue, height?: UnitValue, resolution?: number, resampleMethod?: ResampleMethod, amount?: number): void;
 	/** Splits the channels of the document. */
 	splitChannels(): Document;
 	/** Saves the document. */
@@ -5687,7 +5628,7 @@ export declare class Document {
 	 * @param {MacExtensionType} extensionType - Appends the 
 	 * specified extension to the file name.
 	 */
-	saveAs(saveIn: File, options: any, asCopy: boolean, extensionType: MacExtensionType): void;
+	saveAs(saveIn: File, options?: any, asCopy?: boolean, extensionType?: MacExtensionType): void;
 	/**
 	 * Provides a single history state for the entire script. 
 	 * Allows a single undo for all actions taken in the script.
@@ -5717,7 +5658,7 @@ export declare class Document {
 	 * @param {boolean} right - If true, trims away the right of 
 	 * the document.
 	 */
-	trim(_type: TrimType, top: boolean, left: boolean, bottom: boolean, right: boolean): void;
+	trim(_type?: TrimType, top?: boolean, left?: boolean, bottom?: boolean, right?: boolean): void;
 	/**
 	 * Counts the objects in the document.
 	 * @param {Channel} channel - The channel to use for counting.
@@ -5735,9 +5676,9 @@ export declare class Document {
  */
 export declare class DocumentInfo {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The document title. */
 	title: string;
 	/** The author. */
@@ -5787,8 +5728,7 @@ export declare class DocumentInfo {
 	 * including camera type, date and time of photo, and file 
 	 * size.
 	 */
-	exif: any;
-	
+	readonly exif: any;
 }
 
 /**
@@ -5800,9 +5740,9 @@ export declare class DocumentInfo {
  */
 export declare class Preferences {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The color picker to use. */
 	colorPicker: ColorPicker;
 	/**
@@ -5971,7 +5911,6 @@ export declare class Preferences {
 	saveLogItemsFile: File;
 	/** Show font previews in the type tool font menus. */
 	fontPreviewSize: FontPreviewType;
-	
 }
 
 /**
@@ -5980,9 +5919,9 @@ export declare class Preferences {
  */
 export declare class DocumentPrintSettings {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Description field from File Info. */
 	caption: boolean;
 	/** Prints the document title. */
@@ -6027,19 +5966,19 @@ export declare class DocumentPrintSettings {
 	/** Number of copies. */
 	copies: number;
 	/** Position of image when printing. */
-	docPosition: DocPositionStyle;
+	readonly docPosition: DocPositionStyle;
 	/** Y position of image on page. */
-	posY: UnitValue;
+	readonly posY: UnitValue;
 	/** X position of image on page. */
-	posX: UnitValue;
+	readonly posX: UnitValue;
 	/** Name of printer. */
 	printerName: string;
 	/** Scale of image on page. */
-	scale: number;
+	readonly scale: number;
 	/** Currently selected printer. */
 	activePrinter: string;
 	/** List of available printers. */
-	printers: string;
+	readonly printers: string;
 	/**
 	 * Set the position of the image on the page.
 	 * @param {DocPositionStyle} docPosition - Position of the 
@@ -6050,7 +5989,7 @@ export declare class DocumentPrintSettings {
 	 * @param {number} scale - Position of the image on page when 
 	 * printing. Can be centered, scale to fit, or user defined.
 	 */
-	setPagePosition(docPosition: DocPositionStyle, posX: UnitValue, posY: UnitValue, scale: number): void;
+	setPagePosition(docPosition: DocPositionStyle, posX?: UnitValue, posY?: UnitValue, scale?: number): void;
 }
 
 /**
@@ -6059,13 +5998,13 @@ export declare class DocumentPrintSettings {
  */
 export declare class Selection {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The bounding rectangle of the entire selection. */
-	bounds: UnitRect;
+	readonly bounds: UnitRect;
 	/** If true, the bounding rectangle a solid rectangle. */
-	solid: boolean;
+	readonly solid: boolean;
 	/** Clears the selection and does not copy it to the clipboard. */
 	clear(): void;
 	/**
@@ -6074,7 +6013,7 @@ export declare class Selection {
 	 * visible layers. If false, copies only from the current 
 	 * layer.
 	 */
-	copy(merge: boolean): void;
+	copy(merge?: boolean): void;
 	/** Cuts the current selection to the clipboard. */
 	cut(): void;
 	/**
@@ -6101,7 +6040,7 @@ export declare class Selection {
 	 * @param {boolean} preserveTransparency - If true, perserves 
 	 * transparencies.
 	 */
-	fill(fillType: any, mode: ColorBlendMode, opacity: number, preserveTransparency: boolean): void;
+	fill(fillType: any, mode?: ColorBlendMode, opacity?: number, preserveTransparency?: boolean): void;
 	/**
 	 * Strokes the selection.
 	 * @param {any} strokeColor - The color to stroke the selection 
@@ -6114,7 +6053,7 @@ export declare class Selection {
 	 * @param {boolean} preserveTransparency - If true, preserves 
 	 * transparency.
 	 */
-	stroke(strokeColor: any, width: number, location: StrokeLocation, mode: ColorBlendMode, opacity: number, preserveTransparency: boolean): void;
+	stroke(strokeColor: any, width: number, location?: StrokeLocation, mode?: ColorBlendMode, opacity?: number, preserveTransparency?: boolean): void;
 	/** Selects the entire layer. */
 	selectAll(): void;
 	/** Deselects the current selection. */
@@ -6129,7 +6068,7 @@ export declare class Selection {
 	 * @param {number} feather - The feather amount.
 	 * @param {boolean} antiAlias - If true, anti-aliasing is used.
 	 */
-	select(region: any, _type: SelectionType, feather: number, antiAlias: boolean): void;
+	select(region: any, _type?: SelectionType, feather?: number, antiAlias?: boolean): void;
 	/**
 	 * Expands the selection.
 	 * @param {UnitValue} by - The amount to expand the selection.
@@ -6172,7 +6111,7 @@ export declare class Selection {
 	 * @param {SelectionType} combination - How to add the 
 	 * selection to the existing contents of the channel.
 	 */
-	store(into: Channel, combination: SelectionType): void;
+	store(into: Channel, combination?: SelectionType): void;
 	/**
 	 * Loads the selection from the specified channel.
 	 * @param {Channel} _from - The channel to load the selection 
@@ -6182,7 +6121,7 @@ export declare class Selection {
 	 * @param {boolean} inverting - If true, selects the inverse of 
 	 * the channel contents.
 	 */
-	load(_from: Channel, combination: SelectionType, inverting: boolean): void;
+	load(_from: Channel, combination?: SelectionType, inverting?: boolean): void;
 	/**
 	 * Moves the object relative to its current position.
 	 * @param {UnitValue} deltaX - The amount to move the object 
@@ -6190,7 +6129,7 @@ export declare class Selection {
 	 * @param {UnitValue} deltaY - The amount to move the object 
 	 * vertically.
 	 */
-	translate(deltaX: UnitValue, deltaY: UnitValue): void;
+	translate(deltaX?: UnitValue, deltaY?: UnitValue): void;
 	/**
 	 * Moves the boundary of selection relative to its current 
 	 * position.
@@ -6199,20 +6138,20 @@ export declare class Selection {
 	 * @param {UnitValue} deltaY - The amount to move the object 
 	 * vertically.
 	 */
-	translateBoundary(deltaX: UnitValue, deltaY: UnitValue): void;
+	translateBoundary(deltaX?: UnitValue, deltaY?: UnitValue): void;
 	/**
 	 * Rotates the object.
 	 * @param {number} angle - The number of degrees to rotate the 
 	 * object.
 	 * @param {AnchorPosition} anchor - The point to rotate about.
 	 */
-	rotate(angle: number, anchor: AnchorPosition): void;
+	rotate(angle: number, anchor?: AnchorPosition): void;
 	/**
 	 * Rotates the boundary of the selection.
 	 * @param {number} angle - The rotation angle (in degrees)
 	 * @param {AnchorPosition} anchor - The point to rotate about.
 	 */
-	rotateBoundary(angle: number, anchor: AnchorPosition): void;
+	rotateBoundary(angle: number, anchor?: AnchorPosition): void;
 	/**
 	 * Resizes the selected area to the specified dimensions and 
 	 * anchor position.
@@ -6222,7 +6161,7 @@ export declare class Selection {
 	 * vertically (as a percentage).
 	 * @param {AnchorPosition} anchor - The point to scale around.
 	 */
-	resize(horizontal: number, vertical: number, anchor: AnchorPosition): void;
+	resize(horizontal?: number, vertical?: number, anchor?: AnchorPosition): void;
 	/**
 	 * Scales the boundary of the selection.
 	 * @param {number} horizontal - The amount to scale the object 
@@ -6231,12 +6170,12 @@ export declare class Selection {
 	 * vertically (as a percentage).
 	 * @param {AnchorPosition} anchor - The point to scale around.
 	 */
-	resizeBoundary(horizontal: number, vertical: number, anchor: AnchorPosition): void;
+	resizeBoundary(horizontal?: number, vertical?: number, anchor?: AnchorPosition): void;
 	/**
 	 * Makes this selection item the workpath for this document.
 	 * @param {number} tolerance - The tolerance in pixels.
 	 */
-	makeWorkPath(tolerance: number): void;
+	makeWorkPath(tolerance?: number): void;
 }
 
 /**
@@ -6249,20 +6188,20 @@ export declare class Selection {
  */
 export declare class LayerSet extends Layer {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * The channels that are enabled for the layer set. Must be a 
 	 * list of component channels.
 	 */
 	enabledChannels: Channel;
 	/** The layers in this layer set. */
-	layers: Layers;
+	readonly layers: Layers;
 	/** The layer sets contained within the layer set. */
-	layerSets: LayerSets;
+	readonly layerSets: LayerSets;
 	/** The art layers contained in this layer set. */
-	artLayers: ArtLayers;
+	readonly artLayers: ArtLayers;
 	/** Adds an element. */
 	add(): LayerSet;
 	/** Merges the layer set. */
@@ -6278,9 +6217,9 @@ export declare class LayerSet extends Layer {
  */
 export declare class ArtLayer extends Layer {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The interior opacity of the layer. Range: 0.0 to 100.0. */
 	fillOpacity: number;
 	/** The density of the layer mask (between 0.0 and 100.0) */
@@ -6324,7 +6263,7 @@ export declare class ArtLayer extends Layer {
 	 * The text that is associated with the layer. Valid only when 
 	 * 'kind' is text layer.
 	 */
-	textItem: TextItem;
+	readonly textItem: TextItem;
 	/** Adds an element. */
 	add(): ArtLayer;
 	/**
@@ -6345,7 +6284,7 @@ export declare class ArtLayer extends Layer {
 	 * @param {number} thumbnailSize - Size of thumbnail to save.
 	 * @param {number} backgroundValue - Background grayvalue.
 	 */
-	saveStyleFile(file: File, thumbnail: File, thumbnailSize: number, backgroundValue: number): void;
+	saveStyleFile(file: File, thumbnail?: File, thumbnailSize?: number, backgroundValue?: number): void;
 	/** Cuts the layer without moving it to the clipboard. */
 	clear(): void;
 	/**
@@ -6354,7 +6293,7 @@ export declare class ArtLayer extends Layer {
 	 * visible layers. If false, the copy only copies from the 
 	 * current layer.
 	 */
-	copy(merge: boolean): void;
+	copy(merge?: boolean): void;
 	/** Cuts the layer to the clipboard. */
 	cut(): void;
 	/**
@@ -6404,7 +6343,7 @@ export declare class ArtLayer extends Layer {
 	 * @param {boolean} monochromatic - If true, the noise is 
 	 * monochromatic.
 	 */
-	applyLensBlur(source: DepthMapSource, focalDistance: number, invertDepthMap: boolean, shape: Geometry, radius: number, bladeCurvature: number, rotation: number, brightness: number, threshold: number, amount: number, distribution: NoiseDistribution, monochromatic: boolean): void;
+	applyLensBlur(source?: DepthMapSource, focalDistance?: number, invertDepthMap?: boolean, shape?: Geometry, radius?: number, bladeCurvature?: number, rotation?: number, brightness?: number, threshold?: number, amount?: number, distribution?: NoiseDistribution, monochromatic?: boolean): void;
 	/** Applies the blur filter. */
 	applyBlur(): void;
 	/** Applies the blur more filter. */
@@ -6427,7 +6366,7 @@ export declare class ArtLayer extends Layer {
 	 * graininess of the blurred image.
 	 * @param {UnitPoint} blurCenter - Position (unit value)
 	 */
-	applyRadialBlur(amount: number, blurMethod: RadialBlurMethod, blurQuality: RadialBlurQuality, blurCenter: UnitPoint): void;
+	applyRadialBlur(amount: number, blurMethod: RadialBlurMethod, blurQuality: RadialBlurQuality, blurCenter?: UnitPoint): void;
 	/**
 	 * Applies the smart blur filter.
 	 * @param {number} radius - The blur radius. Range: 0 - 1000.
@@ -6474,7 +6413,7 @@ export declare class ArtLayer extends Layer {
 	 * @param {File} textureFile - The file from which to load the 
 	 * texture type.
 	 */
-	applyGlassEffect(distortion: number, smoothness: number, scaling: number, invert: boolean, texture: TextureType, textureFile: File): void;
+	applyGlassEffect(distortion: number, smoothness: number, scaling: number, invert?: boolean, texture?: TextureType, textureFile?: File): void;
 	/**
 	 * Applies the ocean ripple filter.
 	 * @param {number} size - The ripple size. Range: 1 to 15.
@@ -6724,7 +6663,7 @@ export declare class ArtLayer extends Layer {
 	 * @param {boolean} preserveLuminosity - If true, luminosity is 
 	 * preserved.
 	 */
-	adjustColorBalance(shadows: number, midtones: number, highlights: number, preserveLuminosity: boolean): void;
+	adjustColorBalance(shadows?: number, midtones?: number, highlights?: number, preserveLuminosity?: boolean): void;
 	/**
 	 * Converts a color image to a grayscale image in the current 
 	 * color mode by assigning equal values of each component color 
@@ -6756,7 +6695,7 @@ export declare class ArtLayer extends Layer {
 	 * @param {number} blacks - Array of 4 values: cyan, magenta, 
 	 * yellow, black.
 	 */
-	selectiveColor(selectionMethod: AdjustmentReference, reds: number, yellows: number, greens: number, cyans: number, blues: number, magentas: number, whites: number, neutrals: number, blacks: number): void;
+	selectiveColor(selectionMethod: AdjustmentReference, reds?: number, yellows?: number, greens?: number, cyans?: number, blues?: number, magentas?: number, whites?: number, neutrals?: number, blacks?: number): void;
 	/**
 	 * Modifies a targeted (output) color channel using a mix of 
 	 * the existing color channels in the image. (output channels = 
@@ -6775,7 +6714,7 @@ export declare class ArtLayer extends Layer {
 	 * mixing. Note: If this is true, you can only specify one 
 	 * channel value.
 	 */
-	mixChannels(outputChannels: any, monochrome: boolean): void;
+	mixChannels(outputChannels: any, monochrome?: boolean): void;
 	/**
 	 * Inverts the colors in the layer by converting the brightness 
 	 * value of each pixel in the channels to the inverse value on 
@@ -6812,7 +6751,7 @@ export declare class ArtLayer extends Layer {
 	 * @param {boolean} preserveLuminosity - If true, luminosity is 
 	 * preserved.
 	 */
-	photoFilter(fillColor: SolidColor, density: number, preserveLuminosity: boolean): void;
+	photoFilter(fillColor?: SolidColor, density?: number, preserveLuminosity?: boolean): void;
 	/**
 	 * Adjusts the range of tones in the shadows and highlights.
 	 * @param {number} shadowAmount - The shadow amount, as a 
@@ -6838,7 +6777,7 @@ export declare class ArtLayer extends Layer {
 	 * @param {number} whiteClip - Fractions of blacks to be 
 	 * clipped. Range: 0.000 to 50.000.
 	 */
-	shadowHighlight(shadowAmount: number, shadowWidth: number, shadowRaduis: number, highlightAmount: number, highlightWidth: number, highlightRaduis: number, colorCorrection: number, midtoneContrast: number, blackClip: number, whiteClip: number): void;
+	shadowHighlight(shadowAmount?: number, shadowWidth?: number, shadowRaduis?: number, highlightAmount?: number, highlightWidth?: number, highlightRaduis?: number, colorCorrection?: number, midtoneContrast?: number, blackClip?: number, whiteClip?: number): void;
 }
 
 /**
@@ -6852,9 +6791,9 @@ export declare class ArtLayer extends Layer {
  */
 export declare class Layer {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The name of the layer. */
 	name: string;
 	/** If true, the layer's contents and settings are locked. */
@@ -6862,7 +6801,7 @@ export declare class Layer {
 	/** The mode to use when compositing an object. */
 	blendMode: BlendMode;
 	/** The layers linked to this layer. */
-	linkedLayers: Layer;
+	readonly linkedLayers: Layer;
 	/**
 	 * The layer's master opacity (as a percentage). Range: 0.0 to 
 	 * 100.0.
@@ -6871,21 +6810,21 @@ export declare class Layer {
 	/** If true, the layer is visible. */
 	visible: boolean;
 	/** The unique ID of this layer. */
-	id: number;
+	readonly id: number;
 	/**
 	 * The layer index sans layer groups, how Photoshop would index 
 	 * them.
 	 */
-	itemIndex: number;
+	readonly itemIndex: number;
 	/**
 	 * If the Layer is a layer set, this property returns a 
 	 * reference to the corresponding layer set object.
 	 */
-	bounds: UnitRect;
+	readonly bounds: UnitRect;
 	/** Bounding rectangle of the Layer not including effects. */
-	boundsNoEffects: UnitRect;
+	readonly boundsNoEffects: UnitRect;
 	/** XMP metadata associated with the Layer. */
-	xmpMetadata: XMPMetadata;
+	readonly xmpMetadata: XMPMetadata;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6902,7 +6841,7 @@ export declare class Layer {
 	 * ...
 	 * @param {LayerSet} layerSet
 	 */
-	moveToEnd(layerSet: LayerSet): void;
+	moveToEnd(layerSet?: LayerSet): void;
 	/** Deletes this object. */
 	remove(): void;
 	/** Deletes all elements. */
@@ -6921,14 +6860,14 @@ export declare class Layer {
 	 * @param {UnitValue} deltaY - The amount to move the object 
 	 * vertically.
 	 */
-	translate(deltaX: UnitValue, deltaY: UnitValue): void;
+	translate(deltaX?: UnitValue, deltaY?: UnitValue): void;
 	/**
 	 * Rotates the object.
 	 * @param {number} angle - The number of degrees to rotate the 
 	 * object.
 	 * @param {AnchorPosition} anchor - The point to rotate about.
 	 */
-	rotate(angle: number, anchor: AnchorPosition): void;
+	rotate(angle: number, anchor?: AnchorPosition): void;
 	/**
 	 * Scales the object.
 	 * @param {number} horizontal - The amount to scale the object 
@@ -6937,7 +6876,7 @@ export declare class Layer {
 	 * vertically (as a percentage).
 	 * @param {AnchorPosition} anchor - The point to resize about.
 	 */
-	resize(horizontal: number, vertical: number, anchor: AnchorPosition): void;
+	resize(horizontal?: number, vertical?: number, anchor?: AnchorPosition): void;
 }
 
 /**
@@ -6953,11 +6892,11 @@ export declare class Layer {
  */
 export declare class Channel {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** A histogram of the color of the channel. */
-	histogram: number;
+	readonly histogram: number;
 	/** The channel name. */
 	name: string;
 	/** The type of channel. */
@@ -6994,9 +6933,9 @@ export declare class Channel {
  */
 export declare class Guide {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Indicates whether the guide is vertical or horizontal. */
 	direction: Direction;
 	/** Location of the guide from origin of image. */
@@ -7015,14 +6954,13 @@ export declare class Guide {
  */
 export declare class HistoryState {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The history state name. */
-	name: string;
+	readonly name: string;
 	/** If true, the history state is a snapshot. */
-	snapshot: boolean;
-	
+	readonly snapshot: boolean;
 }
 
 /**
@@ -7031,18 +6969,17 @@ export declare class HistoryState {
  */
 export declare class TextFont {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The font name. */
-	name: string;
+	readonly name: string;
 	/** The PostScript name of the font. */
-	postScriptName: string;
+	readonly postScriptName: string;
 	/** The font family. */
-	family: string;
+	readonly family: string;
 	/** The font style. */
-	style: string;
-	
+	readonly style: string;
 }
 
 /**
@@ -7051,9 +6988,9 @@ export declare class TextFont {
  */
 export declare class TextItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The method of anti-aliasing to use. */
 	antiAliasMethod: AntiAlias;
 	/** Options for auto kerning. */
@@ -7280,9 +7217,9 @@ export declare class TextItem {
  */
 export declare class LayerComp {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The name of the layer comp. */
 	name: string;
 	/** The description of the layer comp. */
@@ -7294,7 +7231,7 @@ export declare class LayerComp {
 	/** If true, the layer comp is visible. */
 	visibility: boolean;
 	/** If true, the layer comp is currently selected. */
-	selected: boolean;
+	readonly selected: boolean;
 	/** Adds an element. */
 	add(): LayerComp;
 	/** Deletes this object. */
@@ -7317,13 +7254,13 @@ export declare class LayerComp {
  */
 export declare class PathItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The name of the path item. */
 	name: string;
 	/** The sub path objects for this path item. */
-	subPathItems: SubPathItems;
+	readonly subPathItems: SubPathItems;
 	/** The type of path. */
 	kind: PathKind;
 	/** Adds an element. */
@@ -7349,7 +7286,7 @@ export declare class PathItem {
 	 * relative to the existing selection (when a selection already 
 	 * exists).
 	 */
-	makeSelection(feather: number, antiAlias: boolean, operation: SelectionType): void;
+	makeSelection(feather?: number, antiAlias?: boolean, operation?: SelectionType): void;
 	/**
 	 * Fills the area enclosed by the path.
 	 * @param {any} fillColor - The color of the fill for this 
@@ -7367,7 +7304,7 @@ export declare class PathItem {
 	 * @param {boolean} wholePath - If true, uses all subpaths when 
 	 * doing the fill.
 	 */
-	fillPath(fillColor: any, mode: ColorBlendMode, opacity: number, preserveTransparency: boolean, feather: number, antiAlias: boolean, wholePath: boolean): void;
+	fillPath(fillColor?: any, mode?: ColorBlendMode, opacity?: number, preserveTransparency?: boolean, feather?: number, antiAlias?: boolean, wholePath?: boolean): void;
 	/**
 	 * Strokes the path.
 	 * @param {ToolType} tool - The tool to use when stroking the 
@@ -7375,14 +7312,14 @@ export declare class PathItem {
 	 * @param {boolean} simulatePressure - If true, simulates the 
 	 * pressure when using the tool.
 	 */
-	strokePath(tool: ToolType, simulatePressure: boolean): void;
+	strokePath(tool?: ToolType, simulatePressure?: boolean): void;
 	/**
 	 * Makes this path item the clipping path for this document.
 	 * @param {number} flatness - Flatness in device pixels; tells 
 	 * the PostScript printer how to approximate curves. Range: 0.2 
 	 * to 100).
 	 */
-	makeClippingPath(flatness: number): void;
+	makeClippingPath(flatness?: number): void;
 	/** Makes this path item the active or selected path item. */
 	select(): void;
 	/** Unselects the selection, no path items are selected. */
@@ -7399,16 +7336,15 @@ export declare class PathItem {
  */
 export declare class SubPathItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** If true, the path is closed. */
-	closed: boolean;
+	readonly closed: boolean;
 	/** The sub path operation on other sub paths. */
-	operation: ShapeOperation;
+	readonly operation: ShapeOperation;
 	/** The path points collection in the sub path. */
-	pathPoints: PathPoints;
-	
+	readonly pathPoints: PathPoints;
 }
 
 /**
@@ -7421,24 +7357,23 @@ export declare class SubPathItem {
  */
 export declare class PathPoint {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The position (coordinates) of the anchor point. */
-	anchor: Point;
+	readonly anchor: Point;
 	/**
 	 * The location of the left direction point (the "in" 
 	 * position).
 	 */
-	leftDirection: Point;
+	readonly leftDirection: Point;
 	/**
 	 * The location of the right direction point (the "out" 
 	 * position).
 	 */
-	rightDirection: Point;
+	readonly rightDirection: Point;
 	/** The type of point. */
-	kind: PointKind;
-	
+	readonly kind: PointKind;
 }
 
 /**
@@ -7447,9 +7382,9 @@ export declare class PathPoint {
  */
 export declare class MeasurementLog {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * Exports the specified measurements.
 	 * @param {File} file - The file to export to. If not 
@@ -7461,13 +7396,13 @@ export declare class MeasurementLog {
 	 * in the exported file. Defaults to data points visible in 
 	 * Measurement Log palette.
 	 */
-	exportMeasurements(file: File, range: MeasurementRange, dataPoints: string): void;
+	exportMeasurements(file?: File, range?: MeasurementRange, dataPoints?: string): void;
 	/**
 	 * Deletes the specified measurements.
 	 * @param {MeasurementRange} range - The measurements to 
 	 * delete. Default: selected.
 	 */
-	deleteMeasurements(range: MeasurementRange): void;
+	deleteMeasurements(range?: MeasurementRange): void;
 }
 
 /**
@@ -7476,9 +7411,9 @@ export declare class MeasurementLog {
  */
 export declare class MeasurementScale {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The name of the scale. */
 	name: string;
 	/** The length (in pixels) to which this scale equates. */
@@ -7487,7 +7422,6 @@ export declare class MeasurementScale {
 	logicalLength: number;
 	/** The logical units for this scale. */
 	logicalUnits: string;
-	
 }
 
 /**
@@ -7501,24 +7435,24 @@ export declare class MeasurementScale {
  */
 export declare class Notifier {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * The event ID in four characters or a unique string that the 
 	 * notifier is associated with.
 	 */
-	event: string;
+	readonly event: string;
 	/**
 	 * The path to the file to execute when the event 
 	 * occurs/activates the notifier.
 	 */
-	eventFile: File;
+	readonly eventFile: File;
 	/**
 	 * The class ID associated with the event for the Notifier 
 	 * object, four characters or a unique string.
 	 */
-	eventClass: string;
+	readonly eventClass: string;
 	/** Deletes this object. */
 	remove(): void;
 	/** Deletes all elements. */
@@ -7532,11 +7466,11 @@ export declare class Notifier {
  */
 export declare class CountItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The position of count item in the document. */
-	position: UnitPoint;
+	readonly position: UnitPoint;
 	/** Adds an element. */
 	add(): CountItem;
 	/** Deletes this object. */
@@ -7551,13 +7485,13 @@ export declare class CountItem {
  */
 export declare class ColorSampler {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The position of the color sampler in the document. */
-	position: UnitPoint;
+	readonly position: UnitPoint;
 	/** The color of the color sampler. */
-	color: SolidColor;
+	readonly color: SolidColor;
 	/** Adds an element. */
 	add(): ColorSampler;
 	/** Deletes this object. */
@@ -7580,12 +7514,11 @@ export declare class ColorSampler {
  */
 export declare class XMPMetadata {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The raw XML form of file information. */
 	rawData: string;
-	
 }
 
 /**
@@ -7603,8 +7536,7 @@ export declare class Point {
 	/** The top coordinate. */
 	top: number;
 	/** The array length. */
-	length: number;
-	
+	readonly length: number;
 }
 
 /**
@@ -7630,8 +7562,7 @@ export declare class Rectangle {
 	/** The bottom coordinate. */
 	bottom: number;
 	/** The array length. */
-	length: number;
-	
+	readonly length: number;
 }
 
 /**
@@ -7649,7 +7580,7 @@ export declare class Rectangle {
  */
 export declare class global {
 	/** The application object */
-	app: Application;
+	readonly app: Application;
 	/**
 	 * The NaN global property is a predefined variable with the 
 	 * value NaN (Not-a-Number), as specified by the IEEE-754 
@@ -7764,7 +7695,7 @@ export declare class global {
 	 * base 2 to base 36). / If not supplied, base is determined by 
 	 * the format of string.
 	 */
-	parseInt(text: string, base: number): number;
+	parseInt(text: string, base?: number): number;
 	/**
 	 * Parses a string to find the first set of characters that can 
 	 * be converted to a floating point number, and returns that 
@@ -7793,7 +7724,7 @@ export declare class global {
 	 * @param {any} argument - Optional argument(s) to be merged 
 	 * into the string.
 	 */
-	localize(what: string, argument: any): string;
+	localize(what: string, argument?: any): string;
 	/**
 	 * Returns true is the supplied string is a valid XML name.
 	 * @param {string} name - The XML name to test.
@@ -7816,7 +7747,7 @@ export declare class global {
 	 * @param {boolean} errorIcon - Display an Error icon; ignored 
 	 * on the Macintosh
 	 */
-	alert(message: string, title: string, errorIcon: boolean): void;
+	alert(message: string, title?: string, errorIcon?: boolean): void;
 	/**
 	 * Displays an alert box with Yes and No buttons; returns true 
 	 * for Yes
@@ -7826,7 +7757,7 @@ export declare class global {
 	 * @param {string} title - The title of the alert; ignored on 
 	 * the Macintosh
 	 */
-	confirm(message: string, noAsDefault: boolean, title: string): boolean;
+	confirm(message: string, noAsDefault: boolean, title?: string): boolean;
 	/**
 	 * Returns null if the user cancelled the dialog, the text 
 	 * otherwise
@@ -7836,7 +7767,7 @@ export declare class global {
 	 * edit field with
 	 * @param {string} title - The title of the dialog;
 	 */
-	prompt(prompt: string, _default: string, title: string): string;
+	prompt(prompt: string, _default?: string, title?: string): string;
 }
 
 /**

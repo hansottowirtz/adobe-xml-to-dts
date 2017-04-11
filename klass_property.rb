@@ -11,7 +11,9 @@ class KlassProperty < ClassdefProperty
     else
       d = "#{name}: #{type};"
     end
-    if static? then "static #{d}" else d end
+    d.prepend 'readonly ' if readonly?
+    d.prepend 'static ' if static?
+    d
   end
 
   def constructor?
@@ -24,6 +26,10 @@ class KlassProperty < ClassdefProperty
 
   def deprecated?
     @description && @description.include?('deprecated')
+  end
+
+  def readonly?
+    (rw = @x.attributes['rwaccess']) && rw.value == 'readonly'
   end
 
   def doc_tags

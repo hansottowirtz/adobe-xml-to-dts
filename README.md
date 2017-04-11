@@ -4,10 +4,15 @@
 This Ruby script converts ExtendScript Toolkit's Object Model Viewer `.xml` files to `.d.ts` files
 for Typescript. You can find those in the [types/built](types/built) folder.
 
-I am searching for more `omv.xml` files, which are found in the
-`/Library/Application Support/Adobe/Scripting Dictionaries CC` folder on a Mac.
-Please open an issue or pull request if you have more than just the Photoshop,
-Illustrator, ScriptUI and Javascript `.xml`s!
+Currently these apps have built xmls:
+- Illustrator
+- Photoshop
+- Indesign
+
+I am searching for more `omv.xml` files, which are found in
+[these directories](https://github.com/ExtendScript/Sublime-ExtendScript) on a Mac.
+Please open an issue or pull request if you have more than just the these `.xml`s!
+(Like for `File` and `UnitValue`, which must exist because they exist [here](http://jongware.mit.edu/iljscs6html/iljscs6/inxx.html))
 
 ## Usage
 

@@ -31,7 +31,15 @@ class KlassMethod < Documentable
   end
 
   def parameters
-    @x.css('parameter').collect{ |x_p| Parameter.new(x_p) }
+    optional = false
+    # optional is needed because required arguments could
+    # follow optional arguments in the xmls, and the arguments
+    # after the optional arguments should also be optional
+    @x.css('parameter').collect do |x_p|
+      p = Parameter.new(x_p, optional)
+      optional = p.optional?
+      p
+    end
   end
 
   def chunk

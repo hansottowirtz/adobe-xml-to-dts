@@ -12,14 +12,14 @@ class Klass < Classdef
       .uniq(&:name)
       .collect(&:chunk)
       .join("\n")
-    ).pad(1)
+    ).pad(1) if properties.any?
 
     chunk.merge Chunk.new(
       methods
       .uniq(&:name)
       .collect(&:chunk)
       .join("\n")
-    ).pad(1)
+    ).pad(1) if methods.any?
 
     chunk.puts '}'
     chunk
@@ -27,6 +27,10 @@ class Klass < Classdef
 
   def properties
     @properties ||= @x.css('property').collect{ |x_p| KlassProperty.new(x_p, static?) }
+  end
+
+  def methods
+    @methods ||= @x.css('method').collect{ |x_m| KlassMethod.new(x_m) }
   end
 
   def static?
@@ -41,9 +45,5 @@ class Klass < Classdef
     tags = [DocTag.new('class')]
     tags << DocTag.new('extends', superclass_text) if superclass_text
     tags
-  end
-
-  def methods
-    @methods ||= @x.css('method').collect{ |x_m| KlassMethod.new(x_m) }
   end
 end

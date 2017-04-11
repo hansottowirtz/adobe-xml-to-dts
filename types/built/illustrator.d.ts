@@ -1977,11 +1977,11 @@ export declare enum DocumentLayoutStyle {
  */
 export declare class Artboards {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Add artboard object.
 	 * @param {Rect} artboardRect - Size and position of artboard.
@@ -2028,11 +2028,11 @@ export declare class Artboards {
  */
 export declare class Documents {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a new document from a preset.
 	 * @param {string} startupPreset - The name of a startup 
@@ -2042,7 +2042,7 @@ export declare class Documents {
 	 * @param {boolean} showOptionsDialog - If false, do not show 
 	 * Options dialog.
 	 */
-	addDocument(startupPreset: string, presetSettings: DocumentPreset, showOptionsDialog: boolean): Document;
+	addDocument(startupPreset: string, presetSettings?: DocumentPreset, showOptionsDialog?: boolean): Document;
 	/**
 	 * Create a document from the preset with option to throw 
 	 * dialog to customize present settings.
@@ -2051,7 +2051,7 @@ export declare class Documents {
 	 * @param {boolean} showOptionsDialog - Argument controls if 
 	 * options Dialog is shown or not.
 	 */
-	addDocumentWithDialogOption(startupPreset: string, showOptionsDialog: boolean): Document;
+	addDocumentWithDialogOption(startupPreset: string, showOptionsDialog?: boolean): Document;
 	/**
 	 * A document.
 	 * @param {DocumentColorSpace} documentColorSpace - The color 
@@ -2069,7 +2069,7 @@ export declare class Documents {
 	 * is 1 to (docNumArtboards - 1) or 1 for single row or column 
 	 * layouts.
 	 */
-	add(documentColorSpace: DocumentColorSpace, width: number, height: number, numArtboards: number, artboardLayout: DocumentArtboardLayout, artboardSpacing: number, artboardRowsOrCols: number): Document;
+	add(documentColorSpace?: DocumentColorSpace, width?: number, height?: number, numArtboards?: number, artboardLayout?: DocumentArtboardLayout, artboardSpacing?: number, artboardRowsOrCols?: number): Document;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2090,11 +2090,11 @@ export declare class Documents {
  */
 export declare class Layers {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a layer. */
 	add(): Layer;
 	/** Deletes all elements. */
@@ -2113,11 +2113,11 @@ export declare class Layers {
  */
 export declare class GroupItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a group item. */
 	add(): GroupItem;
 	/**
@@ -2142,11 +2142,11 @@ export declare class GroupItems {
  */
 export declare class PageItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2161,11 +2161,11 @@ export declare class PageItems {
  */
 export declare class PathItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a path. */
 	add(): PathItem;
 	/**
@@ -2177,7 +2177,7 @@ export declare class PathItems {
 	 * @param {boolean} reversed - Is the ellipse path reversed?
 	 * @param {boolean} inscribed - Is the ellipse path inscribed?
 	 */
-	ellipse(top: number, left: number, width: number, height: number, reversed: boolean, inscribed: boolean): PathItem;
+	ellipse(top?: number, left?: number, width?: number, height?: number, reversed?: boolean, inscribed?: boolean): PathItem;
 	/**
 	 * Used to create a rectangular path item. Not for path item 
 	 * access.
@@ -2189,7 +2189,7 @@ export declare class PathItems {
 	 * @param {number} height - The height of the rectangle.
 	 * @param {boolean} reversed - Is the rectangle path reversed?
 	 */
-	rectangle(top: number, left: number, width: number, height: number, reversed: boolean): PathItem;
+	rectangle(top: number, left: number, width: number, height: number, reversed?: boolean): PathItem;
 	/**
 	 * Used to create a rounded-corner rectangular path item. Not 
 	 * for path item access.
@@ -2201,7 +2201,7 @@ export declare class PathItems {
 	 * @param {number} verticalRadius - Vertical corner radius.
 	 * @param {boolean} reversed - Is the rectangle path reversed?
 	 */
-	roundedRectangle(top: number, left: number, width: number, height: number, horizontalRadius: number, verticalRadius: number, reversed: boolean): PathItem;
+	roundedRectangle(top: number, left: number, width: number, height: number, horizontalRadius?: number, verticalRadius?: number, reversed?: boolean): PathItem;
 	/**
 	 * Used to create a regular polygon path item. Not for path 
 	 * item access.
@@ -2211,7 +2211,7 @@ export declare class PathItems {
 	 * @param {number} sides - The number of sides on the polygon.
 	 * @param {boolean} reversed - Is the polygon path reversed?
 	 */
-	polygon(centerX: number, centerY: number, radius: number, sides: number, reversed: boolean): PathItem;
+	polygon(centerX?: number, centerY?: number, radius?: number, sides?: number, reversed?: boolean): PathItem;
 	/**
 	 * Used to create a star-shaped path item. Not for path item 
 	 * access.
@@ -2224,7 +2224,7 @@ export declare class PathItems {
 	 * @param {number} points - The number of points on the star.
 	 * @param {boolean} reversed - Is the star path reversed?
 	 */
-	star(centerX: number, centerY: number, radius: number, innerRadius: number, points: number, reversed: boolean): PathItem;
+	star(centerX?: number, centerY?: number, radius?: number, innerRadius?: number, points?: number, reversed?: boolean): PathItem;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -2241,11 +2241,11 @@ export declare class PathItems {
  */
 export declare class PathPoints {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a path point. */
 	add(): PathPoint;
 	/** Deletes all elements. */
@@ -2264,11 +2264,11 @@ export declare class PathPoints {
  */
 export declare class CompoundPathItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a compound path item. */
 	add(): CompoundPathItem;
 	/** Deletes all elements. */
@@ -2287,11 +2287,11 @@ export declare class CompoundPathItems {
  */
 export declare class Stories {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2306,11 +2306,11 @@ export declare class Stories {
  */
 export declare class TextFrameItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a point text frame item. */
 	add(): TextFrameItem;
 	/**
@@ -2320,7 +2320,7 @@ export declare class TextFrameItems {
 	 * @param {TextOrientation} orientation - The orientation of 
 	 * the text.
 	 */
-	pointText(anchor: Point, orientation: TextOrientation): TextFrameItem;
+	pointText(anchor: Point, orientation?: TextOrientation): TextFrameItem;
 	/**
 	 * Create an area text frame item.
 	 * @param {PathItem} textPath - The path item associated with 
@@ -2332,7 +2332,7 @@ export declare class TextFrameItems {
 	 * @param {boolean} postFix - Whether to postfix/prefix the new 
 	 * text frame to the specified base text frame.
 	 */
-	areaText(textPath: PathItem, orientation: TextOrientation, baseFrame: TextFrameItem, postFix: boolean): TextFrameItem;
+	areaText(textPath: PathItem, orientation?: TextOrientation, baseFrame?: TextFrameItem, postFix?: boolean): TextFrameItem;
 	/**
 	 * Create an on-path text frame item.
 	 * @param {PathItem} textPath - The path item associated with 
@@ -2350,7 +2350,7 @@ export declare class TextFrameItems {
 	 * @param {boolean} postFix - Whether to postfix/prefix the new 
 	 * text frame to the specified base text frame.
 	 */
-	pathText(textPath: PathItem, startTValue: number, endTValue: number, orientation: TextOrientation, baseFrame: TextFrameItem, postFix: boolean): TextFrameItem;
+	pathText(textPath: PathItem, startTValue?: number, endTValue?: number, orientation?: TextOrientation, baseFrame?: TextFrameItem, postFix?: boolean): TextFrameItem;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -2367,11 +2367,11 @@ export declare class TextFrameItems {
  */
 export declare class LegacyTextItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2391,11 +2391,11 @@ export declare class LegacyTextItems {
  */
 export declare class TextRanges {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2410,11 +2410,11 @@ export declare class TextRanges {
  */
 export declare class InsertionPoints {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2429,11 +2429,11 @@ export declare class InsertionPoints {
  */
 export declare class Characters {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a character.
 	 * @param {string} contents - The text string.
@@ -2460,11 +2460,11 @@ export declare class Characters {
  */
 export declare class Words {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a word.
 	 * @param {string} contents - The text string.
@@ -2491,11 +2491,11 @@ export declare class Words {
  */
 export declare class Lines {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2510,11 +2510,11 @@ export declare class Lines {
  */
 export declare class Paragraphs {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a text art item.
 	 * @param {string} contents - The text string.
@@ -2541,11 +2541,11 @@ export declare class Paragraphs {
  */
 export declare class CharacterStyles {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a named character style.
 	 * @param {string} name - The character style name.
@@ -2567,11 +2567,11 @@ export declare class CharacterStyles {
  */
 export declare class ParagraphStyles {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a named paragraph style.
 	 * @param {string} name - The paragraph style name.
@@ -2593,11 +2593,11 @@ export declare class ParagraphStyles {
  */
 export declare class Spots {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a spot color. */
 	add(): Spot;
 	/** Deletes all elements. */
@@ -2616,11 +2616,11 @@ export declare class Spots {
  */
 export declare class Swatches {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a swatch. */
 	add(): Swatch;
 	/** Deletes all elements. */
@@ -2636,7 +2636,7 @@ export declare class Swatches {
 	 * @param {boolean} includeSwatchInGroup - The selected element 
 	 * should include swatches in group.
 	 */
-	getSelected(includeSwatchInGroup: boolean): Swatch;
+	getSelected(includeSwatchInGroup?: boolean): Swatch;
 }
 
 /**
@@ -2645,11 +2645,11 @@ export declare class Swatches {
  */
 export declare class SwatchGroups {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a Swatch group. */
 	add(): SwatchGroup;
 	/** Deletes all elements. */
@@ -2670,11 +2670,11 @@ export declare class SwatchGroups {
  */
 export declare class Gradients {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a gradient. */
 	add(): Gradient;
 	/** Deletes all elements. */
@@ -2693,11 +2693,11 @@ export declare class Gradients {
  */
 export declare class GradientStops {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a gradient stop. */
 	add(): GradientStop;
 	/** Deletes all elements. */
@@ -2716,11 +2716,11 @@ export declare class GradientStops {
  */
 export declare class Patterns {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a pattern. */
 	add(): Pattern;
 	/** Deletes all elements. */
@@ -2739,11 +2739,11 @@ export declare class Patterns {
  */
 export declare class Symbols {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a symbol.
 	 * @param {PageItem} sourceArt - The art item from which to 
@@ -2751,7 +2751,7 @@ export declare class Symbols {
 	 * @param {SymbolRegistrationPoint} registrationPoint - The 
 	 * symbol registration point.
 	 */
-	add(sourceArt: PageItem, registrationPoint: SymbolRegistrationPoint): Symbol;
+	add(sourceArt: PageItem, registrationPoint?: SymbolRegistrationPoint): Symbol;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -2768,11 +2768,11 @@ export declare class Symbols {
  */
 export declare class SymbolItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * An instance of a symbol item.
 	 * @param {Symbol} _symbol - The symbol to make an instance of.
@@ -2794,18 +2794,18 @@ export declare class SymbolItems {
  */
 export declare class Brushes {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Create a brush.
 	 * @param {File} brushDefinition - The brush definition from 
 	 * which the brush would be created.
 	 * @param {string} brushName - The name of the brush.
 	 */
-	add(brushDefinition: File, brushName: string): Brush;
+	add(brushDefinition: File, brushName?: string): Brush;
 	/**
 	 * Create a brush, select the brush tool and load the created 
 	 * brush in the brush tool.
@@ -2827,11 +2827,11 @@ export declare class Brushes {
  */
 export declare class ArtStyles {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -2848,11 +2848,11 @@ export declare class ArtStyles {
  */
 export declare class TextFonts {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -2881,11 +2881,11 @@ export declare class TextFonts {
  */
 export declare class Tags {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a tag. */
 	add(): Tag;
 	/** Deletes all elements. */
@@ -2904,11 +2904,11 @@ export declare class Tags {
  */
 export declare class RasterItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -2925,11 +2925,11 @@ export declare class RasterItems {
  */
 export declare class PlacedItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a placed item. */
 	add(): PlacedItem;
 	/** Deletes all elements. */
@@ -2948,11 +2948,11 @@ export declare class PlacedItems {
  */
 export declare class EmbeddedItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create an embedded item. */
 	add(): EmbedItem;
 	/** Deletes all elements. */
@@ -2971,11 +2971,11 @@ export declare class EmbeddedItems {
  */
 export declare class MeshItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -2992,11 +2992,11 @@ export declare class MeshItems {
  */
 export declare class GraphItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -3013,11 +3013,11 @@ export declare class GraphItems {
  */
 export declare class PluginItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Deletes all elements. */
 	removeAll(): void;
 	/**
@@ -3034,11 +3034,11 @@ export declare class PluginItems {
  */
 export declare class NonNativeItems {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3053,11 +3053,11 @@ export declare class NonNativeItems {
  */
 export declare class Views {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/**
 	 * Get the first element in the collection with the provided 
 	 * name.
@@ -3072,11 +3072,11 @@ export declare class Views {
  */
 export declare class Variables {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a variable. */
 	add(): Variable;
 	/** Deletes all elements. */
@@ -3095,11 +3095,11 @@ export declare class Variables {
  */
 export declare class DataSets {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Number of elements in the collection. */
-	length: number;
+	readonly length: number;
 	/** Create a data set. */
 	add(): DataSet;
 	/** Deletes all elements. */
@@ -3153,7 +3153,6 @@ export declare class OpenOptions {
 	convertTilesToArtboard: boolean;
 	/** Add this file to the list of recently opened files. */
 	addToRecentFiles: boolean;
-	
 }
 
 /**
@@ -3189,7 +3188,6 @@ export declare class FXGSaveOptions {
 	gradientsPolicy: GradientsPreservePolicy;
 	/** The policy used by FXG to expand blends. */
 	blendsPolicy: BlendsExpandPolicy;
-	
 }
 
 /**
@@ -3240,7 +3238,6 @@ export declare class EPSSaveOptions {
 	 * string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3414,7 +3411,6 @@ export declare class PDFSaveOptions {
 	 * artboards.Default is empty string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3458,7 +3454,6 @@ export declare class IllustratorSaveOptions {
 	 * is empty string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3471,7 +3466,6 @@ export declare class Matrix {
 	mValueD: number;
 	mValueTX: number;
 	mValueTY: number;
-	
 }
 
 /**
@@ -3500,7 +3494,6 @@ export declare class ExportOptionsJPEG {
 	artBoardClipping: boolean;
 	/** Should the resulting image be saved as HTML. */
 	saveAsHTML: boolean;
-	
 }
 
 /**
@@ -3540,7 +3533,6 @@ export declare class ExportOptionsPNG8 {
 	artBoardClipping: boolean;
 	/** Should the resulting image be saved as HTML. */
 	saveAsHTML: boolean;
-	
 }
 
 /**
@@ -3567,7 +3559,6 @@ export declare class ExportOptionsPNG24 {
 	saveAsHTML: boolean;
 	/** Dimensions in which to contain the resulting raster. */
 	dimensions: Dimensions;
-	
 }
 
 /**
@@ -3609,7 +3600,6 @@ export declare class ExportOptionsGIF {
 	artBoardClipping: boolean;
 	/** Should the resulting image be saved as HTML. */
 	saveAsHTML: boolean;
-	
 }
 
 /**
@@ -3652,7 +3642,6 @@ export declare class ExportOptionsPhotoshop {
 	 * string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3710,7 +3699,6 @@ export declare class ExportOptionsSVG {
 	 * string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3748,7 +3736,6 @@ export declare class ExportOptionsWebOptimizedSVG {
 	 * string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3842,7 +3829,6 @@ export declare class ExportOptionsFlash {
 	 * string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3878,7 +3864,6 @@ export declare class ExportOptionsAutoCAD {
 	 * the drawing.
 	 */
 	scaleLineweights: boolean;
-	
 }
 
 /**
@@ -3911,7 +3896,6 @@ export declare class ExportOptionsTIFF {
 	 * string.
 	 */
 	artboardRange: string;
-	
 }
 
 /**
@@ -3920,8 +3904,6 @@ export declare class ExportOptionsTIFF {
  * @class
  */
 export declare class Color {
-	
-	
 }
 
 /**
@@ -3936,7 +3918,6 @@ export declare class LabColor extends Color {
 	a: number;
 	/** The b color value (between -128.0 and 127.0) */
 	b: number;
-	
 }
 
 /**
@@ -3948,7 +3929,6 @@ export declare class Dimensions {
 	width: number;
 	/** The Height parameter. */
 	height: number;
-	
 }
 
 /**
@@ -3963,7 +3943,6 @@ export declare class RGBColor extends Color {
 	green: number;
 	/** The blue color value (between 0.0 and 255.0) */
 	blue: number;
-	
 }
 
 /**
@@ -3980,7 +3959,6 @@ export declare class CMYKColor extends Color {
 	yellow: number;
 	/** The black color value (between 0.0 and 100.0) */
 	black: number;
-	
 }
 
 /**
@@ -3991,7 +3969,6 @@ export declare class CMYKColor extends Color {
 export declare class GrayColor extends Color {
 	/** The gray value (between 0.0 and 100.0) */
 	gray: number;
-	
 }
 
 /**
@@ -4000,8 +3977,6 @@ export declare class GrayColor extends Color {
  * @extends Color
  */
 export declare class NoColor extends Color {
-	
-	
 }
 
 /**
@@ -4013,7 +3988,6 @@ export declare class SpotColor extends Color {
 	/** Percentage level of tint to be applied to the spot color. */
 	tint: number;
 	spot: Spot;
-	
 }
 
 /**
@@ -4050,7 +4024,6 @@ export declare class PatternColor extends Color {
 	 */
 	matrix: Matrix;
 	pattern: Pattern;
-	
 }
 
 /**
@@ -4076,7 +4049,6 @@ export declare class GradientColor extends Color {
 	matrix: Matrix;
 	/** Reference to the object defining the gradient. */
 	gradient: Gradient;
-	
 }
 
 /**
@@ -4093,7 +4065,6 @@ export declare class TabStopInfo {
 	position: number;
 	/** The leader dot. */
 	leader: string;
-	
 }
 
 /**
@@ -4105,7 +4076,6 @@ export declare class Printer {
 	name: string;
 	/** The printer information. */
 	printerInfo: PrinterInfo;
-	
 }
 
 /**
@@ -4149,7 +4119,6 @@ export declare class PrinterInfo {
 	minPaperWidthOffset: number;
 	/** Custom paper's maximum width offset. */
 	maxPaperWidthOffset: number;
-	
 }
 
 /**
@@ -4161,7 +4130,6 @@ export declare class PPDFile {
 	name: string;
 	/** The PPD file information. */
 	PPDInfo: PPDFileInfo;
-	
 }
 
 /**
@@ -4177,7 +4145,6 @@ export declare class PPDFileInfo {
 	screenList: Screen;
 	/** List of color separation screen spot functions. */
 	screenSpotFunctionList: ScreenSpotFunction;
-	
 }
 
 /**
@@ -4189,7 +4156,6 @@ export declare class Paper {
 	name: string;
 	/** The paper information. */
 	paperInfo: PaperInfo;
-	
 }
 
 /**
@@ -4205,7 +4171,6 @@ export declare class PaperInfo {
 	imageableArea: Rect;
 	/** Is it a custom paper? */
 	customPaper: boolean;
-	
 }
 
 /**
@@ -4217,7 +4182,6 @@ export declare class Screen {
 	name: string;
 	/** The color separation screen information. */
 	screenInfo: ScreenInfo;
-	
 }
 
 /**
@@ -4231,7 +4195,6 @@ export declare class ScreenInfo {
 	frequency: number;
 	/** The screen's angle (in degrees) */
 	angle: number;
-	
 }
 
 /**
@@ -4243,7 +4206,6 @@ export declare class ScreenSpotFunction {
 	name: string;
 	/** The spot function in terms of the PostScript commands. */
 	spotFunction: string;
-	
 }
 
 /**
@@ -4255,7 +4217,6 @@ export declare class Ink {
 	name: string;
 	/** The ink information. */
 	inkInfo: InkInfo;
-	
 }
 
 /**
@@ -4281,7 +4242,6 @@ export declare class InkInfo {
 	customColor: Color;
 	/** The dot shape name. */
 	dotShape: string;
-	
 }
 
 /**
@@ -4317,7 +4277,6 @@ export declare class DocumentPreset {
 	rasterResolution: DocumentRasterResolution;
 	/** The transparency grid for the new document. */
 	transparencyGrid: DocumentTransparencyGrid;
-	
 }
 
 /**
@@ -4351,7 +4310,6 @@ export declare class PrintOptions {
 	colorManagementOptions: PrintColorManagementOptions;
 	/** The printing flattener options. */
 	flattenerOptions: PrintFlattenerOptions;
-	
 }
 
 /**
@@ -4372,7 +4330,6 @@ export declare class PrintPaperOptions {
 	 * custom paper.
 	 */
 	transverse: boolean;
-	
 }
 
 /**
@@ -4402,7 +4359,6 @@ export declare class PrintJobOptions {
 	printAllArtboards: boolean;
 	/** Artboard Range to be printed if PrintAllArtboards is false. */
 	artboardRange: string;
-	
 }
 
 /**
@@ -4418,7 +4374,6 @@ export declare class PrintColorSeparationOptions {
 	overPrintBlack: boolean;
 	/** The list of inks for color separation. */
 	inkList: Ink;
-	
 }
 
 /**
@@ -4449,7 +4404,6 @@ export declare class PrintCoordinateOptions {
 	verticalScale: number;
 	/** The page tiling mode. */
 	tiling: PrintTiling;
-	
 }
 
 /**
@@ -4473,7 +4427,6 @@ export declare class PrintPageMarksOptions {
 	bleedOffsetRect: Rect;
 	/** The page marks offset rect. */
 	marksOffsetRect: Rect;
-	
 }
 
 /**
@@ -4485,7 +4438,6 @@ export declare class PrintFontOptions {
 	downloadFonts: PrintFontDownloadMode;
 	/** The font substitution policy. */
 	fontSubstitution: FontSubstitutionPolicy;
-	
 }
 
 /**
@@ -4510,7 +4462,6 @@ export declare class PrintPostScriptOptions {
 	compatibleShading: boolean;
 	/** The shading resolution. */
 	shadingResolution: number;
-	
 }
 
 /**
@@ -4524,7 +4475,6 @@ export declare class PrintColorManagementOptions {
 	intent: PrintColorIntent;
 	/** The color management profile name. */
 	name: string;
-	
 }
 
 /**
@@ -4546,7 +4496,6 @@ export declare class PrintFlattenerOptions {
 	clipComplexRegions: boolean;
 	/** Overprint. */
 	overprint: PDFOverprint;
-	
 }
 
 /**
@@ -4565,7 +4514,6 @@ export declare class ImageCaptureOptions {
 	matteColor: RGBColor;
 	/** Should the resulting image be antialiased. */
 	antiAliasing: boolean;
-	
 }
 
 /**
@@ -4593,7 +4541,6 @@ export declare class RasterEffectOptions {
 	 * object during rasterization.
 	 */
 	padding: number;
-	
 }
 
 /**
@@ -4636,7 +4583,6 @@ export declare class RasterizeOptions {
 	 * object during rasterization.
 	 */
 	padding: number;
-	
 }
 
 /**
@@ -4645,38 +4591,38 @@ export declare class RasterizeOptions {
  */
 export declare class Application {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The application's name. */
-	name: string;
+	readonly name: string;
 	/** Path specification for the application. */
-	path: File;
+	readonly path: File;
 	/** The active document. */
 	activeDocument: Document;
 	/** The current users adobe id. */
-	userAdobeID: string;
+	readonly userAdobeID: string;
 	/** The current user's GUID. */
-	userGUID: string;
+	readonly userGUID: string;
 	/** The version of the Adobe Illustrator application. */
-	version: string;
+	readonly version: string;
 	/** The build number of the Adobe Illustrator application. */
-	buildNumber: string;
+	readonly buildNumber: string;
 	/** The Locale of the Adobe Illustrator application. */
-	locale: string;
+	readonly locale: string;
 	/** The version of the Scripting plugin. */
-	scriptingVersion: string;
+	readonly scriptingVersion: string;
 	/**
 	 * The amount of unused memory within the Adobe Illustrator 
 	 * partition.
 	 */
-	freeMemory: number;
+	readonly freeMemory: number;
 	/** Is a web browser available? */
-	browserAvailable: boolean;
+	readonly browserAvailable: boolean;
 	/** The selection visible to the user. */
 	selection: any;
 	/** Is the application visible. */
-	visible: boolean;
+	readonly visible: boolean;
 	/**
 	 * What level of interaction with the user should be allowed 
 	 * when handling script commands.
@@ -4685,47 +4631,47 @@ export declare class Application {
 	/** Coordinate System used by script. */
 	coordinateSystem: CoordinateSystem;
 	/** Preferences for Illustrator. */
-	preferences: Preferences;
+	readonly preferences: Preferences;
 	/** The list of installed printers. */
-	printerList: Printer;
+	readonly printerList: Printer;
 	/**
 	 * The list of PPD files currently available for use. For 
 	 * performance reasons, the PPDFile entry only contains the 
 	 * model name and file spec of each PPD file.
 	 */
-	PPDFileList: PPDFile;
+	readonly PPDFileList: PPDFile;
 	/** The list of print preset names currently available for use. */
-	printPresetsList: string;
+	readonly printPresetsList: string;
 	/** The list of presets available for creating a new document. */
-	startupPresetsList: string;
+	readonly startupPresetsList: string;
 	/** The list of PDF preset names currently available for use. */
-	PDFPresetsList: string;
+	readonly PDFPresetsList: string;
 	/**
 	 * The list of flattener style names currently available for 
 	 * use.
 	 */
-	flattenerPresetsList: string;
+	readonly flattenerPresetsList: string;
 	/**
 	 * The list of tracing preset names currently available for 
 	 * use.
 	 */
-	tracingPresetsList: string;
+	readonly tracingPresetsList: string;
 	/**
 	 * The list of color settings files currently available for 
 	 * use.
 	 */
-	colorSettingsList: File;
+	readonly colorSettingsList: File;
 	/**
 	 * The default color settings file for the current application 
 	 * locale.
 	 */
-	defaultColorSettings: File;
+	readonly defaultColorSettings: File;
 	/** Does paste operation remember layers structure? */
 	pasteRemembersLayers: boolean;
 	/** The open documents. */
-	documents: Documents;
+	readonly documents: Documents;
 	/** Installed fonts. */
-	textFonts: TextFonts;
+	readonly textFonts: TextFonts;
 	/** Returns the JSON Data required by Hello. */
 	getHelloJSONData(): string;
 	/**
@@ -4733,7 +4679,7 @@ export declare class Application {
 	 * @param {string} mode - Mode for which the data is to be 
 	 * provided.
 	 */
-	getCCXUserJSONData(mode: string): string;
+	getCCXUserJSONData(mode?: string): string;
 	/**
 	 * Launch cep Extension given its ID.
 	 * @param {string} extensionID - Arguments for Launching 
@@ -4920,7 +4866,7 @@ export declare class Application {
 	 * @param {File} thumbnailURL - For Internal use.
 	 * @param {any} options - For internal use.
 	 */
-	openCloudLibraryAssetForEditing(assetURL: File, thumbnailURL: File, options: any): Document;
+	openCloudLibraryAssetForEditing(assetURL: File, thumbnailURL: File, options?: any): Document;
 	/**
 	 * For Internal Use.
 	 * @param {any} options - Options for the PNG24 export.
@@ -4943,7 +4889,7 @@ export declare class Application {
 	 * @param {boolean} dialogs - Are dialog boxes associated with 
 	 * the action to be presented?
 	 */
-	doScript(action: string, _from: string, dialogs: boolean): void;
+	doScript(action: string, _from: string, dialogs?: boolean): void;
 	/**
 	 * Executes a menu command using the menu shortcut string.
 	 * @param {string} menuCommandString - Menu command shortcut.
@@ -5002,7 +4948,7 @@ export declare class Application {
 	 * @param {number} deltaX - Horizontal transformation.
 	 * @param {number} deltaY - Vertical transformation.
 	 */
-	concatenateTranslationMatrix(matrix: Matrix, deltaX: number, deltaY: number): Matrix;
+	concatenateTranslationMatrix(matrix: Matrix, deltaX?: number, deltaY?: number): Matrix;
 	/**
 	 * Concatenate a scale matrix to a transformation matrix.
 	 * @param {Matrix} matrix - The matrix that is to be added to.
@@ -5011,7 +4957,7 @@ export declare class Application {
 	 * @param {number} scaleY - Vertical scaling factor expressed 
 	 * as a percentage (100 = 100%)
 	 */
-	concatenateScaleMatrix(matrix: Matrix, scaleX: number, scaleY: number): Matrix;
+	concatenateScaleMatrix(matrix: Matrix, scaleX?: number, scaleY?: number): Matrix;
 	/**
 	 * Concatenate a rotation matrix to a transformation matrix.
 	 * @param {Matrix} matrix - The matrix that is to be added to.
@@ -5037,7 +4983,7 @@ export declare class Application {
 	 * Returns a rotation transformation matrix.
 	 * @param {number} angle - Angle of rotation (in degrees)
 	 */
-	getRotationMatrix(angle: number): Matrix;
+	getRotationMatrix(angle?: number): Matrix;
 	/**
 	 * Returns a scale transformation matrix.
 	 * @param {number} scaleX - Horizontal scaling factor expressed 
@@ -5045,13 +4991,13 @@ export declare class Application {
 	 * @param {number} scaleY - Vertical scaling factor expressed 
 	 * as a percentage (100 = 100%)
 	 */
-	getScaleMatrix(scaleX: number, scaleY: number): Matrix;
+	getScaleMatrix(scaleX?: number, scaleY?: number): Matrix;
 	/**
 	 * Returns a translation matrix.
 	 * @param {number} deltaX - Horizontal transformation.
 	 * @param {number} deltaY - Vertical transformation.
 	 */
-	getTranslationMatrix(deltaX: number, deltaY: number): Matrix;
+	getTranslationMatrix(deltaX?: number, deltaY?: number): Matrix;
 	/**
 	 * Open the specified document file.
 	 * @param {File} file - The file to be opened.
@@ -5061,7 +5007,7 @@ export declare class Application {
 	 * @param {any} options - Options for opening a particular type 
 	 * of file.
 	 */
-	open(file: File, documentColorSpace: DocumentColorSpace, options: any): Document;
+	open(file: File, documentColorSpace?: DocumentColorSpace, options?: any): Document;
 	/**
 	 * Dump the PGF portion of ai file to txt file.
 	 * @param {File} file - The AI file to be opened.
@@ -5070,7 +5016,7 @@ export declare class Application {
 	 * models (pre-Illustrator 9)
 	 * @param {File} pGFFile - Folder to save the output PGF file.
 	 */
-	dumpPGFFile(file: File, documentColorSpace: DocumentColorSpace, pGFFile: File): boolean;
+	dumpPGFFile(file: File, documentColorSpace?: DocumentColorSpace, pGFFile?: File): boolean;
 	/** Quit the application. */
 	quit(): void;
 	beep(): void;
@@ -5119,7 +5065,7 @@ export declare class Application {
 	 * @param {boolean} destHasAlpha - True if alpha channel is 
 	 * present in destination color.
 	 */
-	convertSampleColor(sourceColorSpace: ImageColorSpace, sourceColor: number, destColorSpace: ImageColorSpace, colorConvertPurpose: ColorConvertPurpose, sourceHasAlpha: boolean, destHasAlpha: boolean): number;
+	convertSampleColor(sourceColorSpace: ImageColorSpace, sourceColor: number, destColorSpace: ImageColorSpace, colorConvertPurpose: ColorConvertPurpose, sourceHasAlpha?: boolean, destHasAlpha?: boolean): number;
 	/**
 	 * Generate Creative Suite ActionScript Wrappers in specified 
 	 * directory.
@@ -5155,45 +5101,45 @@ export declare class Application {
  */
 export declare class Document {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Is the file a stationery file? */
-	stationery: boolean;
+	readonly stationery: boolean;
 	/** The file associated with the document. */
-	fullName: File;
+	readonly fullName: File;
 	/** The active layer. */
 	activeLayer: Layer;
 	/** The document's current view. */
-	activeView: View;
+	readonly activeView: View;
 	/** The bounds of the illustration excluding stroke width. */
-	geometricBounds: Rect;
+	readonly geometricBounds: Rect;
 	/**
 	 * The visible bounds of the illustration including stroke 
 	 * width.
 	 */
-	visibleBounds: Rect;
+	readonly visibleBounds: Rect;
 	rulerOrigin: Point;
-	rulerUnits: RulerUnits;
+	readonly rulerUnits: RulerUnits;
 	pageOrigin: Point;
 	cropBox: Rect;
 	cropStyle: CropOptions;
-	width: number;
-	height: number;
-	showPlacedImages: boolean;
-	outputResolution: number;
-	printTiles: boolean;
+	readonly width: number;
+	readonly height: number;
+	readonly showPlacedImages: boolean;
+	readonly outputResolution: number;
+	readonly printTiles: boolean;
 	/** The selection within the document. */
 	selection: any;
-	splitLongPaths: boolean;
-	tileFullPages: boolean;
-	useDefaultScreen: boolean;
+	readonly splitLongPaths: boolean;
+	readonly tileFullPages: boolean;
+	readonly useDefaultScreen: boolean;
 	/** The color space used for the document. */
-	documentColorSpace: DocumentColorSpace;
+	readonly documentColorSpace: DocumentColorSpace;
 	/** The document's name. */
-	name: string;
+	readonly name: string;
 	/** Path specification for the document. */
-	path: File;
+	readonly path: File;
 	/** Has the document been saved? */
 	saved: boolean;
 	/** Should a new path be filled? */
@@ -5237,81 +5183,81 @@ export declare class Document {
 	/** The document raster effects settings. */
 	rasterEffectSettings: RasterEffectOptions;
 	/** The name of the color profile of the document. */
-	colorProfileName: string;
+	readonly colorProfileName: string;
 	/** All artboards in the document. */
-	artboards: Artboards;
+	readonly artboards: Artboards;
 	/** The compound path artwork in this collection. */
-	compoundPathItems: CompoundPathItems;
+	readonly compoundPathItems: CompoundPathItems;
 	/** The layers in this document. */
-	layers: Layers;
+	readonly layers: Layers;
 	/** All the artwork in this document. */
-	pageItems: PageItems;
+	readonly pageItems: PageItems;
 	/** The path artwork in this document. */
-	pathItems: PathItems;
+	readonly pathItems: PathItems;
 	/** The tags in this document. */
-	tags: Tags;
+	readonly tags: Tags;
 	/** The views in this document. */
-	views: Views;
+	readonly views: Views;
 	/** The raster art items in this document. */
-	rasterItems: RasterItems;
+	readonly rasterItems: RasterItems;
 	/** The placed art items in this document. */
-	placedItems: PlacedItems;
+	readonly placedItems: PlacedItems;
 	/** The embedded art items in this layer. */
-	embeddedItems: EmbeddedItems;
+	readonly embeddedItems: EmbeddedItems;
 	/** The mesh art items in this document. */
-	meshItems: MeshItems;
+	readonly meshItems: MeshItems;
 	/** The plugin art items in this document. */
-	pluginItems: PluginItems;
+	readonly pluginItems: PluginItems;
 	/** The graph art items in this document. */
-	graphItems: GraphItems;
+	readonly graphItems: GraphItems;
 	/** The non-native art items in this document. */
-	nonNativeItems: NonNativeItems;
+	readonly nonNativeItems: NonNativeItems;
 	/** The group items in this document. */
-	groupItems: GroupItems;
+	readonly groupItems: GroupItems;
 	/** The text frame items in this document. */
-	textFrames: TextFrameItems;
+	readonly textFrames: TextFrameItems;
 	/** The story items in this document. */
-	stories: Stories;
+	readonly stories: Stories;
 	/** The list of character styles in this document. */
-	characterStyles: CharacterStyles;
+	readonly characterStyles: CharacterStyles;
 	/** The list of paragraph styles in this document. */
-	paragraphStyles: ParagraphStyles;
+	readonly paragraphStyles: ParagraphStyles;
 	/** The Kinsoku set. */
-	kinsokuSet: string;
+	readonly kinsokuSet: string;
 	/** The Mojikumi set. */
-	mojikumiSet: string;
+	readonly mojikumiSet: string;
 	/** The swatches in this document. */
-	swatches: Swatches;
+	readonly swatches: Swatches;
 	/** The Swatch Groups in this document. */
-	swatchGroups: SwatchGroups;
+	readonly swatchGroups: SwatchGroups;
 	/** The gradients available in this document. */
-	gradients: Gradients;
+	readonly gradients: Gradients;
 	/** The patterns available in this document. */
-	patterns: Patterns;
+	readonly patterns: Patterns;
 	/** The custom spot colors available in this document. */
-	spots: Spots;
+	readonly spots: Spots;
 	/** The symbols defined in this document. */
-	symbols: Symbols;
+	readonly symbols: Symbols;
 	/** The symbol items in this document. */
-	symbolItems: SymbolItems;
+	readonly symbolItems: SymbolItems;
 	/** The brushes defined in this document. */
-	brushes: Brushes;
+	readonly brushes: Brushes;
 	/** The graphic styles defined in this document. */
-	graphicStyles: ArtStyles;
+	readonly graphicStyles: ArtStyles;
 	/** The variables defined in this document. */
-	variables: Variables;
+	readonly variables: Variables;
 	/** The list of inks in this document. */
-	inkList: Ink;
+	readonly inkList: Ink;
 	/** The data sets defined in this document. */
-	dataSets: DataSets;
+	readonly dataSets: DataSets;
 	/** The text frame items in this story. */
-	legacyTextItems: LegacyTextItems;
+	readonly legacyTextItems: LegacyTextItems;
 	/**
 	 * Close the specified document(s)
 	 * @param {SaveOptions} saving - Specifies whether changes 
 	 * should be saved before closing.
 	 */
-	close(saving: SaveOptions): void;
+	close(saving?: SaveOptions): void;
 	/**
 	 * Process a gesture based on input points.
 	 * @param {string} gesturePointsFile - File Path containing 
@@ -5325,12 +5271,12 @@ export declare class Document {
 	 * @param {File} saveIn - The file to save the document in.
 	 * @param {any} options - Options for the file type specified.
 	 */
-	saveAs(saveIn: File, options: any): void;
+	saveAs(saveIn: File, options?: any): void;
 	/**
 	 * Print the document.
 	 * @param {PrintOptions} options - Print options.
 	 */
-	print(options: PrintOptions): void;
+	print(options?: PrintOptions): void;
 	/**
 	 * Export the specified document(s)
 	 * @param {File} exportFile - The file to export the document 
@@ -5339,14 +5285,14 @@ export declare class Document {
 	 * the document as.
 	 * @param {any} options - Options for the file type specified.
 	 */
-	exportFile(exportFile: File, exportFormat: ExportType, options: any): void;
+	exportFile(exportFile: File, exportFormat: ExportType, options?: any): void;
 	/**
 	 * Export the selection as PNG file.
 	 * @param {File} exportFile - The file to export the selection 
 	 * to.
 	 * @param {any} options - Options for the PNG24 export.
 	 */
-	exportSelectionAsPNG(exportFile: File, options: any): void;
+	exportSelectionAsPNG(exportFile: File, options?: any): void;
 	/**
 	 * Export the selection as Ai file.
 	 * @param {File} exportFile - The file to export the selection 
@@ -5366,7 +5312,7 @@ export declare class Document {
 	 * @param {string} adobeStockId - For Internal Use.
 	 * @param {string} adobeStockLicense - For Internal Use.
 	 */
-	importFile(importFile: File, isLinked: boolean, libraryName: string, itemName: string, elementRef: string, modifiedTime: number, creationTime: number, adobeStockId: string, adobeStockLicense: string): void;
+	importFile(importFile: File, isLinked: boolean, libraryName?: string, itemName?: string, elementRef?: string, modifiedTime?: number, creationTime?: number, adobeStockId?: string, adobeStockLicense?: string): void;
 	/** Activate the first window associated with the document. */
 	activate(): void;
 	/**
@@ -5411,7 +5357,7 @@ export declare class Document {
 	 * @param {boolean} replacingPreset - Should existing editable 
 	 * presets be replaced?
 	 */
-	importPDFPreset(fileSpec: File, replacingPreset: boolean): void;
+	importPDFPreset(fileSpec: File, replacingPreset?: boolean): void;
 	/**
 	 * Save all PDF presets to a file.
 	 * @param {File} file - File to export to.
@@ -5425,7 +5371,7 @@ export declare class Document {
 	 * @param {string} perspectivePreset - Name of perspective grid 
 	 * preset.
 	 */
-	importPerspectiveGridPreset(fileSpec: File, perspectivePreset: string): void;
+	importPerspectiveGridPreset(fileSpec: File, perspectivePreset?: string): void;
 	/**
 	 * Saves all perspective grid presets to a file.
 	 * @param {File} file - File to export to.
@@ -5443,7 +5389,7 @@ export declare class Document {
 	 * @param {ImageCaptureOptions} options - Describes the image 
 	 * capture options.
 	 */
-	imageCapture(imageFile: File, clipBounds: Rect, options: ImageCaptureOptions): void;
+	imageCapture(imageFile: File, clipBounds?: Rect, options?: ImageCaptureOptions): void;
 	/**
 	 * Capture the current document window to the target TIFF image 
 	 * file.
@@ -5464,7 +5410,7 @@ export declare class Document {
 	 * @param {RasterizeOptions} options - Describes the 
 	 * rasterization options.
 	 */
-	rasterize(sourceArt: any, clipBounds: Rect, options: RasterizeOptions): PageItem;
+	rasterize(sourceArt: any, clipBounds?: Rect, options?: RasterizeOptions): PageItem;
 	/**
 	 * Rearrange Artboards in the document.
 	 * @param {DocumentArtboardLayout} artboardLayout - Layout of 
@@ -5477,14 +5423,14 @@ export declare class Document {
 	 * @param {boolean} artboardMoveArtwork - Whether to move 
 	 * artwork with artboards.
 	 */
-	rearrangeArtboards(artboardLayout: DocumentArtboardLayout, artboardRowsOrCols: number, artboardSpacing: number, artboardMoveArtwork: boolean): boolean;
+	rearrangeArtboards(artboardLayout?: DocumentArtboardLayout, artboardRowsOrCols?: number, artboardSpacing?: number, artboardMoveArtwork?: boolean): boolean;
 	/** Select art objects in active artboard. */
 	selectObjectsOnActiveArtboard(): boolean;
 	/**
 	 * Change the artboard to selected art bounds.
 	 * @param {number} index - The index of the artboard to update.
 	 */
-	fitArtboardToSelectedArt(index: number): boolean;
+	fitArtboardToSelectedArt(index?: number): boolean;
 	/**
 	 * Converts the coordinate system of a single point from one 
 	 * coordinate system to another.
@@ -5533,9 +5479,9 @@ export declare class Document {
  */
 export declare class Layer {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Is the layer visible? */
 	visible: boolean;
 	/** Is the layer editable? */
@@ -5558,9 +5504,9 @@ export declare class Layer {
 	/** The layer's opacity (between 0.0 and 100.0) */
 	opacity: number;
 	/** The drawing order of the layer. */
-	zOrderPosition: number;
+	readonly zOrderPosition: number;
 	/** The absolute drawing order of the layer. */
-	absoluteZOrderPosition: number;
+	readonly absoluteZOrderPosition: number;
 	/** Is the layer sliced (default: false) */
 	sliced: boolean;
 	/** The mode used when compositing an object. */
@@ -5570,33 +5516,33 @@ export declare class Layer {
 	/** Is the artwork used to create a knockout. */
 	artworkKnockout: KnockoutState;
 	/** The compound path artwork in this layer. */
-	compoundPathItems: CompoundPathItems;
+	readonly compoundPathItems: CompoundPathItems;
 	/** All the artwork in this layer. */
-	pageItems: PageItems;
+	readonly pageItems: PageItems;
 	/** The path artwork in this layer. */
-	pathItems: PathItems;
+	readonly pathItems: PathItems;
 	/** The raster art items in this layer. */
-	rasterItems: RasterItems;
+	readonly rasterItems: RasterItems;
 	/** The placed art items in this layer. */
-	placedItems: PlacedItems;
+	readonly placedItems: PlacedItems;
 	/** The mesh art items in this layer. */
-	meshItems: MeshItems;
+	readonly meshItems: MeshItems;
 	/** The plugin art items in this layer. */
-	pluginItems: PluginItems;
+	readonly pluginItems: PluginItems;
 	/** The graph art items in this layer. */
-	graphItems: GraphItems;
+	readonly graphItems: GraphItems;
 	/** The non-native art items in this layer. */
-	nonNativeItems: NonNativeItems;
+	readonly nonNativeItems: NonNativeItems;
 	/** The group items in this layer. */
-	groupItems: GroupItems;
+	readonly groupItems: GroupItems;
 	/** The text frame items in this layer. */
-	textFrames: TextFrameItems;
+	readonly textFrames: TextFrameItems;
 	/** Nested layers. */
-	layers: Layers;
+	readonly layers: Layers;
 	/** The symbol items in this layer. */
-	symbolItems: SymbolItems;
+	readonly symbolItems: SymbolItems;
 	/** The text frame items in this story. */
-	legacyTextItems: LegacyTextItems;
+	readonly legacyTextItems: LegacyTextItems;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -5620,18 +5566,17 @@ export declare class Layer {
  */
 export declare class View {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The bounding rectangle of this view. */
-	bounds: Rect;
+	readonly bounds: Rect;
 	/** The center point of this view. */
 	centerPoint: Point;
 	/** The zoom factor of this view. */
 	zoom: number;
 	/** The mode of display. */
 	screenMode: ScreenMode;
-	
 }
 
 /**
@@ -5640,15 +5585,15 @@ export declare class View {
  */
 export declare class Gradient {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The gradient type. */
 	type: GradientType;
 	/** The gradient's name. */
 	name: string;
 	/** The stops in this gradient. */
-	gradientStops: GradientStops;
+	readonly gradientStops: GradientStops;
 	/** Deletes this object. */
 	remove(): void;
 	/** Deletes all elements. */
@@ -5661,9 +5606,9 @@ export declare class Gradient {
  */
 export declare class GradientStop {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Midpoint key value in percent. */
 	midPoint: number;
 	/** Location of color in the blend (in percent) */
@@ -5687,15 +5632,15 @@ export declare class GradientStop {
  */
 export declare class Preferences {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Options to use when opening or placing a Photoshop file. */
-	photoshopFileOptions: OpenOptionsPhotoshop;
+	readonly photoshopFileOptions: OpenOptionsPhotoshop;
 	/** Options to use when opening or placing a PDF file. */
-	PDFFileOptions: OpenOptionsPDF;
+	readonly PDFFileOptions: OpenOptionsPDF;
 	/** Options to use when opening or placing a AutoCAD file. */
-	AutoCADFileOptions: OpenOptionsAutoCAD;
+	readonly AutoCADFileOptions: OpenOptionsAutoCAD;
 	/**
 	 * Retrieve the value of the application preference key as 
 	 * boolean.
@@ -5763,9 +5708,9 @@ export declare class Preferences {
  */
 export declare class Spot {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The custom color's name. */
 	name: string;
 	color: Color;
@@ -5775,7 +5720,7 @@ export declare class Spot {
 	 * Kind of the spot color (i.e. RGB, CMYK or LAB), it is the 
 	 * name of color kind contained in spot.
 	 */
-	spotKind: SpotColorKind;
+	readonly spotKind: SpotColorKind;
 	/** Deletes this object. */
 	remove(): void;
 	/** Deletes all elements. */
@@ -5790,15 +5735,15 @@ export declare class Spot {
  */
 export declare class Variable {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The variable's type. */
 	kind: VariableKind;
 	/** The name of this variable. */
 	name: string;
 	/** All the artwork in this document. */
-	pageItems: PageItems;
+	readonly pageItems: PageItems;
 	/** Deletes this object. */
 	remove(): void;
 	/** Deletes all elements. */
@@ -5812,9 +5757,9 @@ export declare class Variable {
  */
 export declare class DataSet {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The name of this dataset. */
 	name: string;
 	/** Deletes this object. */
@@ -5839,9 +5784,9 @@ export declare class DataSet {
  */
 export declare class Swatch {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The swatch's name. */
 	name: string;
 	/** The color information of the swatch. */
@@ -5858,9 +5803,9 @@ export declare class Swatch {
  */
 export declare class SwatchGroup {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Name of the swatch group. */
 	name: string;
 	/** Deletes this object. */
@@ -5889,9 +5834,9 @@ export declare class SwatchGroup {
  */
 export declare class Pattern {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The pattern's name. */
 	name: string;
 	/** Deletes this object. */
@@ -5906,9 +5851,9 @@ export declare class Pattern {
  */
 export declare class Symbol {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The symbol's name. */
 	name: string;
 	/**
@@ -5929,9 +5874,9 @@ export declare class Symbol {
  */
 export declare class Brush {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The brush's name. */
 	name: string;
 	/**
@@ -5947,9 +5892,9 @@ export declare class Brush {
  */
 export declare class ArtStyle {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The art style's name. */
 	name: string;
 	/** Deletes this object. */
@@ -5974,16 +5919,15 @@ export declare class ArtStyle {
  */
 export declare class TextFont {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The font's full name. */
-	name: string;
+	readonly name: string;
 	/** The font's family name. */
-	family: string;
+	readonly family: string;
 	/** The font's style name. */
-	style: string;
-	
+	readonly style: string;
 }
 
 /**
@@ -5992,9 +5936,9 @@ export declare class TextFont {
  */
 export declare class PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * The value of the Adobe URL tag assigned to this artwork 
 	 * item.
@@ -6003,7 +5947,7 @@ export declare class PageItem {
 	/** The note assigned to this artwork item. */
 	note: string;
 	/** The layer to which this artwork belongs. */
-	layer: Layer;
+	readonly layer: Layer;
 	/** Is this artwork item locked? */
 	locked: boolean;
 	/** Is this artwork item hidden? */
@@ -6017,14 +5961,14 @@ export declare class PageItem {
 	/** The height of the art item. */
 	height: number;
 	/** The bounds of the artwork excluding stroke width. */
-	geometricBounds: Rect;
+	readonly geometricBounds: Rect;
 	/** The visible bounds of the artwork including stroke width. */
-	visibleBounds: Rect;
+	readonly visibleBounds: Rect;
 	/**
 	 * The bounds of the artwork including stroke width and 
 	 * controls.
 	 */
-	controlBounds: Rect;
+	readonly controlBounds: Rect;
 	/** The item's name. */
 	name: string;
 	/** The mode used when compositing an object. */
@@ -6036,11 +5980,11 @@ export declare class PageItem {
 	/** Is the artwork used to create a knockout. */
 	artworkKnockout: KnockoutState;
 	/** The drawing order of the art within it's group or layer. */
-	zOrderPosition: number;
+	readonly zOrderPosition: number;
 	/** The absolute drawing order of the layer. */
-	absoluteZOrderPosition: number;
+	readonly absoluteZOrderPosition: number;
 	/** Can the art item be modified. */
-	editable: boolean;
+	readonly editable: boolean;
 	/** Is the art item sliced (default: false) */
 	sliced: boolean;
 	/** The top position of the art item. */
@@ -6050,7 +5994,7 @@ export declare class PageItem {
 	/** The visibility variable bound to this page item. */
 	visibilityVariable: any;
 	/** The collection of tags associated with this page item. */
-	tags: Tags;
+	readonly tags: Tags;
 	/** Is this artwork item aligned to Pixel Grid? */
 	pixelAligned: boolean;
 	/**
@@ -6091,7 +6035,7 @@ export declare class PageItem {
 	 * @param {boolean} transformStrokePattern - Are the stroke 
 	 * patterns assigned to paths to be transformed?
 	 */
-	translate(deltaX: number, deltaY: number, transformObjects: boolean, transformFillPatterns: boolean, transformFillGradients: boolean, transformStrokePattern: boolean): void;
+	translate(deltaX?: number, deltaY?: number, transformObjects?: boolean, transformFillPatterns?: boolean, transformFillGradients?: boolean, transformStrokePattern?: boolean): void;
 	/**
 	 * Scale art object(s)
 	 * @param {number} scaleX - Horizontal scaling factor expressed 
@@ -6111,7 +6055,7 @@ export declare class PageItem {
 	 * @param {Transformation} scaleAbout - The point on the art 
 	 * item's bounding box to which the scale is applied.
 	 */
-	resize(scaleX: number, scaleY: number, changePositions: boolean, changeFillPatterns: boolean, changeFillGradients: boolean, changeStrokePattern: boolean, changeLineWidths: number, scaleAbout: Transformation): void;
+	resize(scaleX: number, scaleY: number, changePositions?: boolean, changeFillPatterns?: boolean, changeFillGradients?: boolean, changeStrokePattern?: boolean, changeLineWidths?: number, scaleAbout?: Transformation): void;
 	/**
 	 * Rotate art object(s)
 	 * @param {number} angle - Angle of rotation (in degrees). 
@@ -6127,7 +6071,7 @@ export declare class PageItem {
 	 * @param {Transformation} rotateAbout - The point on the art 
 	 * item's bounding box to which the rotation is applied.
 	 */
-	rotate(angle: number, changePositions: boolean, changeFillPatterns: boolean, changeFillGradients: boolean, changeStrokePattern: boolean, rotateAbout: Transformation): void;
+	rotate(angle: number, changePositions?: boolean, changeFillPatterns?: boolean, changeFillGradients?: boolean, changeStrokePattern?: boolean, rotateAbout?: Transformation): void;
 	/**
 	 * Transform art object(s) using a transformation matrix.
 	 * @param {Matrix} transformationMatrix - The transformation 
@@ -6146,7 +6090,7 @@ export declare class PageItem {
 	 * art item's bounding box to which scale and rotation 
 	 * operations apply.
 	 */
-	transform(transformationMatrix: Matrix, changePositions: boolean, changeFillPatterns: boolean, changeFillGradients: boolean, changeStrokePattern: boolean, changeLineWidths: number, transformAbout: Transformation): void;
+	transform(transformationMatrix: Matrix, changePositions?: boolean, changeFillPatterns?: boolean, changeFillGradients?: boolean, changeStrokePattern?: boolean, changeLineWidths?: number, transformAbout?: Transformation): void;
 	/**
 	 * Place art object(s)in perspective grid at spedified 
 	 * perspective plane and coordinate.
@@ -6188,11 +6132,11 @@ export declare class PageItem {
  */
 export declare class CompoundPathItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The path artwork in this compound path. */
-	pathItems: PathItems;
+	readonly pathItems: PathItems;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6217,9 +6161,9 @@ export declare class CompoundPathItem extends PageItem {
  */
 export declare class Tag {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The tag's name. */
 	name: string;
 	/** The data stored in this tag. */
@@ -6237,15 +6181,15 @@ export declare class Tag {
  */
 export declare class PathItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Is this path closed? */
 	closed: boolean;
 	/** The area of this path in square points. */
-	area: number;
+	readonly area: number;
 	/** The length of this path in points. */
-	length: number;
+	readonly length: number;
 	/** Is this path a guide object? */
 	guides: boolean;
 	/** Should the path be filled? */
@@ -6284,10 +6228,10 @@ export declare class PathItem extends PageItem {
 	/** The resolution of the path. */
 	resolution: number;
 	/** All the selected points in the path. */
-	selectedPathPoints: ObjectArray;
+	readonly selectedPathPoints: ObjectArray;
 	/** The polarity the path. */
 	polarity: PolarityValues;
-	pathPoints: PathPoints;
+	readonly pathPoints: PathPoints;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6319,9 +6263,9 @@ export declare class PathItem extends PageItem {
  */
 export declare class PathPoint {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The position (coordinates) of the anchor point. */
 	anchor: Point;
 	/** Location of the left direction point (in position) */
@@ -6345,11 +6289,11 @@ export declare class PathPoint {
  */
 export declare class RasterItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The file containing the raster artwork. */
-	file: File;
+	readonly file: File;
 	/** The transformation matrix of the raster art object. */
 	matrix: Matrix;
 	/**
@@ -6358,23 +6302,23 @@ export declare class RasterItem extends PageItem {
 	 */
 	boundingBox: Rect;
 	/** The color space of the raster image. */
-	imageColorSpace: ImageColorSpace;
+	readonly imageColorSpace: ImageColorSpace;
 	/** Is the raster art embedded within the illustration? */
 	embedded: boolean;
 	/** Is the raster art overprinting? */
 	overprint: boolean;
 	/** Is the raster art a colorized grayscale image? */
-	colorizedGrayscale: boolean;
+	readonly colorizedGrayscale: boolean;
 	/** Is the raster art transparent? */
-	transparent: boolean;
+	readonly transparent: boolean;
 	/** The number of image channels. */
-	channels: number;
+	readonly channels: number;
 	/** The number of bits per channel. */
-	bitsPerChannel: number;
+	readonly bitsPerChannel: number;
 	/** List of colorant names. */
-	colorants: string;
+	readonly colorants: string;
 	/** Status of the linked image. */
-	status: RasterLinkState;
+	readonly status: RasterLinkState;
 	/** The content variable bound to this raster art object. */
 	contentVariable: any;
 	/**
@@ -6413,9 +6357,9 @@ export declare class RasterItem extends PageItem {
  */
 export declare class PlacedItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The file containing the placed artwork. */
 	file: File;
 	/** The transformation matrix of the placed art object. */
@@ -6424,7 +6368,7 @@ export declare class PlacedItem extends PageItem {
 	 * Dimensions of placed art object, regardless of 
 	 * transformations.
 	 */
-	boundingBox: Rect;
+	readonly boundingBox: Rect;
 	/** The content variable bound to this placed art object. */
 	contentVariable: any;
 	/**
@@ -6464,9 +6408,9 @@ export declare class PlacedItem extends PageItem {
  */
 export declare class EmbedItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The file containing the placed artwork. */
 	file: File;
 	/**
@@ -6494,9 +6438,9 @@ export declare class EmbedItem extends PageItem {
  */
 export declare class GraphItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The content variable bound to this graph. */
 	contentVariable: any;
 	/**
@@ -6524,9 +6468,9 @@ export declare class GraphItem extends PageItem {
  */
 export declare class NonNativeItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6552,9 +6496,9 @@ export declare class NonNativeItem extends PageItem {
  */
 export declare class MeshItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6580,13 +6524,13 @@ export declare class MeshItem extends PageItem {
  */
 export declare class PluginItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Is the plugin group a tracing? */
-	isTracing: boolean;
+	readonly isTracing: boolean;
 	/** The tracing object associated with this plugin item. */
-	tracing: TracingObject;
+	readonly tracing: TracingObject;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6612,37 +6556,37 @@ export declare class PluginItem extends PageItem {
  */
 export declare class GroupItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Are the group elements clipped to the clipping path? */
 	clipped: boolean;
 	/** The group items in this group. */
-	groupItems: GroupItems;
+	readonly groupItems: GroupItems;
 	/** All the artwork in this group. */
-	pageItems: PageItems;
+	readonly pageItems: PageItems;
 	/** The compound path artwork in this group. */
-	compoundPathItems: CompoundPathItems;
+	readonly compoundPathItems: CompoundPathItems;
 	/** The path artwork in this group. */
-	pathItems: PathItems;
+	readonly pathItems: PathItems;
 	/** The raster art items in this group. */
-	rasterItems: RasterItems;
+	readonly rasterItems: RasterItems;
 	/** The placed art items in this group. */
-	placedItems: PlacedItems;
+	readonly placedItems: PlacedItems;
 	/** The mesh art items in this group. */
-	meshItems: MeshItems;
+	readonly meshItems: MeshItems;
 	/** The plugin art items in this group. */
-	pluginItems: PluginItems;
+	readonly pluginItems: PluginItems;
 	/** The graph art items in this group. */
-	graphItems: GraphItems;
+	readonly graphItems: GraphItems;
 	/** The non-native art items in this group. */
-	nonNativeItems: NonNativeItems;
+	readonly nonNativeItems: NonNativeItems;
 	/** The text frame items in this group. */
-	textFrames: TextFrameItems;
+	readonly textFrames: TextFrameItems;
 	/** The symbol items in this group. */
-	symbolItems: SymbolItems;
+	readonly symbolItems: SymbolItems;
 	/** The text frame items in this story. */
-	legacyTextItems: LegacyTextItems;
+	readonly legacyTextItems: LegacyTextItems;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6668,9 +6612,9 @@ export declare class GroupItem extends PageItem {
  */
 export declare class SymbolItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The symbol that was used to create this symbol item. */
 	symbol: Symbol;
 	/**
@@ -6699,9 +6643,9 @@ export declare class SymbolItem extends PageItem {
  */
 export declare class TextPath {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The position of the top left corner of the text path. */
 	position: Point;
 	/** The width of the text path. */
@@ -6713,7 +6657,7 @@ export declare class TextPath {
 	/** The object's opacity (between 0.0 and 100.0) */
 	opacity: number;
 	/** Can the text path be modified. */
-	editable: boolean;
+	readonly editable: boolean;
 	/** The top position of the text path. */
 	top: number;
 	/** The left position of the text path. */
@@ -6721,7 +6665,7 @@ export declare class TextPath {
 	/** Is this path closed? */
 	closed: boolean;
 	/** The area of this path in square points. */
-	area: number;
+	readonly area: number;
 	/** Is this path a guide object? */
 	guides: boolean;
 	/** Should the path be filled? */
@@ -6762,10 +6706,10 @@ export declare class TextPath {
 	/** Note assigned to the path. */
 	note: string;
 	/** All the selected points in the path. */
-	selectedPathPoints: ObjectArray;
+	readonly selectedPathPoints: ObjectArray;
 	/** The polarity the path. */
 	polarity: PolarityValues;
-	pathPoints: PathPoints;
+	readonly pathPoints: PathPoints;
 	/**
 	 * Set the path using the provided array of anchor points.
 	 * @param {any} pathPoints - Array of anchor values for the 
@@ -6780,30 +6724,29 @@ export declare class TextPath {
  */
 export declare class Story {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The text range of the story. */
-	textRange: TextRange;
+	readonly textRange: TextRange;
 	/** The text frame items in this story. */
-	textFrames: TextFrameItems;
+	readonly textFrames: TextFrameItems;
 	/** The selected text (ranges) in the story. */
-	textSelection: TextRange;
+	readonly textSelection: TextRange;
 	/** All the characters in this text range. */
-	characters: Characters;
+	readonly characters: Characters;
 	/** All the words in this text range. */
-	words: Words;
+	readonly words: Words;
 	/** All the lines in this text range. */
-	lines: Lines;
+	readonly lines: Lines;
 	/** All the paragraphs in this text range. */
-	paragraphs: Paragraphs;
+	readonly paragraphs: Paragraphs;
 	/** All the text in this text range. */
-	textRanges: TextRanges;
+	readonly textRanges: TextRanges;
 	/** All the insertion points in this text range. */
-	insertionPoints: InsertionPoints;
+	readonly insertionPoints: InsertionPoints;
 	/** The number of characters in the story. */
-	length: number;
-	
+	readonly length: number;
 }
 
 /**
@@ -6813,17 +6756,17 @@ export declare class Story {
  */
 export declare class TextFrameItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The story of the text frame. */
-	story: Story;
+	readonly story: Story;
 	/** The text contents of this text frame. */
 	contents: string;
 	/** The text range of the text frame. */
-	textRange: TextRange;
+	readonly textRange: TextRange;
 	/** The selected text (ranges) in the story. */
-	textSelection: TextRange;
+	readonly textSelection: TextRange;
 	/** The row count in the text frame (area text only) */
 	rowCount: number;
 	/** The column count in the text frame (area text only) */
@@ -6842,13 +6785,13 @@ export declare class TextFrameItem extends PageItem {
 	/** Is the optical alignment active? */
 	opticalAlignment: boolean;
 	/** The type of a text frame item. */
-	kind: TextType;
+	readonly kind: TextType;
 	/** The content variable bound to this text art item. */
 	contentVariable: any;
 	/** The orientation of the text in the frame. */
 	orientation: TextOrientation;
 	/** The path for the text frame (area and path text) */
-	textPath: TextPath;
+	readonly textPath: TextPath;
 	/**
 	 * The position of the anchor point (start of base line for 
 	 * point text)
@@ -6869,7 +6812,7 @@ export declare class TextFrameItem extends PageItem {
 	/** The linked text frame following this one. */
 	nextFrame: TextFrameItem;
 	/** The transformation matrix of the text frame object. */
-	matrix: Matrix;
+	readonly matrix: Matrix;
 	/** The type of a text anti-aliasing on text frame item. */
 	antialias: TextAntialias;
 	/**
@@ -6883,17 +6826,17 @@ export declare class TextFrameItem extends PageItem {
 	 */
 	firstBaselineMin: number;
 	/** All the characters in this text range. */
-	characters: Characters;
+	readonly characters: Characters;
 	/** All the words in this text range. */
-	words: Words;
+	readonly words: Words;
 	/** All the lines in this text range. */
-	lines: Lines;
+	readonly lines: Lines;
 	/** All the paragraphs in this text range. */
-	paragraphs: Paragraphs;
+	readonly paragraphs: Paragraphs;
 	/** All the text in this text range. */
-	textRanges: TextRanges;
+	readonly textRanges: TextRanges;
 	/** All the insertion points in this text range. */
-	insertionPoints: InsertionPoints;
+	readonly insertionPoints: InsertionPoints;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6938,14 +6881,14 @@ export declare class TextFrameItem extends PageItem {
  */
 export declare class LegacyTextItem extends PageItem {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * Has the legacy text item been updated to a native text frame 
 	 * item?
 	 */
-	converted: boolean;
+	readonly converted: boolean;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -6969,9 +6912,9 @@ export declare class LegacyTextItem extends PageItem {
  */
 export declare class TextRange {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * Offset of the first character of the range from the 
 	 * beginning of the story, in characters.
@@ -6984,29 +6927,29 @@ export declare class TextRange {
 	/** Controls the spacing between two characters (in milli-ems) */
 	kerning: number;
 	/** The story of the text range. */
-	story: Story;
+	readonly story: Story;
 	/** The selected text (ranges) in the text range. */
-	textSelection: TextRange;
+	readonly textSelection: TextRange;
 	/** All the characters in this text range. */
-	characters: Characters;
+	readonly characters: Characters;
 	/** All the words in this text range. */
-	words: Words;
+	readonly words: Words;
 	/** All the lines in this text range. */
-	lines: Lines;
+	readonly lines: Lines;
 	/** All the paragraphs in this text range. */
-	paragraphs: Paragraphs;
+	readonly paragraphs: Paragraphs;
 	/** All the text in this text range. */
-	textRanges: TextRanges;
+	readonly textRanges: TextRanges;
 	/** All the insertion points in this text range. */
-	insertionPoints: InsertionPoints;
+	readonly insertionPoints: InsertionPoints;
 	/** List of referenced character styles in the text range. */
-	characterStyles: CharacterStyles;
+	readonly characterStyles: CharacterStyles;
 	/** List of referenced paragraph styles in the text range. */
-	paragraphStyles: ParagraphStyles;
+	readonly paragraphStyles: ParagraphStyles;
 	/** The character properties for the text range. */
-	characterAttributes: CharacterAttributes;
+	readonly characterAttributes: CharacterAttributes;
 	/** The paragraph properties for the text range. */
-	paragraphAttributes: ParagraphAttributes;
+	readonly paragraphAttributes: ParagraphAttributes;
 	/**
 	 * Move the object.
 	 * @param {Object} relativeObject
@@ -7028,7 +6971,7 @@ export declare class TextRange {
 	 * @param {boolean} addToDocument - Whether to add the text 
 	 * range to the document text selection.
 	 */
-	select(addToDocument: boolean): void;
+	select(addToDocument?: boolean): void;
 	/** Deselect the text range. */
 	deSelect(): void;
 	/**
@@ -7045,22 +6988,21 @@ export declare class TextRange {
  */
 export declare class InsertionPoint {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The story of the text range. */
-	story: Story;
+	readonly story: Story;
 	/** All the characters in this text range. */
-	characters: Characters;
+	readonly characters: Characters;
 	/** All the words in this text range. */
-	words: Words;
+	readonly words: Words;
 	/** All the lines in this text range. */
-	lines: Lines;
+	readonly lines: Lines;
 	/** All the paragraphs in this text range. */
-	paragraphs: Paragraphs;
+	readonly paragraphs: Paragraphs;
 	/** All the text in this text range. */
-	textRanges: TextRanges;
-	
+	readonly textRanges: TextRanges;
 }
 
 /**
@@ -7069,13 +7011,13 @@ export declare class InsertionPoint {
  */
 export declare class CharacterStyle {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The character style's name. */
 	name: string;
 	/** The character properties for the text range. */
-	characterAttributes: CharacterAttributes;
+	readonly characterAttributes: CharacterAttributes;
 	/** Adds an element. */
 	add(): CharacterStyle;
 	/** Deletes this object. */
@@ -7089,7 +7031,7 @@ export declare class CharacterStyle {
 	 * @param {boolean} clearingOverrides - Whether to clear any 
 	 * text attributes before apply the style.
 	 */
-	applyTo(textItem: any, clearingOverrides: boolean): void;
+	applyTo(textItem: any, clearingOverrides?: boolean): void;
 	/** Remove all the attributes from this character style. */
 	clear(): void;
 }
@@ -7100,15 +7042,15 @@ export declare class CharacterStyle {
  */
 export declare class ParagraphStyle {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The paragraph style's name. */
 	name: string;
 	/** The character properties for the text range. */
-	characterAttributes: CharacterAttributes;
+	readonly characterAttributes: CharacterAttributes;
 	/** The paragraph properties for the text range. */
-	paragraphAttributes: ParagraphAttributes;
+	readonly paragraphAttributes: ParagraphAttributes;
 	/** Adds an element. */
 	add(): ParagraphStyle;
 	/** Deletes this object. */
@@ -7122,7 +7064,7 @@ export declare class ParagraphStyle {
 	 * @param {boolean} clearingOverrides - Whether to clear any 
 	 * text attributes before apply the style.
 	 */
-	applyTo(textItem: any, clearingOverrides: boolean): void;
+	applyTo(textItem: any, clearingOverrides?: boolean): void;
 	/** Remove all the attributes from this paragraph style. */
 	clear(): void;
 }
@@ -7133,9 +7075,9 @@ export declare class ParagraphStyle {
  */
 export declare class CharacterAttributes {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The text font. */
 	textFont: TextFont;
 	/** Font size in points. */
@@ -7245,7 +7187,6 @@ export declare class CharacterAttributes {
 	underline: boolean;
 	/** Whether to draw a strike through line over the text. */
 	strikeThrough: boolean;
-	
 }
 
 /**
@@ -7254,9 +7195,9 @@ export declare class CharacterAttributes {
  */
 export declare class ParagraphAttributes {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Paragraph justification. */
 	justification: Justification;
 	/** First line left indent expressed in points. */
@@ -7333,7 +7274,6 @@ export declare class ParagraphAttributes {
 	 * line composer)?
 	 */
 	everyLineComposer: boolean;
-	
 }
 
 /**
@@ -7343,9 +7283,9 @@ export declare class ParagraphAttributes {
  */
 export declare class OpenOptionsPhotoshop {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * Should layers be Preserve when the document is converted 
 	 * (default: true)
@@ -7368,7 +7308,6 @@ export declare class OpenOptionsPhotoshop {
 	preserveHiddenLayers: boolean;
 	/** Should use the specified LayerComp. */
 	layerComp: string;
-	
 }
 
 /**
@@ -7377,9 +7316,9 @@ export declare class OpenOptionsPhotoshop {
  */
 export declare class OpenOptionsPDF {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * What page should be used when opening a multipage document 
 	 * (default: 1)
@@ -7390,7 +7329,6 @@ export declare class OpenOptionsPDF {
 	 * (default: PDF media box)
 	 */
 	pDFCropToBox: PDFBoxType;
-	
 }
 
 /**
@@ -7399,9 +7337,9 @@ export declare class OpenOptionsPDF {
  */
 export declare class OpenOptionsAutoCAD {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/**
 	 * How to scale the AutoCAD drawing on import (default: Fit 
 	 * Artboard)
@@ -7433,7 +7371,6 @@ export declare class OpenOptionsAutoCAD {
 	 * drawing (default: false)
 	 */
 	scaleLineweights: boolean;
-	
 }
 
 /**
@@ -7442,11 +7379,11 @@ export declare class OpenOptionsAutoCAD {
  */
 export declare class TracingOptions {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The name of the preset in use. Read-only. */
-	preset: string;
+	readonly preset: string;
 	/** The visualization mode. */
 	viewMode: ViewType;
 	/** The tracing mode: color, gray, black and white. */
@@ -7521,19 +7458,19 @@ export declare class TracingOptions {
  */
 export declare class TracingObject {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** The source art used when creating a new tracing object. */
-	sourceArt: PageItem;
+	readonly sourceArt: PageItem;
 	/** The options used when tracing the artwork. */
-	tracingOptions: TracingOptions;
+	readonly tracingOptions: TracingOptions;
 	/** The number of paths in the tracing result. */
-	pathCount: number;
+	readonly pathCount: number;
 	/** The number of anchors in the tracing result. */
-	anchorCount: number;
+	readonly anchorCount: number;
 	/** The number of colors used in the tracing result. */
-	usedColorCount: number;
+	readonly usedColorCount: number;
 	/**
 	 * Release the source artwork for the tracing object. Deletes 
 	 * this tracing object.
@@ -7544,7 +7481,7 @@ export declare class TracingObject {
 	 * @param {boolean} viewed - Expand as viewed with the raster 
 	 * and vector view modes.
 	 */
-	expandTracing(viewed: boolean): GroupItem;
+	expandTracing(viewed?: boolean): GroupItem;
 }
 
 /**
@@ -7553,9 +7490,9 @@ export declare class TracingObject {
  */
 export declare class Artboard {
 	/** The object's container. */
-	parent: Object;
+	readonly parent: Object;
 	/** The class name of the object. */
-	typename: string;
+	readonly typename: string;
 	/** Size and position of artboard. */
 	artboardRect: Rect;
 	/**
@@ -7597,8 +7534,7 @@ export declare class Point {
 	/** The top coordinate. */
 	top: number;
 	/** The array length. */
-	length: number;
-	
+	readonly length: number;
 }
 
 /**
@@ -7624,6 +7560,5 @@ export declare class Rectangle {
 	/** The bottom coordinate. */
 	bottom: number;
 	/** The array length. */
-	length: number;
-	
+	readonly length: number;
 }

@@ -19,18 +19,18 @@ export declare class $ {
 	 * example: "3.92.95 (debug)".
 	 * @summary The version number of the ExtendScript engine.
 	 */
-	version: string;
+	readonly version: string;
 	/** The ExtendScript build information. */
-	build: string;
+	readonly build: string;
 	/** The ExtendScript build date. */
-	buildDate: Date;
+	readonly buildDate: Date;
 	/**
 	 * A reference to the global object, which contains the 
 	 * JavaScript global namespace.
 	 */
-	global: Object;
+	readonly global: Object;
 	/** The current stack trace. */
-	stack: string;
+	readonly stack: string;
 	/**
 	 * One of 0 (no debugging), 1 (break on runtime errors), or 2 
 	 * (full debug mode).
@@ -95,24 +95,24 @@ export declare class $ {
 	 * @summary An array of objects containing information about 
 	 * the display screens attached to your computer.
 	 */
-	screens: Object;
+	readonly screens: Object;
 	/** The current operating system version information. */
-	os: string;
+	readonly os: string;
 	/** The file name of the current script. */
-	fileName: string;
+	readonly fileName: string;
 	/** The current line number of the currently executing script. */
-	line: number;
+	readonly line: number;
 	/**
 	 * A high-resolution timer, measuring the time in microseconds. 
 	 * The timer starts when ExtendScript is
 	 * initialized during the application startup sequence. Every 
 	 * read access resets the timer to Zero.
 	 */
-	hiresTimer: number;
+	readonly hiresTimer: number;
 	/** The name of the current ExtendScript engine, if set. */
-	engineName: string;
+	readonly engineName: string;
 	/** The path for include files for the current script. */
-	includePath: string;
+	readonly includePath: string;
 	/**
 	 * Shows an About box for the ExtendScript component, and 
 	 * returns the text for the box.
@@ -139,7 +139,7 @@ export declare class $ {
 	 * evaluates to true or nonzero when this point is reached, 
 	 * execution stops.
 	 */
-	bp(condition: any): void;
+	bp(condition?: any): void;
 	/**
 	 * Retrieves the value of an environment variable.
 	 * @param {string} name - The name of the variable.
@@ -174,7 +174,7 @@ export declare class $ {
 	 * @param {number} timeout - An optional timeout in 
 	 * milliseconds.
 	 */
-	evalFile(file: File, timeout: number): any;
+	evalFile(file: File, timeout?: number): any;
 	/** Initiates garbage collection in the ExtendScript engine. */
 	gc(): void;
 }
@@ -191,7 +191,7 @@ export declare class Object {
 	 * XML class.
 	 * @summary Points to the prototype object for this object.
 	 */
-	prototype: Object;
+	readonly prototype: Object;
 	/**
 	 * Note that this property is treated as an XML element in the 
 	 * XML class.
@@ -199,14 +199,14 @@ export declare class Object {
 	 * this object.
 	 * @constructor
 	 */
-	constructor();
+	readonly constructor();
 	/**
 	 * Note that this property is treated as an XML element in the 
 	 * XML class.
 	 * @summary Retrieves and returns the Reflection object 
 	 * associated with this method or a property.
 	 */
-	reflect: Reflection;
+	readonly reflect: Reflection;
 	/**
 	 * Creates and returns a new object of a given type.
 	 * @param {any} what - The object type.
@@ -317,7 +317,7 @@ export declare class Array {
 	 * @param {any} element - If there is more than one parameter, 
 	 * the array is initialized with the given parameters.
 	 */
-	Array(length: number, element: any): any[];
+	Array(length: number, element?: any): any[];
 	/**
 	 * The original array is unchanged.  If an array is provided as 
 	 * a parameter to concat(), each of its elements are appended 
@@ -339,7 +339,7 @@ export declare class Array {
 	 * element of the array. / If omitted, the array elements are 
 	 * separated with a comma.
 	 */
-	join(delimiter: string): string;
+	join(delimiter?: string): string;
 	/**
 	 * Returns the reversed array.
 	 * @summary Reverses the order of the elements in the array.
@@ -398,7 +398,7 @@ export declare class Array {
 	 * added to the array starting at index start. / Must specify a 
 	 * value for num, to use this argument.
 	 */
-	splice(start: number, num: number, value: any): any[];
+	splice(start: number, num?: number, value?: any): any[];
 	/**
 	 * Returns the value of the deleted array element.
 	 * @summary Removes the first element from the array, decreases 
@@ -441,21 +441,21 @@ export declare class Array {
  */
 export declare class Math {
 	/** Euler's constant and the base of natural logarithms. */
-	E: number;
+	readonly E: number;
 	/** The natural logarithm of 10. */
-	LN10: number;
+	readonly LN10: number;
 	/** The natural logarithm of 2. */
-	LN2: number;
+	readonly LN2: number;
 	/** The base 2 logarithm of e. */
-	LOG2E: number;
+	readonly LOG2E: number;
 	/** The base 10 logarithm of e. */
-	LOG10E: number;
+	readonly LOG10E: number;
 	/** The ratio of the circumference of a circle to its diameter. */
-	PI: number;
+	readonly PI: number;
 	/** The reciprocal of the square root of 1/2. */
-	SQRT1_2: number;
+	readonly SQRT1_2: number;
 	/** The square root of 2. */
-	SQRT2: number;
+	readonly SQRT2: number;
 	/**
 	 * Returns the absolute value of a number.
 	 * @param {number} x - A number.
@@ -558,7 +558,6 @@ export declare class Math {
  * @class
  */
 export declare class Date {
-	
 	/**
 	 * If parameters are supplied, returns a new Date object 
 	 * holding the supplied date and time.
@@ -579,7 +578,7 @@ export declare class Date {
 	 * @param {number} ms - An integer value from 0 to 999. If this 
 	 * argument is not supplied, its value is set to 0.
 	 */
-	Date(year: number, month: number, day: number, hours: number, min: number, sec: number, ms: number): Date;
+	Date(year: number, month?: number, day?: number, hours?: number, min?: number, sec?: number, ms?: number): Date;
 	/**
 	 * Parses a string, returning a new Date object. The string 
 	 * should be similar to the string returned bt toString().
@@ -608,7 +607,7 @@ export declare class Date {
 	 * @param {number} ms - An integer value from 0 to 999. If this 
 	 * argument is not supplied, its value is set to 0.
 	 */
-	UTC(year: number, month: number, day: number, hours: number, min: number, sec: number, ms: number): Date;
+	UTC(year: number, month?: number, day?: number, hours?: number, min?: number, sec?: number, ms?: number): Date;
 	/**
 	 * Returns the day of the month of the specified Date object in 
 	 * local time.
@@ -903,16 +902,16 @@ export declare class Function {
 	 */
 	arguments: Object;
 	/** The number of formal arguments. */
-	length: number;
+	readonly length: number;
 	/**
 	 * This property is deprecated; use the length property 
 	 * instead.
 	 * @summary The number of formal arguments.
 	 * @deprecated
 	 */
-	arity: number;
+	readonly arity: number;
 	/** The function name. */
-	name: string;
+	readonly name: string;
 	/**
 	 * The Function constructor parses the argument list and 
 	 * creates a Function object.
@@ -1078,7 +1077,7 @@ export declare class global {
 	 * base 2 to base 36). / If not supplied, base is determined by 
 	 * the format of string.
 	 */
-	parseInt(text: string, base: number): number;
+	parseInt(text: string, base?: number): number;
 	/**
 	 * Parses a string to find the first set of characters that can 
 	 * be converted to a floating point number, and returns that 
@@ -1107,7 +1106,7 @@ export declare class global {
 	 * @param {any} argument - Optional argument(s) to be merged 
 	 * into the string. There may be more than one argument.
 	 */
-	localize(what: string, argument: any): string;
+	localize(what: string, argument?: any): string;
 	/**
 	 * Returns true if the supplied string is a valid XML name.
 	 * @param {string} name - The XML name to test.
@@ -1130,7 +1129,7 @@ export declare class global {
 	 * @param {boolean} errorIcon - Display an Error icon; ignored 
 	 * on the Macintosh
 	 */
-	alert(message: string, title: string, errorIcon: boolean): void;
+	alert(message: string, title?: string, errorIcon?: boolean): void;
 	/**
 	 * Displays an alert box with Yes and No buttons; returns true 
 	 * for Yes
@@ -1140,7 +1139,7 @@ export declare class global {
 	 * @param {string} title - The title of the alert; ignored on 
 	 * the Macintosh
 	 */
-	confirm(message: string, noAsDefault: boolean, title: string): boolean;
+	confirm(message: string, noAsDefault: boolean, title?: string): boolean;
 	/**
 	 * Returns null if the user cancelled the dialog, the text 
 	 * otherwise
@@ -1150,7 +1149,7 @@ export declare class global {
 	 * edit field with
 	 * @param {string} title - The title of the dialog;
 	 */
-	prompt(prompt: string, _default: string, title: string): string;
+	prompt(prompt: string, _default?: string, title?: string): string;
 }
 
 /**
@@ -1160,7 +1159,7 @@ export declare class global {
  */
 export declare class String {
 	/** The length of the string. */
-	length: number;
+	readonly length: number;
 	/**
 	 * @summary Returns a string representation of the value given 
 	 * as an argument.
@@ -1215,7 +1214,7 @@ export declare class String {
 	 * search.
 	 * @param {number} offset - The starting offset of the search.
 	 */
-	indexOf(searchValue: string, offset: number): number;
+	indexOf(searchValue: string, offset?: number): number;
 	/**
 	 * The string is searched backward, starting at fromIndex.  
 	 * Returns the index within the string where the last 
@@ -1227,7 +1226,7 @@ export declare class String {
 	 * search.
 	 * @param {number} offset - The starting offset of the search.
 	 */
-	lastIndexOf(searchValue: string, offset: number): number;
+	lastIndexOf(searchValue: string, offset?: number): number;
 	/**
 	 * The substring begins at startSlice, and includes all 
 	 * characters up to, but not including the character at the 
@@ -1245,7 +1244,7 @@ export declare class String {
 	 * extraction. / If omitted, slice extracts to the end of the 
 	 * string.
 	 */
-	slice(startSlice: number, endSlice: number): string;
+	slice(startSlice: number, endSlice?: number): string;
 	/**
 	 * The original string is unchanged.
 	 * @summary Returns a new string which contains all the 
@@ -1410,15 +1409,15 @@ export declare class String {
  */
 export declare class Number {
 	/** A constant representing the smallest representable number. */
-	MIN_VALUE: number;
+	readonly MIN_VALUE: number;
 	/** A constant representing the largest representable number. */
-	MAX_VALUE: number;
+	readonly MAX_VALUE: number;
 	/** A constant representing the special "Not a Number" value. */
-	NaN: number;
+	readonly NaN: number;
 	/** A constant representing negative infinity. */
-	NEGATIVE_INFINITY: number;
+	readonly NEGATIVE_INFINITY: number;
 	/** A constant representing positive infinity. */
-	POSITIVE_INFINITY: number;
+	readonly POSITIVE_INFINITY: number;
 	/**
 	 * @summary Returns a new Number object set to the value of the 
 	 * argument converted to a number.
@@ -1436,7 +1435,7 @@ export declare class Number {
 	 * Returns the value of a Number object converted to a string.
 	 * @param {number} radix - The optional conversion radix.
 	 */
-	toString(radix: number): number;
+	toString(radix?: number): number;
 	/**
 	 * Returns the value of a Number object converted to a string, 
 	 * using localized conventions.
@@ -1468,7 +1467,6 @@ export declare class Number {
  * @class
  */
 export declare class Boolean {
-	
 	/**
 	 * @summary Creates and returns a new Boolean object set to the 
 	 * value of the argument converted to a boolean.
@@ -1507,31 +1505,31 @@ export declare class Boolean {
  */
 export declare class RegExp {
 	/** The matched subexpression #1. */
-	$1: string;
+	readonly $1: string;
 	/** The matched subexpression #2. */
-	$2: string;
+	readonly $2: string;
 	/** The matched subexpression #3. */
-	$3: string;
+	readonly $3: string;
 	/** The matched subexpression #4. */
-	$4: string;
+	readonly $4: string;
 	/** The matched subexpression #5. */
-	$5: string;
+	readonly $5: string;
 	/** The matched subexpression #6. */
-	$6: string;
+	readonly $6: string;
 	/** The matched subexpression #7. */
-	$7: string;
+	readonly $7: string;
 	/** The matched subexpression #8. */
-	$8: string;
+	readonly $8: string;
 	/** The matched subexpression #9. */
-	$9: string;
+	readonly $9: string;
 	/** The last match. */
-	lastMatch: string;
+	readonly lastMatch: string;
 	/** The value of the last matched subexpression. */
-	lastParen: string;
+	readonly lastParen: string;
 	/** The string before the match. */
-	leftContext: string;
+	readonly leftContext: string;
 	/** The string after the match. */
-	rightContext: string;
+	readonly rightContext: string;
 	/** Indicates whether the match is a global match. */
 	global: boolean;
 	/** Indicates whether the match is not case sensitive. */
@@ -1555,7 +1553,7 @@ export declare class RegExp {
 	 * "m" -- treat the string as multiple lines
 	 * "g" -- do global pattern matching
 	 */
-	RegExp(pattern: string, flags: string): RegExp;
+	RegExp(pattern: string, flags?: string): RegExp;
 	/** Converts this RegExp object to a string. */
 	toString(): string;
 	/**
@@ -1595,7 +1593,7 @@ export declare class Error {
 	 * @param {string} file - The name of the file.
 	 * @param {number} line - The line number.
 	 */
-	Error(msg: string, file: string, line: number): Error;
+	Error(msg: string, file?: string, line?: number): Error;
 	/** Convert this object to a string. */
 	toString(): string;
 	/**
@@ -1625,17 +1623,17 @@ export declare class File {
 	 * "Unix".
 	 * @summary The name of the file system.
 	 */
-	fs: string;
+	readonly fs: string;
 	/**
 	 * If true, the object refers to a file system alias or 
 	 * shortcut.
 	 */
-	alias: boolean;
+	readonly alias: boolean;
 	/**
 	 * The creation date of the referenced file, or null if the 
 	 * object does not refer to a file on disk.
 	 */
-	created: Date;
+	readonly created: Date;
 	/**
 	 * Typically set by the file system, but a script can set it. 
 	 * Setting this value clears any error message and resets the 
@@ -1649,55 +1647,55 @@ export declare class File {
 	 * If true, this object refers to a file or file-system alias 
 	 * that actually exists in the file system.
 	 */
-	exists: boolean;
+	readonly exists: boolean;
 	/**
 	 * The platform-specific full path name for the referenced 
 	 * file.
 	 */
-	fsName: string;
+	readonly fsName: string;
 	/** The full path name for the referenced file in URI notation. */
-	fullName: string;
+	readonly fullName: string;
 	/** The full path name for the referenced file in URI notation. */
-	absoluteURI: string;
+	readonly absoluteURI: string;
 	/**
 	 * The path name for the object in URI notation, relative to 
 	 * the current folder.
 	 */
-	relativeURI: string;
+	readonly relativeURI: string;
 	/**
 	 * The date of the referenced file's last modification, or null 
 	 * if the object does not refer to a file on the disk.
 	 */
-	modified: Date;
+	readonly modified: Date;
 	/**
 	 * The file name portion of the absolute URI for the referenced 
 	 * file, without the path specification.
 	 */
-	name: string;
+	readonly name: string;
 	/**
 	 * The localized name of the referenced file, without the path 
 	 * specification.
 	 */
-	displayName: string;
+	readonly displayName: string;
 	/**
 	 * The path portion of the absolute URI for the referenced 
 	 * file, without the file name.
 	 */
-	path: string;
+	readonly path: string;
 	/** The Folder object for the folder that contains this file. */
-	parent: Folder;
+	readonly parent: Folder;
 	/**
 	 * In Mac OS, the Mac OS file type.
 	 * In Windows, "appl" for .EXE files, "shlb" for .DLL files and 
 	 * "TEXT" for any other file.
 	 * @summary The file type as a four-character string.
 	 */
-	type: string;
+	readonly type: string;
 	/**
 	 * In Mac OS, the file creator as a four-character string. In 
 	 * Windows or UNIX, value is "????".
 	 */
-	creator: string;
+	readonly creator: string;
 	/**
 	 * If the object references a file-system alias or shortcut, 
 	 * the flag is altered on the alias, not on the original file.
@@ -1741,7 +1739,7 @@ export declare class File {
 	 * When true, a read attempt caused the current position to be 
 	 * at the end of the file, or the file is not open.
 	 */
-	eof: boolean;
+	readonly eof: boolean;
 	/**
 	 * The value stored in the object is the absolute path. The 
 	 * file that the path refers to does not need to exist.If the 
@@ -1762,7 +1760,7 @@ export declare class File {
 	 * The new operator returns a File object for a nonexisting 
 	 * file with the same name.
 	 */
-	File(path: string): File;
+	File(path?: string): File;
 	/**
 	 * All special characters are encoded in UTF-8 and stored as 
 	 * escaped characters starting with the percent sign followed 
@@ -1815,7 +1813,7 @@ export declare class File {
 	 * @param {boolean} multiSelect - When true, the user can 
 	 * select multiple files and the return value is an array.
 	 */
-	openDialog(prompt: string, filter: any, multiSelect: boolean): File;
+	openDialog(prompt: string, filter?: any, multiSelect?: boolean): File;
 	/**
 	 * Opens the built-in platform-specific file-browsing dialog in 
 	 * which a user can select an existing file location to which 
@@ -1833,7 +1831,7 @@ export declare class File {
 	 * only,  a filter expression such as "Javascript 
 	 * files:*.jsx;All files:*.*". Not used In Mac OS.
 	 */
-	saveDialog(prompt: string, filter: any): File;
+	saveDialog(prompt: string, filter?: any): File;
 	/**
 	 * If successful, creates and returns a new File object that 
 	 * points to the resolved file system element. Returns null if 
@@ -1909,7 +1907,7 @@ export declare class File {
 	 * @param {boolean} multiSelect - When true, the user can 
 	 * select multiple files and the return value is an array.
 	 */
-	openDlg(prompt: string, filter: any, multiSelect: boolean): File;
+	openDlg(prompt: string, filter?: any, multiSelect?: boolean): File;
 	/**
 	 * Differs from the class method saveDialog() in that it 
 	 * presets the current folder to this File object’s parent 
@@ -1928,7 +1926,7 @@ export declare class File {
 	 * only,  a filter expression such as "Javascript 
 	 * files:*.jsx;All files:*.*". Not used In Mac OS.
 	 */
-	saveDlg(prompt: string, filter: any): File;
+	saveDlg(prompt: string, filter?: any): File;
 	/** Converts this object to a string. */
 	toString(): string;
 	/**
@@ -1982,7 +1980,7 @@ export declare class File {
 	 * created file, a 4-character string. Ignored in Windows and 
 	 * UNIX.
 	 */
-	open(mode: string, _type: string, creator: string): boolean;
+	open(mode: string, _type?: string, creator?: string): boolean;
 	/**
 	 * Returns true if the file was closed successfully, false if 
 	 * an I/O error occurred.
@@ -2000,7 +1998,7 @@ export declare class File {
 	 * @param {number} chars - An integer specifying the number of 
 	 * characters to read.
 	 */
-	read(chars: number): string;
+	read(chars?: number): string;
 	/**
 	 * Line feeds are recognized as CR, LF, CRLF or LFCR pairs.  If 
 	 * the file is encoded, multiple bytes might be read to create 
@@ -2058,7 +2056,7 @@ export declare class File {
 	 * 1: Seek relative to the current position.
 	 * 2. Seek backward from the end of the file.
 	 */
-	seek(pos: number, mode: number): boolean;
+	seek(pos: number, mode?: number): boolean;
 	/**
 	 * Returns a number, the position index.
 	 * @summary Retrieves the current position as a byte offset 
@@ -2091,7 +2089,7 @@ export declare class Folder {
 	 * One of "Windows", "Macintosh", or "Unix".
 	 * @summary The name of the current file system.
 	 */
-	fs: string;
+	readonly fs: string;
 	/**
 	 * Assign a Folder object or a string containing the new path 
 	 * name to set the current folder. This is a class property 
@@ -2103,28 +2101,28 @@ export declare class Folder {
 	 * A Folder object for the folder containing the executable 
 	 * image of the running application.
 	 */
-	startup: Folder;
+	readonly startup: Folder;
 	/**
 	 * In Mac OS, a Folder object for the folder containing the 
 	 * bundle of the running application.
 	 */
-	appPackage: Folder;
+	readonly appPackage: Folder;
 	/**
 	 * In Windows, the value of %windir% (by default, C:\\Windows)
 	 * In Mac OS, /System
 	 * @summary A Folder object for the folder containing the 
 	 * operating system files.
 	 */
-	system: Folder;
+	readonly system: Folder;
 	/**
 	 * A Folder object for the folder containing deleted items. On 
 	 * Windows, the trash folder is a virtual
 	 * folder containing a database; therefore, the property value 
 	 * is null on Windows.
 	 */
-	trash: Folder;
+	readonly trash: Folder;
 	/** A Folder object for the default folder for temporary files. */
-	temp: Folder;
+	readonly temp: Folder;
 	/**
 	 * In Windows, the value of %USERDATA% (by default, 
 	 * C:\\Documents and Settings\\username\\Application Data)
@@ -2132,7 +2130,7 @@ export declare class Folder {
 	 * @summary A Folder object for the folder containing the 
 	 * user's application data.
 	 */
-	userData: Folder;
+	readonly userData: Folder;
 	/**
 	 * In Windows, the value of %APPDATA% (by default, 
 	 * C:\\Documents and Settings\\All Users\\Application Data)
@@ -2140,7 +2138,7 @@ export declare class Folder {
 	 * @summary The folder containing the application data for all 
 	 * users.
 	 */
-	appData: Folder;
+	readonly appData: Folder;
 	/**
 	 * In Windows, the value of %CommonProgramFiles% (by default, 
 	 * C:\\Program Files\\Common Files)
@@ -2148,7 +2146,7 @@ export declare class Folder {
 	 * @summary A Folder object for the folder containing common 
 	 * files for all programs installed by the user.
 	 */
-	commonFiles: Folder;
+	readonly commonFiles: Folder;
 	/**
 	 * In Windows, C:\\Documents and Settings\\username\\My 
 	 * Documents
@@ -2156,24 +2154,24 @@ export declare class Folder {
 	 * @summary A folder pointing to the user's My Documents 
 	 * folder.
 	 */
-	myDocuments: Folder;
+	readonly myDocuments: Folder;
 	/**
 	 * In Windows, C:\\Documents and Settings\\username\\Desktop
 	 * In Mac OS, ~/Desktop
 	 * @summary A Folder object for the folder that contains the 
 	 * user’s desktop.
 	 */
-	desktop: Folder;
+	readonly desktop: Folder;
 	/**
 	 * When true, the object refers to a file system alias or 
 	 * shortcut.
 	 */
-	alias: boolean;
+	readonly alias: boolean;
 	/**
 	 * The creation date of the referenced folder, or null if the 
 	 * object does not refer to a folder on disk.
 	 */
-	created: Date;
+	readonly created: Date;
 	/**
 	 * Typically set by the file system, but a script can set it. 
 	 * Setting this value clears any error message and resets the 
@@ -2187,53 +2185,53 @@ export declare class Folder {
 	 * When true, this object refers to a folder that currently 
 	 * exists in the file system.
 	 */
-	exists: boolean;
+	readonly exists: boolean;
 	/**
 	 * The platform-specific name of the referenced folder as a 
 	 * full path name.
 	 */
-	fsName: string;
+	readonly fsName: string;
 	/**
 	 * The full path name for the referenced folder in URI 
 	 * notation. .
 	 */
-	fullName: string;
+	readonly fullName: string;
 	/**
 	 * The full path name for the referenced folder in URI 
 	 * notation.
 	 */
-	absoluteURI: string;
+	readonly absoluteURI: string;
 	/**
 	 * The path name for the referenced folder in URI notation, 
 	 * relative to the current folder.
 	 */
-	relativeURI: string;
+	readonly relativeURI: string;
 	/**
 	 * The date of the referenced folder's last modification, or 
 	 * null if the object does not refer to a folder on disk.
 	 */
-	modified: Date;
+	readonly modified: Date;
 	/**
 	 * The folder name portion of the absolute URI for the 
 	 * referenced file, without the path specification.
 	 */
-	name: string;
+	readonly name: string;
 	/**
 	 * The localized name portion of the absolute URI for the 
 	 * referenced folder, without the path specification.
 	 */
-	displayName: string;
+	readonly displayName: string;
 	/**
 	 * The path portion of the object absolute URI for the 
 	 * referenced file, without the folder name.
 	 */
-	path: string;
+	readonly path: string;
 	/**
 	 * TThe Folder object for the folder that contains this folder, 
 	 * or null if this object refers to the root folder of a 
 	 * volume.
 	 */
-	parent: Folder;
+	readonly parent: Folder;
 	/**
 	 * If the path name refers to an already existing disk file, a 
 	 * File object is returned instead.  Returns the new Folder 
@@ -2250,7 +2248,7 @@ export declare class Folder {
 	 * The new operator returns a Folder object for a nonexisting 
 	 * folder with the same name.
 	 */
-	Folder(path: string): Folder;
+	Folder(path?: string): Folder;
 	/**
 	 * All special characters are encoded in UTF-8 and stored as 
 	 * escaped characters starting with the percent sign followed 
@@ -2337,7 +2335,7 @@ export declare class Folder {
 	 * relative to the specified base path, in URI notation.
 	 * @param {string} basePath - A base path in URI notation.
 	 */
-	getRelativeURI(basePath: string): string;
+	getRelativeURI(basePath?: string): string;
 	/**
 	 * Returns true immediately if the folder was opened 
 	 * successfully.
@@ -2410,7 +2408,7 @@ export declare class Socket {
 	 * @summary The name of the remote computer when a connection 
 	 * is established.
 	 */
-	host: string;
+	readonly host: string;
 	/**
 	 * Typical values are "ASCII", "BINARY", or "UTF-8".
 	 * @summary Sets or retrieves the name of the encoding used to 
@@ -2423,9 +2421,9 @@ export declare class Socket {
 	 */
 	error: string;
 	/** When true, the receive buffer is empty. */
-	eof: boolean;
+	readonly eof: boolean;
 	/** When true, the connection is active. */
-	connected: boolean;
+	readonly connected: boolean;
 	/**
 	 * The timeout in seconds to be applied to read or write 
 	 * operations.
@@ -2445,7 +2443,7 @@ export declare class Socket {
 	 * connection / Typical values are "ASCII", "binary", or 
 	 * "UTF-8".
 	 */
-	open(host: string, encoding: string): boolean;
+	open(host: string, encoding?: string): boolean;
 	/**
 	 * The call to open() and the call to listen()are mutually 
 	 * exclusive. Call one function or the other, not both.
@@ -2458,7 +2456,7 @@ export declare class Socket {
 	 * connection / Typical values are "ASCII", "BINARY", or 
 	 * "UTF-8".
 	 */
-	listen(port: number, encoding: string): boolean;
+	listen(port: number, encoding?: string): boolean;
 	/**
 	 * Returns true if the connection was closed, false on I/O 
 	 * errors.
@@ -2480,7 +2478,7 @@ export declare class Socket {
 	 * If not supplied, the connection attempts to read as many 
 	 * characters it can get and returns immediately.
 	 */
-	read(count: number): string;
+	read(count?: number): string;
 	/**
 	 * Line feeds are recognized as LF or CRLF pairs. CR characters 
 	 * are ignored. Returns a string containing the characters.
@@ -2527,36 +2525,35 @@ export declare class Socket {
  */
 export declare class ReflectionInfo {
 	/** The class object that this element belongs to. */
-	parent: Reflection;
+	readonly parent: Reflection;
 	/** The element name. */
-	name: string;
+	readonly name: string;
 	/**
 	 * One of unknown, readonly, readwrite, createonly, method or 
 	 * parameter.
 	 * @summary The element type.
 	 */
-	type: string;
+	readonly type: string;
 	/** The data type. */
-	dataType: string;
+	readonly dataType: string;
 	/** The description of method or function arguments. */
-	arguments: ReflectionInfo;
+	readonly arguments: ReflectionInfo;
 	/** The minimum value. */
-	min: number;
+	readonly min: number;
 	/** The maximum value. */
-	max: number;
+	readonly max: number;
 	/** The default value. */
-	defaultValue: any;
+	readonly defaultValue: any;
 	/** Contains true if the class describes a collection class. */
-	isCollection: boolean;
+	readonly isCollection: boolean;
 	/** The long description text. */
-	description: string;
+	readonly description: string;
 	/** The short description text. */
-	help: string;
+	readonly help: string;
 	/** Sample code, if present. */
-	sampleCode: string;
+	readonly sampleCode: string;
 	/** A file containing sample code. May be null. */
-	sampleFile: File;
-	
+	readonly sampleFile: File;
 }
 
 /**
@@ -2565,23 +2562,23 @@ export declare class ReflectionInfo {
  */
 export declare class Reflection {
 	/** The class name. */
-	name: string;
+	readonly name: string;
 	/** An array of method descriptions. */
-	methods: ReflectionInfo;
+	readonly methods: ReflectionInfo;
 	/** An array of property descriptions. */
-	properties: ReflectionInfo;
+	readonly properties: ReflectionInfo;
 	/** An array of class method descriptions. */
-	staticMethods: ReflectionInfo;
+	readonly staticMethods: ReflectionInfo;
 	/** An array of class property descriptions. */
-	staticProperties: ReflectionInfo;
+	readonly staticProperties: ReflectionInfo;
 	/** The long description text. */
-	description: string;
+	readonly description: string;
 	/** The short description text. */
-	help: string;
+	readonly help: string;
 	/** Sample code, if present. */
-	sampleCode: string;
+	readonly sampleCode: string;
 	/** A file containing sample code. May be null. */
-	sampleFile: File;
+	readonly sampleFile: File;
 	/**
 	 * Finds an element description by name.
 	 * @param {string} name - The name of the element to find.
@@ -2603,9 +2600,9 @@ export declare class Reflection {
  */
 export declare class QName {
 	/** The URI part of the qualified name. */
-	uri: string;
+	readonly uri: string;
 	/** The local name part of the qualified name. */
-	localName: string;
+	readonly localName: string;
 	/**
 	 * If this is a Namespace object, the URI is set to the 
 	 * namespace URI, and there is no local name.
@@ -2623,7 +2620,7 @@ export declare class QName {
 	 * @param {string} name - The local name. Used only if URI is 
 	 * given as a string.
 	 */
-	QName(uri: any, name: string): QName;
+	QName(uri: any, name?: string): QName;
 }
 
 /**
@@ -2636,9 +2633,9 @@ export declare class QName {
  */
 export declare class Namespace {
 	/** The named prefix. */
-	prefix: string;
+	readonly prefix: string;
 	/** The URI. */
-	uri: string;
+	readonly uri: string;
 	/**
 	 * If this is a Namespace or a QName object, the URI and prefix 
 	 * are set to that of the object.
@@ -2654,7 +2651,7 @@ export declare class Namespace {
 	 * @param {string} uri - The URI if the prefix is specified as 
 	 * a string.
 	 */
-	Namespace(prefix: any, uri: string): Namespace;
+	Namespace(prefix: any, uri?: string): Namespace;
 }
 
 /**
@@ -2771,14 +2768,14 @@ export declare class XML {
 	 * object with the given name.
 	 * @param {string} name - The name of the descendant to find.
 	 */
-	descendants(name: string): XML;
+	descendants(name?: string): XML;
 	/**
 	 * Returns a list of XML children that are elements with a 
 	 * given name, or all children that are XML elements.
 	 * @param {string} name - The element name. If not supplied, 
 	 * gets all children that are XML elements.
 	 */
-	elements(name: string): XML;
+	elements(name?: string): XML;
 	/**
 	 * An XML object is considered to contain complex content if it 
 	 * represents an XML element that has child elements. XML 
@@ -2893,7 +2890,7 @@ export declare class XML {
 	 * @param {string} name - The name of the preprocessing 
 	 * instruction to return.
 	 */
-	processingInstructions(name: string): XML;
+	processingInstructions(name?: string): XML;
 	/**
 	 * Inserts a given child into this object before its existing 
 	 * XML properties, and returns this XML object.
@@ -2990,8 +2987,6 @@ export declare class XML {
  * @class
  */
 export declare class XMLList {
-	
-	
 }
 
 /**
@@ -3004,7 +2999,7 @@ export declare class UnitValue {
 	/** The base unit for all conversions. */
 	baseUnit: UnitValue;
 	/** The unit name. */
-	type: string;
+	readonly type: string;
 	/** The numeric value. */
 	value: number;
 	/**

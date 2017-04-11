@@ -10,8 +10,10 @@ module Type
         'Number' => 'number',
         'String' => 'string',
         'Any' => 'any',
+        'varies=any' => 'any',
         'Array' => 'any[]',
-        'Undefined' => 'undefined'
+        'Undefined' => 'undefined',
+        'Measurement Unit (Number or String)=any' => 'number|string'
       }
       h[nil] = 'void'
       h
