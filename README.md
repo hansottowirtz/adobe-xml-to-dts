@@ -12,8 +12,8 @@ Illustrator, ScriptUI and Javascript `.xml`s!
 ## Usage
 
 ```bash
-./bin/adobe-types res/illustrator.xml res/photoshop.xml types/built/
-./bin/adobe-types res/scriptui.xml types/built/scriptui.d.ts
+./bin/adobe-typescript res/illustrator.xml res/photoshop.xml types/built/
+./bin/adobe-typescript res/scriptui.xml types/built/scriptui.d.ts
 ```
 
 ## Setup
@@ -21,5 +21,8 @@ Illustrator, ScriptUI and Javascript `.xml`s!
 Depends on Ruby, probably `>= 2.0.0`
 
 ```bash
+git clone https://github.com/hansottowirtz/adobe-typescript
+cd adobe-typescript
+chmod +x ./bin/adobe-typescript
 bundle install
 ```
