@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require_relative '../adobe_typescript'
+
+if ARGV.length > 2
+  output_folder = ARGV.last
+  ARGV.first(ARGV.length - 1).each do |file|
+    AdobeTypescript.run(file, output_folder)
+  end
+else
+  AdobeTypescript.run(ARGV[0], ARGV[1])
+end
