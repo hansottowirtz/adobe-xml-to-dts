@@ -10,9 +10,9 @@ class KlassProperty < ClassdefProperty
       d = "#{name}();"
     else
       d = "#{name}: #{type};"
+      d.prepend 'readonly ' if readonly?
+      d.prepend 'static ' if static?
     end
-    d.prepend 'readonly ' if readonly?
-    d.prepend 'static ' if static?
     d
   end
 

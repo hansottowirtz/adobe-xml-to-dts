@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../src/adobe_xml_to_dts'
+
+non_option_args = ARGV.reject{|a| a.start_with? '--'}
+option_args = ARGV.select{|a| a.start_with? '--'}
+
+if non_option_args.length > 2
+  output_folder = non_option_args.last
+  non_option_args.first(non_option_args.length - 1).each do |file|
+    AdobeXmlToDts.run(file, output_folder, option_args)
+  end
+else
+  AdobeXmlToDts.run(non_option_args[0], non_option_args[1], option_args)
+end

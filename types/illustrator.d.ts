@@ -1,4 +1,3 @@
-/// <reference path="../helpers/illustrator-helper.d.ts"/>
 /**
  * The screen mode.
  * @enum

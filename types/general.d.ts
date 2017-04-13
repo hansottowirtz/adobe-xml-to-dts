@@ -199,7 +199,7 @@ export declare class Object {
 	 * this object.
 	 * @constructor
 	 */
-	readonly constructor();
+	constructor();
 	/**
 	 * Note that this property is treated as an XML element in the 
 	 * XML class.
